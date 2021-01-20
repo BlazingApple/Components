@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "ZeroState.razor.css",
-    "inputFile": "ZeroState.razor.scss"
+    "outputFile": "wwwroot/css/components/components.css",
+    "inputFile": "wwwroot/css/components/components.scss"
   }
 ]

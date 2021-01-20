@@ -1,0 +1,37 @@
+﻿@import '_colors.scss';
+/* #region events */
+$og-success: $og-lime;
+$og-failure: $og-blush;
+/* #endregion */
+
+$og-background-mode: var(--og-background-theme-mode);
+$og-background-mode-inverse: var(--og-background-theme-mode-inverse);
+$og-content-background: var(--og-theme-content-color);
+$og-background-mode-white: var(--og-background-theme-mode-white);
+$og-accent-color: var(--og-accent-bg);
+$og-accent-border: var(--og-accent-border);
+
+/* #region political categories */
+$og-nonprofit: $og-fuchsia;
+$og-government:$og-sky;
+$og-commercial: $og-lime;
+
+/*#endregion*/
+$og-republican: #E41B22;
+$og-republican-background: rgba(228, 27, 34, 0.05);
+$og-republican-border-color: rgba(228, 27, 34, 0.25);
+
+$og-democratic: #2FABE1;
+$og-democratic-background: rgba(47, 171, 225,.05);
+$og-democratic-border-color: rgba(47, 171, 225,.25);
+
+$og-libertarian: #f9d334;
+$og-libertarian-background: rgba(249, 211, 52, 0.05);
+$og-libertarian-border-color: rgba(249, 211, 52, 0.25);
+
+$og-independent: $og-lime;
+$og-independent-background: rgba(105, 195, 0,.05);
+$og-independent-border-color: rgba(105, 195, 0,.25);
+$og-unknown: lightgray;
+/* #region */
+/* #endregion*/
