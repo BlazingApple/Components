@@ -1,4 +1,4 @@
-# BlazingApple.Survey :apple:
+# BlazingApple.Components :apple:
 
 :fire:  A totally copacetic, easy-to-use front-end Blazor Survey package.
 This front-end Razor Class Library is intended to be used by Blazor WASM projects, and targets .NET 5.
@@ -8,8 +8,6 @@ BlazingApples is an open-source set of packages that aims to speed application d
 
 :zap: Check out the [demo site here](https://blazorsimplesurvey.azurewebsites.net/displaysurvey), [or this blog post on how the components work](https://blazorhelpwebsite.com/ViewBlogPost/44)!
 
-:clap: Special thanks to [ADefWebServer](https://github.com/ADefWebserver/BlazorSimpleSurvey/commits?author=ADefWebserver) for creating the [BlazorSimpleSurvey](https://github.com/ADefWebserver/BlazorSimpleSurvey) demo application which this is based off of.
-
 # Demo :video_camera:
   <img alt="Demo of BlazingApple.Survey" src="https://github.com/BlazingApple/Survey/blob/main/README/BlazingApplesDemo.gif?raw=true" style="max-width:1000px;">
 
@@ -18,7 +16,7 @@ BlazingApples is an open-source set of packages that aims to speed application d
 ## 1. Get the required dependencies.
 
 1. On Client Project, right click and get to the NuGet Package Manager ("Manage NuGetPackages").
-2. Install `BlazingApple.Survey`
+2. Install `BlazingApple.Components`
 <img alt="Survey Administration" src="https://github.com/BlazingApple/Survey/blob/main/README/InstallBlazingApplePackage.png?raw=true" style="max-width:1000px;">
 
 3. Add the following to `Program.cs's Main`:
@@ -35,26 +33,18 @@ BlazingApples is an open-source set of packages that aims to speed application d
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 ```
 
-## 2. Set up your server's API controller to receive the requests.
+## 2. Add BlazingApple.Components namespaces to your imports file.
 It is recommended to do this with EntityFrameworkCore to create the tables in my database and receive and process the request. This portion of the setup shows how to do this.
 
 1. In your `Server` project, open `ApplicationDbContext`, add the following tables:
 ```
-		using BlazingApples.Shared;
 		...
-    public DbSet<Survey> Surveys { get; set; }
-		public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
-		public DbSet<SurveyItem> SurveyItems { get; set; }
-		public DbSet<SurveyItemOption> SurveyItemOptions { get; set; }
+		@using BlazingApples.Components
+		@using BlazingApples.Components.Records
+		@using BlazingApples.Components.Lists
+		...
 ```
-2. Create a `SurveysController.cs` in the `Controllers` directory, use [this controller](https://github.com/BlazingApple/Survey/blob/main/examples/BlazingAppleConsumer.Survey/Server/Controllers/SurveysController.cs) as the controller.
 
-3. In the `Package Manager Console`, enter the following commands:
-<img alt="Survey Administration" src="https://github.com/BlazingApple/Survey/blob/main/README/Package%20Manager%20Console.png?raw=true" style="max-width:750px;">
-```
-Add-Migration AddSurveyData
-Update-Database
-```
 Now you should be all set to use the components.
 
 # Usage :muscle:
@@ -67,7 +57,7 @@ Once the (admittedly rather involved) setup is complete, using the components is
 
 ## Credits :white_flower:
 
-- Build with love :blue_heart:, using [Radzen's Component Library](https://razor.radzen.com/) and [ADefWebServer](https://github.com/ADefWebserver/BlazorSimpleSurvey/commits?author=ADefWebserver)'s [BlazorSimpleSurvey](https://github.com/ADefWebserver/BlazorSimpleSurvey) as a starting point.
+- Build with love :blue_heart:, using [Radzen's Component Library](https://razor.radzen.com/).
 
 ## Authors :pencil:
 
