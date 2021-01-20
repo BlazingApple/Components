@@ -1,0 +1,56 @@
+﻿<CascadingValue Value="this">
+	<div class="btn-group tabstrip" role="group">
+		@foreach (TabPage tabPage in Pages)
+		{
+			@if (Pages.Count > 1)@* Don't show the header if there is only one page. *@
+			{
+				<button type="button"
+						class="btn tab btn-light @GetButtonClass(tabPage)"
+						@onclick=@( () => ActivatePage(tabPage) )>
+					@tabPage.Title
+				</button>
+			}
+		}
+	</div>
+	@ChildContent
+</CascadingValue>
+
+@code {
+	#region Properties
+	public TabPage ActivePage { get; set; }
+	[Parameter]
+	public bool Prerender { get; set; } = false;
+	List<TabPage> Pages { get; set; }
+	#endregion
+
+	// Next line is needed so we are able to add <TabPage> components inside
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	#region Overrides
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		Pages = new List<TabPage>();
+	}
+	#endregion
+
+	#region Methods
+	internal void AddPage(TabPage tabPage)
+	{
+		Pages.Add(tabPage);
+		if (Pages.Count == 1)
+			ActivePage = tabPage;
+		StateHasChanged();
+	}
+
+	string GetButtonClass(TabPage page)
+	{
+		return page == ActivePage ? "active og-color-primary" : "";
+	}
+	void ActivatePage(TabPage page)
+	{
+		ActivePage = page;
+	}
+	#endregion
+}

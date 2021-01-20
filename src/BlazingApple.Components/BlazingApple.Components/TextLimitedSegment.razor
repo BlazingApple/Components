@@ -1,0 +1,72 @@
+﻿
+@if (wordCount > MaxWords)
+{
+	@if (!ShowMoreSelected)
+	{
+		<div @attributes="AdditionalAttributes" title="@Content">
+			@limitedContent
+			<SeeMoreToggle @bind-Value="ShowMoreSelected"></SeeMoreToggle>
+		</div>
+	}
+	else
+	{
+		<div @attributes="AdditionalAttributes">
+			@Content
+			<SeeMoreToggle @bind-Value="ShowMoreSelected"></SeeMoreToggle>
+		</div>
+	}
+}
+else
+{
+	<div @attributes="AdditionalAttributes">
+		@Content
+	</div>
+}
+
+@code {
+	/// <summary>
+	/// The string text to truncate if it is too long.
+	/// </summary>
+	[Parameter]
+	public string Content { get; set; }
+
+	/// <summary>
+	/// Defaults to 25 words if not set. Any count of words over this are truncated and an ellipsis added.
+	/// </summary>
+	[Parameter]
+	public int MaxWords { get; set; }
+
+	[Parameter(CaptureUnmatchedValues = true)]
+	public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+	private string limitedContent;
+	private int wordCount = 0;
+	private bool ShowMoreSelected;
+	protected override void OnParametersSet()
+	{
+		base.OnParametersSet();
+		if (MaxWords == 0)
+		{
+			MaxWords = 25;
+		}
+
+		string[] words = Content.Split(" ");
+		wordCount = words.Length;
+		if (wordCount > MaxWords)
+		{
+			for (int i = 0; i < MaxWords; i++)
+			{
+				if (i != 0)
+				{
+					limitedContent += " " + words[i];
+				}
+				else
+				{
+					limitedContent += words[i];
+				}
+			}
+			limitedContent += "...";
+		}
+	}
+
+}
