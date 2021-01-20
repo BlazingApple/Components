@@ -1,0 +1,30 @@
+﻿<Tooltip>
+	<HoverContent>
+		<div class="og-post-it">
+			<div class="og-post-it-contents">
+				@Comment
+			</div>
+		</div>
+	</HoverContent>
+	<TooltipContent>
+		<h3 class="lead">@Title</h3>
+		<div class="og-no-results text-muted">
+			@Subtitle
+		</div>
+		<div>
+			@Comment
+		</div>
+	</TooltipContent>
+</Tooltip>
+
+@code {
+
+	[Parameter]
+	public string Title { get; set; }
+
+	[Parameter]
+	public string Subtitle { get; set; }
+
+	[Parameter]
+	public string Comment { get; set; }
+}

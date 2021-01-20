@@ -1,0 +1,440 @@
+﻿@if (I != s.IconType.Null && string.IsNullOrEmpty(CustomIcon))
+{
+	@switch (I)
+	{
+		case s.IconType.About:
+			<i title="@AltText" class="fas fa-info-circle @AdditionalClasses"></i>
+			break;
+		case s.IconType.Add:
+			<i title="@AltText" class="fas fa-plus @AdditionalClasses"></i>
+			break;
+		case s.IconType.Affiliation:
+			<i title="@AltText" class="far fa-handshake @AdditionalClasses"></i>
+			break;
+		case s.IconType.Agriculture:
+			<i title="@AltText" class="fas fa-tractor @AdditionalClasses"></i>
+			break;
+		case s.IconType.Amend:
+			<i title="@AltText" class="fas fa-user-edit @AdditionalClasses"></i>
+			break;
+		case s.IconType.Analytics:
+			<i title="@AltText" class="fas fa-project-diagram @AdditionalClasses"></i>
+			break;
+		case s.IconType.Apple:
+			<i title="@AltText" class="fas fa-apple-alt @AdditionalClasses"></i>
+			break;
+		case s.IconType.Arctic:
+			<i title="@AltText" class="fas fa-skating @AdditionalClasses"></i>
+			break;
+		case s.IconType.Art:
+			<i title="@AltText" class="fas fa-palette @AdditionalClasses"></i>
+			break;
+		case s.IconType.Back:
+			<i title="@AltText" class="fas fa-arrow-left @AdditionalClasses"></i>
+			break;
+		case s.IconType.Beach:
+			<i title="@AltText" class="fas fa-umbrella-beach @AdditionalClasses"></i>
+			break;
+		case s.IconType.Bird:
+			<i title="@AltText" class="fas fa-dove @AdditionalClasses"></i>
+			break;
+		case s.IconType.Birthday:
+			<i title="@AltText" class="fas fa-birthday-cake @AdditionalClasses"></i>
+			break;
+		case s.IconType.Blog:
+			<i title="@AltText" class="fas fa-bullhorn @AdditionalClasses"></i>
+			break;
+		case s.IconType.Branch:
+			<i title="@AltText" class="fas fa-pagelines @AdditionalClasses"></i>
+			break;
+		case s.IconType.Building:
+			<i title="@AltText" class="fas fa-building @AdditionalClasses"></i>
+			break;
+		case s.IconType.Career:
+			<i title="@AltText" class="fas fa-graduation-cap @AdditionalClasses"></i>
+			break;
+		case s.IconType.NotifDaily:
+		case s.IconType.Calendar:
+			<i title="@AltText" class="fas fa-calendar-day @AdditionalClasses"></i>
+			break;
+		case s.IconType.Cancel:
+			<i title="@AltText" class="fas fa-times @AdditionalClasses"></i>
+			break;
+		case s.IconType.ChartArea:
+			<i title="@AltText" class="fas fa-chart-area @AdditionalClasses"></i>
+			break;
+		case s.IconType.ChartBar:
+			<i title="@AltText" class="fas fa-chart-bar @AdditionalClasses"></i>
+			break;
+		case s.IconType.ChartLine:
+			<i title="@AltText" class="fas fa-chart-line @AdditionalClasses"></i>
+			break;
+		case s.IconType.ChartPie:
+			<i title="@AltText" class="fas fa-chart-pie @AdditionalClasses"></i>
+			break;
+		case s.IconType.Circle:
+			<i title="@AltText" class="fas fa-circle @AdditionalClasses"></i>
+			break;
+		case s.IconType.City:
+			<i title="@AltText" class="fas fa-city @AdditionalClasses"></i>
+			break;
+		case s.IconType.CityChicago:
+			<i title="@AltText" class="fas fa-pizza-slice @AdditionalClasses"></i>
+			break;
+		case s.IconType.CityNewYork:
+			<i title="@AltText" class="fas fa-city @AdditionalClasses"></i>
+			break;
+		case s.IconType.Check:
+			<i title="@AltText" class="fas fa-check @AdditionalClasses"></i>
+			break;
+		case s.IconType.Checklist:
+			<i title="@AltText" class="fas fa-tasks @AdditionalClasses"></i>
+			break;
+		case s.IconType.ContactCard:
+			<i title="@AltText" class="fas fa-address-card @AdditionalClasses"></i>
+			break;
+		case s.IconType.Commercial:
+			<i title="@AltText" class="fas fa-money-bill-wave @AdditionalClasses"></i>
+			break;
+		case s.IconType.Comments:
+			<i title="@AltText" class="fas fa-comments @AdditionalClasses"></i>
+			break;
+		case s.IconType.Create:
+			<i title="@AltText" class="fas fa-plus @AdditionalClasses"></i>
+			break;
+		case s.IconType.CSpan:
+			<img title="@AltText" class="@AdditionalClasses" src="https://static.c-span.org/assets/images/CSPAN_Navy-and-Blue.svg" />
+			break;
+		case s.IconType.Customer:
+			<i title="@AltText" class="fas fa-building @AdditionalClasses"></i>
+			break;
+		case s.IconType.Dashboard:
+			<i title="@AltText" class="fas fa-tachometer-alt @AdditionalClasses"></i>
+			break;
+		case s.IconType.Database:
+			<i title="@AltText" class="fas fa-database @AdditionalClasses"></i>
+			break;
+		case s.IconType.Desert:
+			<i title="@AltText" class="fas fa-sun @AdditionalClasses"></i>
+			break;
+		case s.IconType.Delete:
+			<i title="@AltText" class="fas fa-times @AdditionalClasses"></i>
+			break;
+		case s.IconType.Details:
+			<i title="@AltText" class="fas fa-clipboard-list @AdditionalClasses"></i>
+			break;
+		case s.IconType.Democrat:
+			break;
+		case s.IconType.Download:
+			<i title="@AltText" class="fas fa-download @AdditionalClasses"></i>
+			break;
+		case s.IconType.Dislike:
+			<i title="@AltText" class="fas fa-thumbs-down @AdditionalClasses"></i>
+			break;
+		case s.IconType.Dollar:
+			<i title="@AltText" class="fas fa-dollar-sign @AdditionalClasses"></i>
+			break;
+		case s.IconType.EmojiWinkHeart:
+			<i title="@AltText" class="fas fa-kiss-wink-heart @AdditionalClasses"></i>
+			break;
+		case s.IconType.Email:
+			<i title="@AltText" class="fas fa-at @AdditionalClasses"></i>
+			break;
+		case s.IconType.Edit:
+			<i title="@AltText" class="fas fa-pen @AdditionalClasses"></i>
+			break;
+		case s.IconType.End:
+			<i title="@AltText" class="fas fa-hourglass-end @AdditionalClasses"></i>
+			break;
+		case s.IconType.Facebook:
+			<i title="@AltText" class="fab fa-facebook-f @AdditionalClasses"></i>
+			break;
+		case s.IconType.FlagUSA:
+			<i title="@AltText" class="fas fa-flag-usa @AdditionalClasses"></i>
+			break;
+		case s.IconType.Fish:
+			<i title="@AltText" class="fas fa-fish @AdditionalClasses"></i>
+			break;
+		case s.IconType.Flower:
+			<i title="@AltText" class="fas fa-seedling @AdditionalClasses"></i>
+			break;
+		case s.IconType.Fruit:
+			<i title="@AltText" class="fas fa-lemon @AdditionalClasses"></i>
+			break;
+		case s.IconType.Glossary:
+			<i title="@AltText" class="fas fa-book @AdditionalClasses"></i>
+			break;
+		case s.IconType.Government:
+			<i title="@AltText" class="fas fa-landmark @AdditionalClasses"></i>
+			break;
+		case s.IconType.GovTrack:
+			<img title="@AltText" class="@AdditionalClasses" src="https://www.govtrack.us/static/images/logo.png?201906" />
+			break;
+		case s.IconType.Hospitality:
+			<i title="@AltText" class="fas fa-hotel @AdditionalClasses"></i>
+			break;
+		case s.IconType.Igloo:
+			<i title="@AltText" class="fas fa-igloo @AdditionalClasses"></i>
+			break;
+		case s.IconType.Image:
+			<i title="@AltText" class="far fa-image @AdditionalClasses"></i>
+			break;
+		case s.IconType.Incoming:
+			<i title="@AltText" class="fas fa-long-arrow-alt-left @AdditionalClasses"></i>
+			break;
+		case s.IconType.Independent:
+			<i title="@AltText" class="fas fa-dove @AdditionalClasses"></i>
+			break;
+		case s.IconType.Landmark:
+			<i title="@AltText" class="fas fa-archway @AdditionalClasses"></i>
+			break;
+		case s.IconType.Locked:
+			<i title="@AltText" class="fas fa-lock @AdditionalClasses"></i>
+			break;
+		case s.IconType.Love:
+			<i title="@AltText" class="fas fa-heart @AdditionalClasses"></i>
+			break;
+		case s.IconType.Leaf:
+			<i title="@AltText" class="fas fa-leaf @AdditionalClasses"></i>
+			break;
+		case s.IconType.Legislation:
+			<i title="@AltText" class="fas fa-atlas @AdditionalClasses"></i>
+			break;
+		case s.IconType.Letter:
+			<i title="@AltText" class="fas fa-envelope @AdditionalClasses"></i>
+			break;
+		case s.IconType.Libertarian:
+			break;
+		case s.IconType.Like:
+			<i title="@AltText" class="fas fa-thumbs-up @AdditionalClasses"></i>
+			break;
+		case s.IconType.Loading:
+			<i title="@AltText" class="fas fa-spinner og-loading-subtle og-color-primary @AdditionalClasses"></i>
+			break;
+		case s.IconType.Lobbying:
+			<i title="@AltText" class="fas comments-dollar og-loading-subtle og-color-primary @AdditionalClasses"></i>
+			break;
+		case s.IconType.LoadingFullPage:
+			<!-- We get the actual icon from the Loading component, so don't put one here. -->
+			<i title="@AltText" class="og-loading-default og-color-primary @AdditionalClasses"></i>
+			break;
+		case s.IconType.Map:
+			<i title="@AltText" class="far fa-map @AdditionalClasses"></i>
+			break;
+		case s.IconType.MembershipType:
+			<i title="@AltText" class="fas fa-dollar-sign @AdditionalClasses"></i>
+			break;
+		case s.IconType.MessageOpen:
+			<i title="@AltText" class="fas fa-envelope-open-text @AdditionalClasses"></i>
+			break;
+		case s.IconType.Money:
+			break;
+		case s.IconType.Mountains:
+			<i title="@AltText" class="fas fa-mountain @AdditionalClasses"></i>
+			break;
+		case s.IconType.Name:
+			<i title="@AltText" class="fas fa-signature @AdditionalClasses"></i>
+			break;
+		case s.IconType.Newspaper:
+			<i title="@AltText" class="far fa-newspaper @AdditionalClasses"></i>
+			break;
+		case s.IconType.NonProfit:
+			<i title="@AltText" class="fas fa-peace @AdditionalClasses"></i>
+			break;
+		case s.IconType.Notification:
+			<i title="@AltText" class="fas fa-bell @AdditionalClasses"></i>
+			break;
+		case s.IconType.NotifNever:
+			<i title="@AltText" class="fas fa-bell-slash @AdditionalClasses"></i>
+			break;
+		case s.IconType.NotifImmediately:
+			<i title="@AltText" class="fas fa-exclamation @AdditionalClasses"></i>
+			break;
+		case s.IconType.NotifWeekly:
+			<i title="@AltText" class="fas fa-calendar-week @AdditionalClasses"></i>
+			break;
+		case s.IconType.Outdoors:
+			<i title="@AltText" class="fas fa-hiking @AdditionalClasses"></i>
+			break;
+		case s.IconType.Outgoing:
+			<i title="@AltText" class="fas fa-long-arrow-alt-right @AdditionalClasses"></i>
+			break;
+		case s.IconType.OurGov:
+			<svg title="@AltText" class="@AdditionalClasses og-fill-primary branded" height="40" width="40">
+				<!--<use href="/images/OurGov Logo - Rounded Rectangle.svg#roundedRectIcon"></use>-->
+				<use href="/images/OurGov Logo - Rounded.svg#roundIcon"></use>
+			</svg>
+			break;
+		case s.IconType.PatternShortline:
+			<i title="@AltText" class="fas fa-stream @AdditionalClasses"></i>
+			break;
+		case s.IconType.PatternWiggles:
+			<i title="@AltText" class="fas fa-braille @AdditionalClasses"></i>
+			break;
+		case s.IconType.PostedDate:
+			<i title="@AltText" class="fas fa-file-alt @AdditionalClasses"></i>
+			break;
+		case s.IconType.Phone:
+			<i title="@AltText" class="fas fa-phone @AdditionalClasses"></i>
+			break;
+		case s.IconType.Planet:
+			<i title="@AltText" class="fas fa-meteor @AdditionalClasses"></i>
+			break;
+		case s.IconType.Preferences:
+			<i title="@AltText" class="fas fa-palette @AdditionalClasses"></i>
+			break;
+		case s.IconType.Question:
+			<i title="@AltText" class="fas fa-question @AdditionalClasses"></i>
+			break;
+		case s.IconType.Representative:
+			<i title="@AltText" class="fas fa-user-tie @AdditionalClasses"></i>
+			break;
+		case s.IconType.Republican:
+			break;
+		case s.IconType.Rule:
+			<i title="@AltText" class="fas fa-ruler @AdditionalClasses"></i>
+			break;
+		case s.IconType.Science:
+			<i title="@AltText" class="fas fa-vial @AdditionalClasses"></i>
+			break;
+		case s.IconType.SealHouse:
+			<svg title="@AltText" viewBox="0 0 420.20125 648.03126" class="@AdditionalClasses">
+				<use xlink:href="/images/organizations/government/usa/legislative/seal_us_house.svg"></use>
+			</svg>
+			break;
+		case s.IconType.SealPresident:
+			<svg title="@AltText" viewBox="0 0 1000 999.999" class="@AdditionalClasses">
+				<use xlink:href="/images/organizations/government/usa/executive/seal_office_president.svg"></use>
+			</svg>
+			break;
+		case s.IconType.SealSenate:
+			<svg title="@AltText" viewBox="0 0 420.28283 648.15706" class="@AdditionalClasses">
+				<use xlink:href="/images/organizations/government/usa/legislative/seal_us_senate.svg"></use>
+			</svg>
+			break;
+		case s.IconType.Search:
+			<i title="@AltText" class="fas fa-search @AdditionalClasses"></i>
+			break;
+		case s.IconType.SearchData:
+			<i title="@AltText" class="fab fa-searchengin @AdditionalClasses"></i>
+			break;
+		case s.IconType.Settings:
+			<i title="@AltText" class="fas fa-cog @AdditionalClasses"></i>
+			break;
+		case s.IconType.Shapes:
+			<i title="@AltText" class="fas fa-shapes @AdditionalClasses"></i>
+			break;
+		case s.IconType.Shoes:
+			<i title="@AltText" class="fas fa-shoe-prints @AdditionalClasses"></i>
+			break;
+		case s.IconType.Signature:
+			<i title="@AltText" class="fas fa-pen-fancy @AdditionalClasses"></i>
+			break;
+		case s.IconType.SocialMedia:
+			<i title="@AltText" class="fas fa-hashtag @AdditionalClasses"></i>
+			break;
+		case s.IconType.Spa:
+			<i title="@AltText" class="fas fa-spa @AdditionalClasses"></i>
+			break;
+		case s.IconType.Space:
+			<i title="@AltText" class="fas fa-meteor @AdditionalClasses"></i>
+			break;
+		case s.IconType.SpaceShip:
+			<i title="@AltText" class="fas fa-space-shuttle @AdditionalClasses"></i>
+			break;
+		case s.IconType.Sun:
+			<i title="@AltText" class="far fa-sun @AdditionalClasses"></i>
+			break;
+		case s.IconType.Start:
+			<i title="@AltText" class="fas fa-hourglass-start @AdditionalClasses"></i>
+			break;
+		case s.IconType.Tags:
+			<i title="@AltText" class="fas fa-tags @AdditionalClasses"></i>
+			break;
+		case s.IconType.Timeline:
+			<i title="@AltText" class="fas fa-history @AdditionalClasses"></i>
+			break;
+		case s.IconType.Texas:
+			<i title="@AltText" class="fas fa-hat-cowboy-side @AdditionalClasses"></i>
+			break;
+		case s.IconType.Tree:
+			<i title="@AltText" class="fas fa-tree @AdditionalClasses"></i>
+			break;
+		case s.IconType.Twitter:
+			<i title="@AltText" class="fab fa-twitter @AdditionalClasses"></i>
+			break;
+		case s.IconType.Undecided:
+			<i title="@AltText" class="fas fa-sign-language @AdditionalClasses"></i>
+			break;
+		case s.IconType.Undo:
+			<i title="@AltText" class="fas fa-undo-alt @AdditionalClasses"></i>
+			break;
+		case s.IconType.User:
+			<i title="@AltText" class="fas fa-user @AdditionalClasses"></i>
+			break;
+		case s.IconType.UserRole:
+			<i title="@AltText" class="fas fa-user-tag @AdditionalClasses"></i>
+			break;
+		case s.IconType.UserSettings:
+			<i title="@AltText" class="fas fa-user-cog @AdditionalClasses"></i>
+			break;
+		case s.IconType.Users:
+			<i title="@AltText" class="fas fa-users @AdditionalClasses"></i>
+			break;
+		case s.IconType.Verified:
+			<i title="@AltText" class="fas fa-certificate @AdditionalClasses"></i>
+			break;
+		case s.IconType.Visualizations:
+			<i title="@AltText" class="fas fa-eye @AdditionalClasses"></i>
+			break;
+		case s.IconType.Video:
+			<i title="@AltText" class="fas fa-video @AdditionalClasses"></i>
+			break;
+		case s.IconType.Water:
+			<i title="@AltText" class="fas fa-water @AdditionalClasses"></i>
+			break;
+		case s.IconType.Website:
+			<i title="@AltText" class="fas fa-wifi @AdditionalClasses"></i>
+			break;
+		default:
+			break;
+	}
+}
+else
+{
+	<i title="@AltText" class="@customIconString"></i>
+}
+
+@code {
+	#region Parameters
+	/// <summary>
+	/// IconType enumeration requesting a specific
+	/// </summary>
+	[Parameter]
+	public s.IconType I { get; set; } // Keep parameter short since we only have one...
+
+	/// <summary>
+	/// Used for the icon's title text
+	/// </summary>
+	[Parameter]
+	public string AltText { get; set; }
+
+	[Parameter]
+	public string CustomIcon { get; set; }
+
+	[Parameter]
+	public string AdditionalClasses { get; set; }
+	#endregion
+
+	#region Properties
+	private string customIconString;
+	#endregion
+
+	protected override void OnParametersSet()
+	{
+		if (!string.IsNullOrEmpty(CustomIcon))
+		{
+			customIconString = "fas " + CustomIcon;
+		}
+	}
+}

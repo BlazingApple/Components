@@ -1,0 +1,58 @@
+﻿@import "../themes/_siteColors.scss";
+
+.tagList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.og-tag {
+		border-radius: 1rem;
+		padding: .1rem 1rem;
+		margin: .15rem;
+		display: inline-flex;
+		vertical-align: middle;
+		align-items: center;
+
+		&.og-republican {
+			background-color: $og-republican-background;
+			border-color: $og-republican-border-color;
+
+			&:hover {
+				background-color: $og-republican;
+			}
+		}
+
+		&.og-democratic {
+			background-color: $og-democratic-background;
+			border-color: $og-democratic-border-color;
+
+			&:hover {
+				background-color: $og-democratic;
+			}
+		}
+
+		&.og-liberterian {
+			background-color: $og-libertarian-background;
+			border-color: $og-libertarian-border-color;
+
+			&:hover {
+				background-color: $og-libertarian;
+			}
+		}
+
+		&.og-independent {
+			background-color: $og-independent-background;
+			border-color: $og-independent-border-color;
+
+			&:hover {
+				background-color: $og-independent;
+			}
+		}
+
+		.og-cancel {
+			margin-left: .4rem;
+			margin-right: -.4rem; // We do this so the text is still centered and it seems like the icon didn't take space
+			position: relative;
+		}
+	}
+}

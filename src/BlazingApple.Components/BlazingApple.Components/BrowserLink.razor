@@ -1,0 +1,60 @@
+﻿@using System.Text.RegularExpressions
+@inject NavigationManager navManager
+
+@if (isExternal(href))
+{
+	<a class="@className" title="@title" href="@href" target="_blank" @attributes="AdditionalAttributes">
+		@ChildContent
+	</a>
+}
+else
+{
+	<a class="@className" title="@title" href="@href" @attributes="AdditionalAttributes">
+		@ChildContent
+	</a>
+}
+
+
+@code {
+	[Parameter]
+	public string title { get; set; }
+
+	[Parameter]
+	public string className { get; set; }
+
+	[Parameter]
+	public string href { get; set; }
+
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter(CaptureUnmatchedValues = true)]
+	public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+	private bool isExternal(string url)
+	{
+		string currentHost = new Uri(navManager.BaseUri).Host;
+		string linkUrl;
+
+		try
+		{
+			linkUrl = new Uri(url).AbsoluteUri;
+		}
+		catch (Exception e)
+		{
+			// We know this is a relative path if this operation fails
+			return false;
+		}
+
+		Regex internalLinkRegex = new Regex("^((((http:\\/\\/|https:\\/\\/)(www\\.)?)?"
+								+ currentHost
+								+ ")|(localhost:\\d{4})|(\\/.*))(\\/.*)?$");
+
+		MatchCollection matches = internalLinkRegex.Matches(linkUrl);
+		if (matches.Count > 0)
+		{
+			return false;
+		}
+		return true;
+	}
+}

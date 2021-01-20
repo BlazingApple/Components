@@ -1,0 +1,11 @@
+﻿@import "../../themes/_siteColors.scss";
+/*#region Blazored Modal */
+.og-modal-popover {
+	background-color: $og-background-mode !important;
+	border:none !important;
+}
+
+.blazored-modal-close {
+	line-height:1;
+}
+/* #endregion */

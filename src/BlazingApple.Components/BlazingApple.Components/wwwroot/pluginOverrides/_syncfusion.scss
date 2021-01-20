@@ -1,0 +1,115 @@
+﻿
+
+/* All */
+.e-control, .e-css, .e-tooltip-wrap .e-tip-content {
+	font-size: inherit !important;
+	font-family: inherit !important;
+}
+.e-splitter.e-splitter-horizontal, .e-splitter.e-splitter-vertical {
+	background-color:inherit !important;
+}
+/* Splitter */
+.e-split-bar-horizontal {
+	padding-left: .5rem;
+	padding-right: .5rem;
+	background: none !important;
+	transition: background-color .25s ease-in-out;
+	border-radius: 1rem;
+
+	&:hover {
+		background-color: var(--og-bg-color) !important;
+
+		.e-resize-handler.e-icons {
+			color: var(--og-theme-color) !important;
+		}
+	}
+
+	&:active {
+		background-color: var(--og-theme-color) !important;
+
+		.e-resize-handler.e-icons {
+			color: white !important;
+		}
+	}
+}
+
+.e-resize-handler.e-icons {
+	background: none !important;
+	transition: color .25s ease-in-out;
+}
+
+.e-control, .e-css, .e-splitter.e-splitter-horizontal .e-pane, .e-splitter.e-splitter-vertical .e-pane {
+	font-family: inherit !important;
+}
+
+/* ListView */
+.e-list-item {
+	cursor: pointer; /* Make it appear as a selection option */
+}
+
+.e-list-item-header {
+	font-weight: 500;
+}
+
+.e-listview.e-list-template .e-list-item.e-active .e-list-content {
+	color: rgba(255,255,255,.75) !important;
+}
+
+.e-list-item.e-level-1.e-active {
+	i {
+		color: white !important; /* Override the style of the icon if the row is selected, it should contrast with the selected color. */
+	}
+}
+
+/* Tooltip */
+.e-tooltip-wrap.e-popup {
+	background: var(--og-background-theme-mode) !important;
+	border: none !important;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28) !important;
+}
+.e-tip-content {
+	min-width: 20rem;
+	padding: 1rem !important;
+}
+.e-tooltip-wrap .e-tip-content {
+	color: black !important;
+	font-family: inherit !important;
+}
+.e-tooltip-wrap {
+
+	.e-arrow-tip-outer.e-tip-right {
+		border-left: 8px solid var(--og-background-theme-mode) !important;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28) !important;
+	}
+
+	.e-arrow-tip-outer.e-tip-left {
+		border-right: 8px solid var(--og-background-theme-mode) !important;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28) !important;
+	}
+
+	.e-arrow-tip-outer.e-tip-top {
+		border-bottom: 8px solid var(--og-background-theme-mode) !important;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28) !important;
+	}
+
+	.e-arrow-tip-outer.e-tip-bottom {
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 8px solid var(--og-background-theme-mode) !important;
+		box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28) !important;
+	}
+}
+
+.e-tooltip-wrap {
+	.e-arrow-tip-inner.e-tip-right, .e-arrow-tip-inner.e-tip-left, .e-arrow-tip-inner.e-tip-bottom, .e-arrow-tip-inner.e-tip-top {
+		color: var(--og-background-theme-mode) !important;
+		box-shadow: 8px 11px 5px 4px rgba(32, 33, 36, 0.28) !important;
+	}
+}

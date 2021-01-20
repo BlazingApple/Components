@@ -1,0 +1,22 @@
+﻿<div class="og-zero-state">
+	@ChildContent
+	@if (!string.IsNullOrEmpty(Message))
+	{
+		<h3 class="display-4">@Message</h3>
+	}
+</div>
+@code {
+	#region Parameters
+	[Parameter]
+	public string Message { get; set; }
+
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+	#endregion
+
+	#region Functions
+	protected override void OnParametersSet()
+	{
+	}
+	#endregion
+}

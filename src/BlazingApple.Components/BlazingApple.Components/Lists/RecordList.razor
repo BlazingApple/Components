@@ -1,0 +1,51 @@
+﻿@typeparam TItem
+<div style="max-height: 600px; overflow: auto; overflow-x: hidden;">
+	@if (!FormatAsList)
+	{
+		<table class="table table-hover table-responsive-lg recordList" @attributes="AdditionalAttributes">
+			@ColGroup
+			<thead>
+				@HeadRow
+			</thead>
+			<tbody>
+				<Virtualize Context="item" Items="Items" TItem="TItem">
+					@RowTemplate(item)
+				</Virtualize>
+			</tbody>
+		</table>
+	}
+	else
+	{
+		@HeadRow
+		<ul style="list-style-type:none; padding-left:0;" @attributes="AdditionalAttributes">
+			<Virtualize Context="item" Items="Items" TItem="TItem">
+				@RowTemplate(item)
+			</Virtualize>
+		</ul>
+	}
+</div>
+
+@code {
+	[Parameter]
+	public ICollection<TItem> Items { get; set; }
+
+	[Parameter]
+	public RenderFragment<TItem> RowTemplate { get; set; }
+
+	[Parameter]
+	public RenderFragment HeadRow { get; set; }
+
+	[Parameter]
+	public RenderFragment ColGroup { get; set; }
+
+	/// <summary>
+	/// If this is set to true, rather than a table, an unordered list element will be used.
+	/// If this is set to true, HeadRow is rendered as is, not as a <thead></thead> element.
+	/// </summary>
+	[Parameter]
+	public bool FormatAsList { get; set; }
+
+
+	[Parameter(CaptureUnmatchedValues = true)]
+	public IDictionary<string, object> AdditionalAttributes { get; set; }
+}

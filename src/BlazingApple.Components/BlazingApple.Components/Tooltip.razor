@@ -1,0 +1,21 @@
+﻿@using Syncfusion.Blazor.Popups;
+
+<SfTooltip CssClass="e-tooltip-css" OpensOn="Hover" Target="@TargetId" CloseDelay="10">
+	<TooltipTemplates>
+		<Content>
+			@TooltipContent
+		</Content>
+	</TooltipTemplates>
+	@HoverContent
+</SfTooltip>
+
+@code {
+	[Parameter]
+	public RenderFragment HoverContent { get; set; }
+
+	[Parameter]
+	public RenderFragment TooltipContent { get; set; }
+
+	[Parameter]
+	public string TargetId { get; set; }
+}
