@@ -11,7 +11,7 @@ else
 		}
 		else if (OnDetailsPage)
 		{
-			if (OnEditClick == null)
+			if (!OnEditClick.HasDelegate)
 			{
 				<BrowserLink href="@editRoute">Edit</BrowserLink>
 			}
@@ -24,7 +24,7 @@ else
 		{
 			if (!HideEditButton)
 			{
-				if (OnEditClick == null)
+				if (!OnEditClick.HasDelegate)
 				{
 					if (DisplayEditAsIcon)
 					{
@@ -53,8 +53,6 @@ else
 }
 
 @code {
-	public delegate void EventDelegate(string id);
-
 	[Parameter]
 	public string route { get; set; }
 
@@ -74,10 +72,10 @@ else
 	public bool OnEditPage { get; set; }
 
 	[Parameter]
-	public EventDelegate OnDeleteClick { get; set; }
+	public EventCallback<string> OnDeleteClick { get; set; }
 
 	[Parameter]
-	public EventDelegate OnEditClick { get; set; }
+	public EventCallback<string> OnEditClick { get; set; }
 
 	/// <summary>
 	/// If this is set to true, then the edit button will always be an icon. If it is not set or set to false
@@ -91,12 +89,14 @@ else
 
 	private void _OnDeleteClick()
 	{
-		OnDeleteClick(idForRoute);
+		if(OnDeleteClick.HasDelegate)
+			OnDeleteClick.InvokeAsync(idForRoute);
 	}
 
 	private void _OnEditClick()
 	{
-		OnEditClick(idForRoute);
+		if(OnEditClick.HasDelegate)
+			OnEditClick.InvokeAsync(idForRoute);
 	}
 
 	string editRoute { get; set; }
