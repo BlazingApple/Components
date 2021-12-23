@@ -1,0 +1,43 @@
+﻿@using BlazingApple.Components.HTMLElements
+@using BlazingAppleConsumer.Components.Data
+@page "/form-components"
+
+<div class="d-flex" style="align-items:center;">
+    <img src="../../../BlazingAppleApple.png" style="max-height: 4rem; width: auto;"/>
+    <h1 class="ml-2">Welcome to the BlazingApple form components page.</h1>
+</div>
+@if (Model is not null)
+{
+    <EditForm Model="@Model" class="modal-form">
+        <div class="form-body">
+            <DataAnnotationsValidator />
+            <div class="row">
+                <h2>Multi-Checklist</h2>
+                <FormGroup for="title" ColumnWidthClass="col-md-12" Label="User Roles">
+                    <ValidationMessage For="@(() => Model)" />
+                    <InputCheckboxList Data="@_roleOptions" TItem="DisplayValuePair<UserRole>" TValue="UserRole"
+                                   TextField="@((item)=>item.Text)"
+                                   ValueField="@((item)=>item.Value)"
+                                   OnChange="OnChange"
+                                   SelectedValues="@SelectedRoles" />
+                </FormGroup>
+            </div>
+            <div class="row">
+                <h2>Radio Button Group</h2>
+                <div class="btn-group btn-group-toggle" style="max-width:12rem;">
+                    <InputRadioOG name="feedFilter" SelectedValue="@UserRole.Basic" @bind-Value="Model.SelectedRole"
+                              style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
+                        Basic
+                    </InputRadioOG>
+                    <InputRadioOG name="feedFilter" SelectedValue="@UserRole.Admin" @bind-Value="Model.SelectedRole">
+                        Administrator
+                    </InputRadioOG>
+                    <InputRadioOG name="feedFilter" SelectedValue="@UserRole.Owner" @bind-Value="Model.SelectedRole"
+                              style="border-top-right-radius: 2rem; border-bottom-right-radius: 2rem;">
+                        Owner
+                    </InputRadioOG>
+                </div>
+            </div>
+        </div>
+    </EditForm>
+}
