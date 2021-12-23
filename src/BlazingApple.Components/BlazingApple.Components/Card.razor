@@ -4,67 +4,29 @@
 		<div class="card-header" style="display: flex; justify-content:space-between;">
 			<div>
 				<Badge Name="@BadgeTitle" Color="@Color" />
-				<div class="og-card-title" style="@_titleStyle">@Title</div>
-			</div>
-			@if (IsDismissable)
-			{
-				<div>
-					<button type="button" class="close" aria-label="Close" @onclick="DismissCard">
-						<span aria-hidden="true">&times;</span>
-					</button>
+				<div class="og-card-title" style="@_titleStyle">
+					@if(!string.IsNullOrEmpty(TitleUrl)) {
+						<a href="@TitleUrl">@Title</a>
+					}
+					else {
+						@Title
+					}
 				</div>
-			}
+			</div>
+			<div>
+
+				@if (IsDismissable)
+				{
+					<div>
+						<button type="button" class="close" aria-label="Close" @onclick="DismissCard">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				}
+			</div>
 		</div>
 		<div class="card-body">
 			@ChildContent
 		</div>
 	</div>
-}
-@code {
-	[Parameter]
-	public RenderFragment ChildContent { get; set; }
-
-	[Parameter]
-	public string Title { get; set; }
-
-	[Parameter]
-	public string BadgeTitle { get; set; }
-
-	[Parameter]
-	public bool IsDismissable { get; set; }
-
-	private string _titleStyle;
-	private bool isDismissed;
-
-	/// <summary>
-	/// The color to use for the badge
-	/// </summary>
-	[Parameter]
-	public dynamic Color { get; set; }
-	private Colors _colors;
-
-	protected override void OnParametersSet()
-	{
-		isDismissed = false;
-		SetColorIfNull();
-		_titleStyle = "color: " + Color.HexCode + ";";
-		if (string.IsNullOrEmpty(BadgeTitle))
-		{
-			BadgeTitle = Title;
-		}
-	}
-
-	private void DismissCard()
-	{
-		isDismissed = true;
-	}
-
-	private void SetColorIfNull()
-	{
-		if (Color == null)
-		{
-			_colors = new Colors();
-			Color = _colors.GetRandomThemeColor();
-		}
-	}
 }

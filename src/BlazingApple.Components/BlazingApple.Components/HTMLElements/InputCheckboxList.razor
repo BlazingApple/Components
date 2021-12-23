@@ -1,11 +1,13 @@
 ﻿@typeparam TItem
+@typeparam TValue
 <div @attributes="AdditionalAttributes">
 	@if (Data != null)
 	{
 		foreach (var item in Data)
 		{
 			var Text = TextField?.Invoke(item);
-			var Value = ValueField?.Invoke(item).ToString();
+			TValue Value = ValueField.Invoke(item);
+			var ValueId = Value.ToString();
 			bool Checked = false;
 			if (SelectedValues.Contains(Value))
 			{
@@ -13,65 +15,11 @@
 			}
 			<div class="form-group" style="margin-bottom:0;">
 				<div class="form-check" style="line-height: initial;">
-					<input id="@Value" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(Value, eventArgs.Value); }" />
-					<label for="@Value" class="form-check-label">@Text</label>
+					<input id="@ValueId" disabled="@Disabled" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(ValueId, eventArgs.Value); }" />
+					<label for="@ValueId" class="form-check-label">@Text</label>
 				</div>
 			</div>
 		}
 	}
 	@ChildContent
 </div>
-
-@code {
-	//Data for the Checkbox
-	[Parameter]
-	public IEnumerable<TItem> Data { get; set; }
-
-	// The field to be shown adjacent to checkbox
-	[Parameter]
-	public Func<TItem, string> TextField { get; set; }
-
-	// The Value which checkbox will return when checked
-	[Parameter]
-	public Func<TItem, object> ValueField { get; set; }
-
-
-	[Parameter(CaptureUnmatchedValues = true)]
-	public IDictionary<string, object> AdditionalAttributes { get; set; }
-
-	// Any child content for the control (if needed)
-	[Parameter]
-	public RenderFragment ChildContent { get; set; }
-
-	// The array which contains the list of selected checkboxs
-	[Parameter]
-	public List<string> SelectedValues { get; set; }
-
-	[Parameter]
-	public EventHandler OnChange { get; set; }
-
-
-	//Method to update the selected value on click on checkbox
-	public void CheckboxClicked(string aSelectedId, object aChecked)
-	{
-		if ((bool)aChecked)
-		{
-			if (!SelectedValues.Contains(aSelectedId))
-			{
-				SelectedValues.Add(aSelectedId);
-			}
-		}
-		else
-		{
-			if (SelectedValues.Contains(aSelectedId))
-			{
-				SelectedValues.Remove(aSelectedId);
-			}
-		}
-		if (OnChange != null)
-		{
-			OnChange.Invoke(null, null);
-		}
-		StateHasChanged();
-	}
-}  

@@ -20,7 +20,7 @@
 	[Parameter]
 	public DateTimeOffset AsOfTime { get; set; }
 
-	private string _progressTooltip, _remainingTime, _asOfTime, _percentComplete;
+	private string? _progressTooltip, _asOfTime, _percentComplete;
 	protected override void OnParametersSet()
 	{
 		if (TotalCount <= 0)

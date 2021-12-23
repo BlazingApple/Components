@@ -2,17 +2,13 @@
 @typeparam TValue
 @inherits InputBase<TValue>
 
-<label class=@string.Concat("btn ",@LabelCssClasses,activeClass())>
-	@if (Disabled)
-	{
-		<input @attributes="AdditionalAttributes" type="radio" value="@SelectedValue"
-			   checked="@(SelectedValue.Equals(Value))" @onchange="OnChange" disabled />
-	}
-	else
-	{
-		<input @attributes="AdditionalAttributes" type="radio" value="@SelectedValue"
-			   checked="@(SelectedValue.Equals(Value))" @onchange="OnChange" />
-	}
+<label class=@string.Concat("btn ",@LabelCssClasses,ActiveClass()) @attributes="AdditionalAttributes">
+
+	<input type="radio" value="@SelectedValue"
+		   checked="@(SelectedValue.Equals(Value))"
+		   @onchange="OnChange"
+		   disabled="@Disabled" />
+
 	@if (ChildContent != null)
 	{
 		@ChildContent
@@ -22,73 +18,3 @@
 		@DisplayString
 	}
 </label>
-
-@code {
-	[Parameter]
-	public TValue SelectedValue { get; set; }
-
-	[Parameter]
-	public string DisplayString { get; set; }
-
-	[Parameter]
-	public RenderFragment ChildContent { get; set; }
-
-	[Parameter]
-	public bool Disabled { get; set; }
-
-	[Parameter]
-	public string LabelCssClasses { get; set; }
-
-	private string LabelCssClassString;
-
-	private void OnChange(ChangeEventArgs args)
-	{
-		CurrentValueAsString = args.Value.ToString();
-	}
-
-	private string activeClass()
-	{
-		if (SelectedValue.Equals(Value))
-		{
-			return " active";
-		}
-		return string.Empty;
-	}
-	protected override bool TryParseValueFromString(string value,
-		out TValue result, out string errorMessage)
-	{
-		var success = BindConverter.TryConvertTo<TValue>(
-			value, CultureInfo.CurrentCulture, out var parsedValue);
-		if (success)
-		{
-			result = parsedValue;
-			errorMessage = null;
-
-			return true;
-		}
-		else
-		{
-			result = default;
-			errorMessage = $"{FieldIdentifier.FieldName} field isn't valid.";
-
-			return false;
-		}
-	}
-
-	protected override void OnParametersSet()
-	{
-		string disabledClass = " disabled";
-		if (string.IsNullOrEmpty(DisplayString))
-		{
-			DisplayString = SelectedValue.ToString();
-		}
-		if (string.IsNullOrEmpty(LabelCssClasses))
-		{
-			LabelCssClasses = "btn-outline-primary";
-		}
-		if (Disabled && !SelectedValue.Equals(Value))
-		{
-			LabelCssClasses = LabelCssClasses + disabledClass;
-		}
-	}
-}
