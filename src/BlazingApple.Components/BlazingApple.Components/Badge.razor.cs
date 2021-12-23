@@ -64,7 +64,7 @@ public partial class Badge : ComponentBase
         if (LargeDisplay)
             _badgeClass += " large";
 
-        _badgeStyle = $"color: {Color?.HexCode} border: 1px solid {Color?.HexCode};";
+        _badgeStyle = $"color: {Color?.HexCode}; border: 1px solid {Color?.HexCode};";
 
         if (_badgeString.Length > 3)
             _badgeString = string.Concat(_badgeString.AsSpan(0, 3), "...");
