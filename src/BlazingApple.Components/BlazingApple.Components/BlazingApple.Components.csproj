@@ -11,10 +11,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>1.0.0.19</AssemblyVersion>
-		<FileVersion>1.0.0.19</FileVersion>
-		<Version>1.0.0.19</Version>
-		<PackageReleaseNotes>1.0.0.19 - InputCheckboxList SelectedValues now returns TItem instead of string.</PackageReleaseNotes>
+		<AssemblyVersion>1.0.1.0</AssemblyVersion>
+		<FileVersion>1.0.1.0</FileVersion>
+		<Version>1.0.0.20</Version>
+		<PackageReleaseNotes>1.0.1.0 - Major (breaking) changes. Improve binding on InputChecklist. .NET 6 support. Nullable warnings enabled.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
