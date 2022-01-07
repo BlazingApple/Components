@@ -1,5 +1,5 @@
 ﻿@typeparam TItem
-<div style="max-height: 600px; overflow: auto; overflow-x: hidden;">
+<div style=@rootDivStyles>
 	@if (!FormatAsList)
 	{
 		<table class="table table-hover table-responsive-lg recordList" @attributes="AdditionalAttributes">
@@ -11,7 +11,20 @@
 				<Virtualize Context="item" Items="Items" TItem="TItem">
 					@RowTemplate(item)
 				</Virtualize>
+				<tr>
+				</tr>
 			</tbody>
+			@if (LoadMoreCallback.HasDelegate)
+			{
+				<caption style="caption-side: bottom; padding-top: 10px;">
+					<button class="btn btn-primary d-flex" style="margin:auto;" @onclick="OnLoadMoreClicked" disabled="@awaitingLoadMoreResponse">
+						@if (awaitingLoadMoreResponse)
+						{
+							<Icon I="s.IconType.Loading" style="color:white!important;"></Icon>
+						} Load More
+					</button>
+				</caption>
+			}
 		</table>
 	}
 	else
@@ -21,6 +34,18 @@
 			<Virtualize Context="item" Items="Items" TItem="TItem">
 				@RowTemplate(item)
 			</Virtualize>
+
+			@if (LoadMoreCallback.HasDelegate)
+			{
+				<li class="d-flex align-items-center justify-content-center" style="width:100%;">
+					<button class="btn btn-primary" @onclick="OnLoadMoreClicked" disabled="@awaitingLoadMoreResponse">
+						@if (awaitingLoadMoreResponse)
+						{
+							<Icon I="s.IconType.Loading" style="color:white!important;"></Icon>
+						} Load More
+					</button>
+				</li>
+			}
 		</ul>
 	}
 </div>
@@ -38,6 +63,14 @@
 	[Parameter]
 	public RenderFragment ColGroup { get; set; }
 
+	[Parameter]
+	public EventCallback LoadMoreCallback { get; set; }
+
+	[Parameter]
+	public bool NoMaxHeight { get; set; }
+
+	private bool awaitingLoadMoreResponse;
+
 	/// <summary>
 	/// If this is set to true, rather than a table, an unordered list element will be used.
 	/// If this is set to true, HeadRow is rendered as is, not as a <thead></thead> element.
@@ -45,7 +78,16 @@
 	[Parameter]
 	public bool FormatAsList { get; set; }
 
+	private string rootDivStyles => NoMaxHeight ? "" : "max-height: 100vh; overflow: auto; overflow-x: hidden;";
 
 	[Parameter(CaptureUnmatchedValues = true)]
 	public IDictionary<string, object> AdditionalAttributes { get; set; }
+
+	private async void OnLoadMoreClicked()
+	{
+		awaitingLoadMoreResponse = true;
+		await LoadMoreCallback.InvokeAsync();
+		awaitingLoadMoreResponse = false;
+		StateHasChanged();
+	}
 }

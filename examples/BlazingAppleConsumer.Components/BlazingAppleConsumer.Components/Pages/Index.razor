@@ -2,8 +2,24 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 class="d-flex" style="align-items:center;">
+    <img src="../../../BlazingApple.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;"/>
+    Hello, world!
+    </h1>
 
-Welcome to your new app.
+Welcome to your BlazingApples's component library! Glad you're here.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<h2>Due Date</h2>
+<div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
+
+<h3>A few days from now</h3>
+<DueDate Date="@DateTime.Now.Date.AddDays(5)"/>
+
+<h3>Tomorrow</h3>
+<DueDate Date="@DateTime.Now.Date.AddDays(1)"/>
+
+<h3>Overdue</h3>
+<DueDate Date="@DateTime.Now.Date.AddDays(-1)"/>
+
+<h3><i>Really</i> Overdue</h3>
+<DueDate Date="@DateTime.Now.Date.AddDays(-5)"/>
