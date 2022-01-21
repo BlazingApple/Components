@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "wwwroot/css/components/components.css",
-    "inputFile": "wwwroot/css/components/components.scss"
+    "outputFile": "wwwroot/css/components/blazingAppleComponents.css",
+    "inputFile": "wwwroot/css/components/blazingAppleComponents.scss"
   }
 ]

@@ -2,8 +2,21 @@
 {
 	<div class="card my-1">
 		<div class="card-header" style="display: flex; justify-content:space-between;">
-			<div>
-				<Badge Name="@BadgeTitle" Color="@Color" />
+			<div style="display: inline-flex; align-items: center;">
+				@if(BadgeTooltipContent is not null) {
+					<Tooltip>
+						<TooltipContent>
+							@BadgeTooltipContent
+						</TooltipContent>
+						<ChildContent>
+							<Badge Name="@BadgeTitle" Color="@Color" />					
+						</ChildContent>
+					</Tooltip>
+				}
+				else
+				{
+					<Badge Name="@BadgeTitle" Color="@Color" />					
+				}
 				<div class="og-card-title" style="@_titleStyle">
 					@if(!string.IsNullOrEmpty(TitleUrl)) {
 						<a href="@TitleUrl">@Title</a>

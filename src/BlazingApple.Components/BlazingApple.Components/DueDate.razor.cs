@@ -69,7 +69,7 @@ namespace BlazingApple.Components
                 _styleString += " font-weight: bold;";
         }
 
-        private string GetColorStyle(string colorHexCode)
+        private static string GetColorStyle(string colorHexCode)
             => $"color: {colorHexCode};";
 
         [MemberNotNull(nameof(Date))]

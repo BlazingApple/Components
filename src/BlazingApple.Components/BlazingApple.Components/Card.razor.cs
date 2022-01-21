@@ -8,61 +8,71 @@ using System.Threading.Tasks;
 
 namespace BlazingApple.Components
 {
-	public partial class Card : ComponentBase
-	{
-		private Colors _colors;
+    public partial class Card : ComponentBase
+    {
+        private Colors _colors;
 
-		private string _titleStyle;
+        private string _titleStyle;
 
-		private bool isDismissed;
+        private bool isDismissed;
 
-		[Parameter]
-		public string BadgeTitle { get; set; }
+        [Parameter]
+        public string BadgeTitle { get; set; }
 
-		[Parameter]
-		public RenderFragment ChildContent { get; set; }
+        /// <summary>If passed, a complex tooltip will be rendered when the user hovers over the badge.</summary>
+        [Parameter]
+        public RenderFragment? BadgeTooltipContent { get; set; }
 
-		/// <summary>The color to use for the badge</summary>
-		[Parameter]
-		public dynamic Color { get; set; }
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
-		/// <summary>Appears on the right hand side of the card header, left of the dismiss button (if dismissable).</summary>
-		[Parameter]
-		public RenderFragment HeaderContent { get; set; }
+        /// <summary>The color to use for the badge</summary>
+        [Parameter]
+        public dynamic Color { get; set; }
 
-		[Parameter]
-		public bool IsDismissable { get; set; }
+        /// <summary>Appears on the right hand side of the card header, left of the dismiss button (if dismissable).</summary>
+        [Parameter]
+        public RenderFragment HeaderContent { get; set; }
 
-		[Parameter]
-		public string Title { get; set; }
+        [Parameter]
+        public bool IsDismissable { get; set; }
 
-		/// <summary>If passed, the title will be made a link to the provided URL.</summary>
-		[Parameter]
-		public string TitleUrl { get; set; }
+        /// <summary>Defaults to open on click. Pass this to modify when the tooltip opens (click or hover).</summary>
+        [Parameter]
+        public TooltipOpenOn OpenTooltipOn { get; set; } = TooltipOpenOn.Click;
 
-		protected override void OnParametersSet()
-		{
-			isDismissed = false;
-			SetColorIfNull();
-			_titleStyle = "color: " + Color.HexCode + ";";
-			if (string.IsNullOrEmpty(BadgeTitle))
-			{
-				BadgeTitle = Title;
-			}
-		}
+        [Parameter]
+        public string Title { get; set; }
 
-		private void DismissCard()
-		{
-			isDismissed = true;
-		}
+        /// <summary>If passed, the title will be made a link to the provided URL.</summary>
+        [Parameter]
+        public string TitleUrl { get; set; }
 
-		private void SetColorIfNull()
-		{
-			if (Color == null)
-			{
-				_colors = new Colors();
-				Color = _colors.GetRandomThemeColor();
-			}
-		}
-	}
+        /// <inheritdoc />
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+            isDismissed = false;
+            SetColorIfNull();
+            _titleStyle = "color: " + Color.HexCode + ";";
+            if (string.IsNullOrEmpty(BadgeTitle))
+            {
+                BadgeTitle = Title;
+            }
+        }
+
+        private void DismissCard()
+        {
+            isDismissed = true;
+        }
+
+        private void SetColorIfNull()
+        {
+            if (Color == null)
+            {
+                _colors = new Colors();
+                Color = _colors.GetRandomThemeColor();
+            }
+        }
+    }
 }

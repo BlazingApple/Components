@@ -320,14 +320,6 @@
   background-color: #f0edfc;
 }
 
-pre code {
-  background-color: #f6f8fa;
-  padding: 0.25rem;
-  overflow: auto;
-  line-height: 1.45;
-  border-radius: 6px;
-}
-
 .og-circle-container {
   --rel: 1.25;
   /* how much extra space we want between images, 1 = one image size */
