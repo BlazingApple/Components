@@ -10,8 +10,9 @@ namespace BlazingApple.Components.Lists
     {
         private bool awaitingLoadMoreResponse;
 
+        /// <summary>The extra attributes to show on a page.</summary>
         [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
+        public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
         /// <summary>Tbe column grouping to use, if any.</summary>
         [Parameter]
@@ -41,8 +42,8 @@ namespace BlazingApple.Components.Lists
         public bool NoMaxHeight { get; set; }
 
         /// <summary>The remplate for each row.</summary>
-        [Parameter]
-        public RenderFragment<TItem> RowTemplate { get; set; }
+        [Parameter, EditorRequired]
+        public RenderFragment<TItem> RowTemplate { get; set; } = null!;
 
         private string RootDivStyles => NoMaxHeight ? "" : "max-height: 100vh; overflow: auto; overflow-x: hidden;";
 

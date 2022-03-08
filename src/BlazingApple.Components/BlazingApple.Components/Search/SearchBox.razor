@@ -1,0 +1,11 @@
+﻿@using BlazingApple.Components.Services
+@using s = BlazingApple.Components.Services
+
+<div class="og-search">
+	<Icon I="s.IconType.Search" />
+	<input placeholder="@TitleText" @bind="@SearchTerm" type="input" />
+	<button class="@_clearButtonClasses" @onclick="OnClearClick" type="button" title="Remove your search term!">
+		<Icon I="s.IconType.Cancel" />
+	</button>
+
+</div>

@@ -19,6 +19,10 @@ namespace BlazingApple.Components
     /// <summary>A generic tooltip.</summary>
     public partial class Tooltip : ComponentBase
     {
+        /// <summary>Additional classes to apply to the tooltip.</summary>
+        [Parameter]
+        public string AdditionalClasses { get; set; }
+
         /// <summary>The content to expose with the target Id, that a user must hover or click on.</summary>
         [Parameter]
         public RenderFragment ChildContent { get; set; }
@@ -38,5 +42,9 @@ namespace BlazingApple.Components
         /// <summary>The content to render inside the tooltip.</summary>
         [Parameter]
         public RenderFragment TooltipContent { get; set; }
+
+        /// <summary>The css style width.</summary>
+        [Parameter]
+        public string WidthStyle { get; set; }
     }
 }

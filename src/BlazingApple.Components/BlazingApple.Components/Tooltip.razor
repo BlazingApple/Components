@@ -1,6 +1,6 @@
 ﻿@using Syncfusion.Blazor.Popups;
 
-<SfTooltip CssClass="e-tooltip-css" OpensOn="@OpenOn.ToString()" Target="@TargetId" CloseDelay="@CloseDelay">
+<SfTooltip Width="@WidthStyle" CssClass="@($"e-tooltip-css {AdditionalClasses}")" OpensOn="@OpenOn.ToString()" Target="@TargetId" CloseDelay="@CloseDelay">
 	<TooltipTemplates>
 		<Content>
 			@TooltipContent
