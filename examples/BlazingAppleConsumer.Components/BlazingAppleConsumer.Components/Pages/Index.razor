@@ -1,5 +1,5 @@
 ﻿@page "/"
-
+@using BlazingApple.Components.Lists
 <PageTitle>Index</PageTitle>
 
 <h1 class="d-flex" style="align-items:center;">
@@ -27,3 +27,13 @@ Welcome to your BlazingApples's component library! Glad you're here.
 <h2>Icon Chooser</h2>
 <div class="code"><code>@("<IconChooser/>")</code></div>
 <IconChooser/>
+
+<hr/>
+<h2>Lists</h2>
+<h3>Paginator</h3>
+<div class="code"><code>@("<ListPaginator BatchSize=\"25\" ResultCount=\"126\" @bind-Value=\"_currentPage\"/>")</code></div>
+
+<div class="d-flex">
+<label>Current Page: </label><span class="ml-2">@(_currentPage+1)</span>
+</div>
+<ListPaginator BatchSize="25" ResultCount="1000" @bind-Value="_currentPage"></ListPaginator>
