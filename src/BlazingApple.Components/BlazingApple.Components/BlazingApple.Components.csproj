@@ -11,10 +11,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>1.0.3.13</AssemblyVersion>
-		<FileVersion>1.0.3.13</FileVersion>
-		<Version>1.0.3.13</Version>
-		<PackageReleaseNotes>1.0.3.13 - Add list paginator</PackageReleaseNotes>
+		<AssemblyVersion>1.0.3.18</AssemblyVersion>
+		<FileVersion>1.0.3.18</FileVersion>
+		<Version>1.0.3.18</Version>
+		<PackageReleaseNotes>1.0.3.18 - Bug fixes</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

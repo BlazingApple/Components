@@ -6,5 +6,6 @@ namespace BlazingAppleConsumer.Components.Pages
     public partial class Index : ComponentBase
     {
         private int _currentPage = 0;
+        private int _resultCount = 500;
     }
 }

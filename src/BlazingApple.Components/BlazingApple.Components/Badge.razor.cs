@@ -3,6 +3,7 @@ using System;
 
 namespace BlazingApple.Components;
 
+/// <summary>Displays a short color coded string summarizing a concept.</summary>
 public partial class Badge : ComponentBase
 {
     private string _badgeClass = null!;
@@ -39,11 +40,20 @@ public partial class Badge : ComponentBase
     [Parameter]
     public bool UseFullString { get; set; } = false;
 
+    /// <summary>
+    ///     By default, we use the badge name to determine the color of the badge. If this is true, the component just selects a color randomly.
+    /// </summary>
+    [Parameter]
+    public bool UseRandomColor { get; set; }
+
     /// <inheritdoc />
     protected override void OnParametersSet()
     {
         _badgeString = "";
-        SetColorIfNull();
+
+        Name = Name.Replace("\"", "");
+        Name = Name.Replace("\'", "");
+
         if (UseFullString || IsAllUpper(Name))
         {
             _badgeString = Name;
@@ -59,15 +69,17 @@ public partial class Badge : ComponentBase
             }
         }
 
+        if (_badgeString.Length > 3)
+            _badgeString = _badgeString[..3];
+
+        SetColorIfNull();
+
         _badgeClass = $"og-badge-subtle {Color?.BackgroundCssClass} {Color?.CssClass}";
         _badgeClass += " " + AdditionalClasses;
         if (LargeDisplay)
             _badgeClass += " large";
 
         _badgeStyle = $"color: {Color?.HexCode}; border: 1px solid {Color?.HexCode};";
-
-        if (_badgeString.Length > 3)
-            _badgeString = string.Concat(_badgeString.AsSpan(0, 3), "...");
     }
 
     private static bool IsAllUpper(string input)
@@ -85,7 +97,11 @@ public partial class Badge : ComponentBase
         if (Color == null)
         {
             _colors = new Colors();
-            Color = _colors.GetRandomThemeColor();
+
+            if (UseRandomColor)
+                Color = _colors.GetRandomThemeColor();
+            else
+                Color = Card.GetColorForName(_colors._colors, _badgeString);
         }
     }
 }
