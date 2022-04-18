@@ -1,5 +1,6 @@
 ﻿using BlazingApple.Components.Interfaces;
 using System;
+using System.Text.RegularExpressions;
 
 namespace BlazingApple.Components;
 
@@ -51,8 +52,7 @@ public partial class Badge : ComponentBase
     {
         _badgeString = "";
 
-        Name = Name.Replace("\"", "");
-        Name = Name.Replace("\'", "");
+        Name = Regex.Replace(Name, @"[^\w\d\s]", "");
 
         if (UseFullString || IsAllUpper(Name))
         {
@@ -69,8 +69,8 @@ public partial class Badge : ComponentBase
             }
         }
 
-        if (_badgeString.Length > 3)
-            _badgeString = _badgeString[..3];
+        if (_badgeString.Length > 4)
+            _badgeString = _badgeString[..4];
 
         SetColorIfNull();
 
@@ -80,6 +80,8 @@ public partial class Badge : ComponentBase
             _badgeClass += " large";
 
         _badgeStyle = $"color: {Color?.HexCode}; border: 1px solid {Color?.HexCode};";
+        if (_badgeString.Length == 4)
+            _badgeStyle += " font-size:.75rem;";
     }
 
     private static bool IsAllUpper(string input)

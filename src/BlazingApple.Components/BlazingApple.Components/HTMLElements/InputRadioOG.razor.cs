@@ -23,13 +23,19 @@ public partial class InputRadioOG<TValue> : InputBase<TValue>
     [Parameter]
     public string? LabelCssClasses { get; set; }
 
-    /// <summary>The selected value.</summary>
+    /// <summary>Callback providing the newly selected value.</summary>
+    [Parameter]
+    public EventCallback<TValue> OnChange { get; set; }
+
+    /// <summary>The selected/bound value.</summary>
     [Parameter]
     public TValue SelectedValue { get; set; }
 
     /// <inheritdoc />
-    protected override void OnParametersSet()
+    protected override async Task OnParametersSetAsync()
     {
+        await base.OnParametersSetAsync();
+
         string disabledClass = " disabled";
         if (string.IsNullOrEmpty(DisplayString) && SelectedValue is not null)
         {
@@ -74,6 +80,16 @@ public partial class InputRadioOG<TValue> : InputBase<TValue>
         return string.Empty;
     }
 
-    private void OnChange(ChangeEventArgs args)
-        => CurrentValueAsString = args.Value.ToString();
+    /// <summary>The on change event</summary>
+    /// <param name="args">What's changed.</param>
+    /// <returns>Nothing.</returns>
+    private async Task OnChangeInternal(ChangeEventArgs args)
+    {
+        CurrentValueAsString = args.Value?.ToString();
+        if (TryParseValueFromString(CurrentValueAsString, out TValue? result, out _))
+        {
+            if (OnChange.HasDelegate)
+                await OnChange.InvokeAsync(result);
+        }
+    }
 }

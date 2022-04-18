@@ -6,7 +6,7 @@
 
 	<input type="radio" value="@SelectedValue"
 		   checked="@(SelectedValue.Equals(Value))"
-		   @onchange="OnChange"
+		   @onchange="OnChangeInternal"
 		   disabled="@Disabled" />
 
 	@if (ChildContent != null)
