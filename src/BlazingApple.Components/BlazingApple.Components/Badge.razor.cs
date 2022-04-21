@@ -10,8 +10,8 @@ public partial class Badge : ComponentBase
     private string _badgeClass = null!;
     private string _badgeString = null!;
     private string _badgeStyle = null!;
-
     private Colors? _colors;
+    private bool _isLoaded;
 
     /// <summary>Additional styles to apply to the badge.</summary>
     [Parameter(CaptureUnmatchedValues = true)]
@@ -50,6 +50,8 @@ public partial class Badge : ComponentBase
     /// <inheritdoc />
     protected override void OnParametersSet()
     {
+        base.OnParametersSet();
+        _isLoaded = false;
         _badgeString = "";
 
         Name = Regex.Replace(Name, @"[^\w\d\s]", "");
@@ -82,6 +84,8 @@ public partial class Badge : ComponentBase
         _badgeStyle = $"color: {Color?.HexCode}; border: 1px solid {Color?.HexCode};";
         if (_badgeString.Length == 4)
             _badgeStyle += " font-size:.75rem;";
+
+        _isLoaded = true;
     }
 
     private static bool IsAllUpper(string input)
