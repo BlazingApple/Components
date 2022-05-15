@@ -47,6 +47,36 @@ public partial class Badge : ComponentBase
     [Parameter]
     public bool UseRandomColor { get; set; }
 
+    /// <summary>Gets the badge string.</summary>
+    /// <param name="name">The initial name to process.</param>
+    /// <param name="useFullString">Whether or not the string has been preprocessed and should not be processed.</param>
+    /// <returns></returns>
+    public static string GetBadgeString(string name, bool useFullString = false)
+    {
+        name = Regex.Replace(name, @"[^\w\d\s]", "");
+
+        if (useFullString || IsAllUpper(name))
+        {
+            return name;
+        }
+        else
+        {
+            string badgeString = "";
+            List<string> wordList = name.Split(' ').ToList();
+
+            foreach (string word in wordList)
+            {
+                if (word.Length > 0)
+                    badgeString += word[0].ToString().ToUpper();
+            }
+
+            if (badgeString.Length > 4)
+                badgeString = badgeString[..4];
+
+            return badgeString;
+        }
+    }
+
     /// <inheritdoc />
     protected override void OnParametersSet()
     {
@@ -54,25 +84,7 @@ public partial class Badge : ComponentBase
         _isLoaded = false;
         _badgeString = "";
 
-        Name = Regex.Replace(Name, @"[^\w\d\s]", "");
-
-        if (UseFullString || IsAllUpper(Name))
-        {
-            _badgeString = Name;
-        }
-        else
-        {
-            List<string> wordList = Name.Split(' ').ToList();
-
-            foreach (string word in wordList)
-            {
-                if (word.Length > 0)
-                    _badgeString += word[0].ToString().ToUpper();
-            }
-        }
-
-        if (_badgeString.Length > 4)
-            _badgeString = _badgeString[..4];
+        Name = GetBadgeString(Name, UseFullString);
 
         SetColorIfNull();
 

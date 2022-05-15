@@ -54,6 +54,13 @@ public partial class InputRadioOG<TValue> : InputBase<TValue>
     /// <inheritdoc />
     protected override bool TryParseValueFromString(string? value, [MaybeNullWhen(false)] out TValue result, [NotNullWhen(false)] out string? validationErrorMessage)
     {
+        if (typeof(TValue) == typeof(bool) || typeof(TValue) == typeof(bool?))
+        {
+            if (string.IsNullOrEmpty(value))
+                value = "false";
+            else
+                value = "true";
+        }
         bool success = BindConverter.TryConvertTo<TValue>(value, CultureInfo.CurrentCulture, out TValue? parsedValue);
 
         if (success)

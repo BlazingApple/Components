@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BlazingApple.Components.Tests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50356;http://localhost:50357"
+    }
+  }
+}

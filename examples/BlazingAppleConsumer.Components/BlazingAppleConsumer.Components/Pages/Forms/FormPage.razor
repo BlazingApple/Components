@@ -3,7 +3,7 @@
 @page "/form-components"
 
 <div class="d-flex" style="align-items:center;">
-    <img src="../../../BlazingAppleApple.png" style="max-height: 4rem; width: auto;"/>
+    <img src="../../../BlazingAppleApple.png" style="max-height: 4rem; width: auto;" />
     <h1 class="ml-2">Welcome to the BlazingApple form components page.</h1>
 </div>
 @if (Model is not null)
@@ -38,6 +38,23 @@
                     </InputRadioOG>
                 </div>
             </div>
+            <div class="row">
+
+                <h3>Radio Buttons - Boolean</h3>
+                @code {
+                string? radioVal = "true";
+
+            private void OnValueChange(string newVal)
+            {
+                bool.TryParse(newVal,out bool result);   
+            }
+            }
+            <div>
+                <label>Boolean radio value: @radioVal</label>
+                <InputRadioOG TValue="string" SelectedValue="@("false")" @bind-Value="radioVal" OnChange="OnValueChange">False</InputRadioOG>
+                <InputRadioOG TValue="string" SelectedValue="@("true")" @bind-Value="radioVal" OnChange="OnValueChange">True</InputRadioOG>
+            </div>
         </div>
-    </EditForm>
+    </div>
+</EditForm>
 }

@@ -9,22 +9,23 @@
 
 Welcome to your BlazingApples's component library! Glad you're here.
 
-<h2>Due Date</h2>
+<h2>Forms</h2>
+<h3>Due Date</h3>
 <div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
 
-<h3>A few days from now</h3>
+<h4>A few days from now</h4>
 <DueDate Date="@DateTime.Now.Date.AddDays(5)"/>
 
-<h3>Tomorrow</h3>
+<h4>Tomorrow</h4>
 <DueDate Date="@DateTime.Now.Date.AddDays(1)"/>
 
-<h3>Overdue</h3>
+<h4>Overdue</h4>
 <DueDate Date="@DateTime.Now.Date.AddDays(-1)"/>
 
-<h3><i>Really</i> Overdue</h3>
+<h4><i>Really</i> Overdue</h4>
 <DueDate Date="@DateTime.Now.Date.AddDays(-5)"/>
 
-<h2>Icon Chooser</h2>
+<h3>Icon Chooser</h3>
 <div class="code"><code>@("<IconChooser/>")</code></div>
 <IconChooser/>
 
