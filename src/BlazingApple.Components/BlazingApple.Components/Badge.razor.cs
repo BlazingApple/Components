@@ -82,9 +82,8 @@ public partial class Badge : ComponentBase
     {
         base.OnParametersSet();
         _isLoaded = false;
-        _badgeString = "";
 
-        Name = GetBadgeString(Name, UseFullString);
+        _badgeString = GetBadgeString(Name, UseFullString);
 
         SetColorIfNull();
 
@@ -93,7 +92,7 @@ public partial class Badge : ComponentBase
         if (LargeDisplay)
             _badgeClass += " large";
 
-        _badgeStyle = $"color: {Color?.HexCode}; border: 1px solid {Color?.HexCode};";
+        _badgeStyle = $"color: {Color?.ForegroundHexCode}; border: 1px solid {Color?.ForegroundHexCode};";
         if (_badgeString.Length == 4)
             _badgeStyle += " font-size:.75rem;";
 

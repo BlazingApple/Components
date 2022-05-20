@@ -17,23 +17,31 @@ namespace BlazingApple.Components.Interfaces
         public string UserId { get; set; }
     }
 
+    /// <summary>Ids are required for records.</summary>
     public interface IRecord
     {
         string Id { get; set; }
     }
 
+    /// <summary>Represents a theme color.</summary>
     public interface IThemeColor
     {
+        /// <summary>The Css class to use for the background of the site (not the site content) but the light site background.</summary>
         public string BackgroundCssClass { get; }
 
+        /// <summary>The hex code for the background color.</summary>
         public string BackgroundHexCode { get; set; }
 
+        /// <summary>The CssClass for the foreground.</summary>
         public string CssClass { get; set; }
 
+        /// <summary>The name of the theme color (e.g. Romance Blue, etc.).</summary>
         public string DisplayName { get; set; }
 
-        public string HexCode { get; set; }
+        /// <summary>Primary foreground color.</summary>
+        public string ForegroundHexCode { get; set; }
 
+        /// <summary>The identifier for the record.</summary>
         public string Id { get; set; }
 
         /* Includes # hash */
@@ -72,8 +80,10 @@ namespace BlazingApple.Components.Interfaces
         }
     }
 
+    /// <summary>Represents a theme color for the site.</summary>
     public class ThemeColor : IThemeColor
     {
+        /// <inheritdoc />
         public virtual string BackgroundCssClass
         {
             get
@@ -82,14 +92,19 @@ namespace BlazingApple.Components.Interfaces
             }
         }
 
+        /// <inheritdoc />
         public string BackgroundHexCode { get; set; }
 
+        /// <inheritdoc />
         public string CssClass { get; set; }
 
+        /// <inheritdoc />
         public string DisplayName { get; set; }
 
-        public string HexCode { get; set; }
+        /// <inheritdoc />
+        public string ForegroundHexCode { get; set; }
 
+        /// <inheritdoc />
         public string Id { get; set; } // todo change back to ID
 
         /* Includes # hash */
@@ -102,15 +117,17 @@ namespace BlazingApple.Components.Interfaces
             }
         } /* Use this in code... */
 
+        /// <summary>DI Constructor.</summary>
         public ThemeColor()
         {
         }
 
-        public ThemeColor(string Id, string DisplayName, string HexCode, string CssClass, string BackgroundHexCode)
+        /// <summary>Parameterized constructor.</summary>
+        public ThemeColor(string Id, string DisplayName, string ForegroundHexCode, string CssClass, string BackgroundHexCode)
         {
             this.Id = Id;
             this.DisplayName = DisplayName;
-            this.HexCode = HexCode;
+            this.ForegroundHexCode = ForegroundHexCode;
             this.CssClass = CssClass;
             this.BackgroundHexCode = BackgroundHexCode;
         }

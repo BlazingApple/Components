@@ -80,7 +80,7 @@ namespace BlazingApple.Components
             base.OnParametersSet();
             isDismissed = false;
             SetColorIfNull();
-            _titleStyle = "color: " + Color.HexCode + ";";
+            _titleStyle = "color: " + Color.ForegroundHexCode + ";";
             if (string.IsNullOrEmpty(BadgeTitle))
             {
                 BadgeTitle = Title;
