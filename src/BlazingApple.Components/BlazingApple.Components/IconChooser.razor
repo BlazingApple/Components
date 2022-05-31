@@ -14,28 +14,31 @@
         }
         else if (_searchResultIcons is not null)
         {
-            @foreach (KeyValuePair<string, string> kvp in _searchResultIcons)
-            {
-                IconData iconData = new(kvp.Value, kvp.Key);
+            <div class="btn-matrix" role="group" aria-label="Three Column Button Matrix">
 
-                <button type="button" class="@($"btn {(Value == iconData ? SelectedButtonClasses : ButtonClasses)}")" attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
-                    <BlazingApple.Components.Icon CustomIcon="@iconData.IconClasses"></BlazingApple.Components.Icon> @iconData.ToString()
-                </button>
-            }
-
-            @if (CustomIcons is not null)
-            {
-                @foreach (string iconName in CustomIcons.Keys)
+                @foreach (KeyValuePair<string, string> kvp in _searchResultIcons)
                 {
-                    @if (!string.IsNullOrEmpty(_searchString) && iconName.ToLower().Contains(_searchString))
-                    {
-                        <button type="button" class="@($"btn {ButtonClasses}")" attributes="@AdditionalAttributes">
-                            <BlazingApple.Components.Icon CustomIcon="@CustomIcons[iconName]"></BlazingApple.Components.Icon> @iconName
-                        </button>
-                    }
+                    IconData iconData = new(kvp.Value, kvp.Key);
 
+                    <button type="button" class="@($"btn {(Value == iconData ? SelectedButtonClasses : ButtonClasses)}")" attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
+                        <BlazingApple.Components.Icon CustomIcon="@iconData.IconClasses"></BlazingApple.Components.Icon> @iconData.ToString()
+                    </button>
                 }
-            }
+
+                @if (CustomIcons is not null)
+                {
+                    @foreach (string iconName in CustomIcons.Keys)
+                    {
+                        @if (!string.IsNullOrEmpty(_searchString) && iconName.ToLower().Contains(_searchString))
+                        {
+                            <button type="button" class="@($"btn {ButtonClasses}")" attributes="@AdditionalAttributes">
+                                <BlazingApple.Components.Icon CustomIcon="@CustomIcons[iconName]"></BlazingApple.Components.Icon> @iconName
+                            </button>
+                        }
+
+                    }
+                }
+            </div>
         }
     }
     else

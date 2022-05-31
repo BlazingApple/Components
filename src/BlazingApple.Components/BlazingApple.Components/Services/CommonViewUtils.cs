@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlazingApple.Components.Services
 {
+    /// <summary>Various methods to ease the display logic of common operations, like rendering a date.</summary>
     public static class CommonViewUtils
     {
         private const string DATE_FORMAT = "MMM dd \\'yy";
@@ -103,6 +104,9 @@ namespace BlazingApple.Components.Services
             return pieces[^1];
         }
 
+        /// <summary>Gets the string value of the model.</summary>
+        /// <param name="model">The model type.</param>
+        /// <returns>Model type.</returns>
         public static string GetModelType(object model)
         {
             string modelType = model.GetType().ToString();
@@ -110,6 +114,9 @@ namespace BlazingApple.Components.Services
             return modelType;
         }
 
+        /// <summary>Converts an integer to a "90%" percent string.</summary>
+        /// <param name="percent">The integer percent value.</param>
+        /// <returns>See summary.</returns>
         public static string GetPercentString(int percent)
         {
             return string.Format("{0}%", percent);
@@ -135,14 +142,12 @@ namespace BlazingApple.Components.Services
             return string.Format(formatString, percent);
         }
 
-        public static bool IsMinimumDate(DateTime dateTime)
-        {
-            return dateTime == DateTime.MinValue;
-        }
+        /// <summary>Whether or not the date time is the minimum (empty).</summary>
+        /// <param name="dateTime">The date being compared.</param>
+        /// <returns>True if so, false otherwise.</returns>
+        public static bool IsMinimumDate(DateTime dateTime) => dateTime == default;
 
         /// <summary>Given a broken out slug (broken out by the framework, combine it for easy string comparison in the database.</summary>
-        /// <param name="routeParams">The pieces of the route.</param>
-        /// <returns></returns>
         public static void ParseInternalSlug(string route, out string country, out string state, out string slug)
         {
             string[] pieces = route.Split('/');
