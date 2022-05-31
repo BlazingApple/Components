@@ -1,7 +1,10 @@
 ﻿using BlazingApple.Components.Services;
+using BlazingApple.FontAwesome.Models;
+using BlazingApple.FontAwesome.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +13,8 @@ namespace BlazingApple.Components
     /// <summary>A collection of icons rendered as buttons for a user to choose from.</summary>
     public partial class IconChooser : ComponentBase
     {
+        private bool _isLoading;
+        private IReadOnlyDictionary<string, string>? _searchResultIcons;
         private string? _searchString = null;
 
         /// <summary>Additional attributes to put on each button.</summary>
@@ -23,6 +28,10 @@ namespace BlazingApple.Components
         /// <summary>A dictionary, keyed by the icon display name, and valued by the icon class names to also render.</summary>
         [Parameter]
         public IReadOnlyDictionary<string, string>? CustomIcons { get; set; }
+
+        /// <summary>The callback to invoke when the user's search query has changed.</summary>
+        [Parameter]
+        public EventCallback<string?> OnSearchChanged { get; set; }
 
         /// <summary>Default is "Search for an icon!" if not passed. Displays when the search box field is empty.</summary>
         [Parameter]
@@ -40,6 +49,13 @@ namespace BlazingApple.Components
         [Parameter]
         public EventCallback<IconData?> ValueChanged { get; set; }
 
+        /// <summary>
+        ///     If passed, this route will be appended with a "?query={searchQuery}" and the invoked callback on a search change will use this
+        ///     endpoint to load icon data.
+        /// </summary>
+        [Parameter]
+        public string? WebRoute { get; set; }
+
         /// <summary>The value that the component is bound to.</summary>
         private IconData? BoundValue
         {
@@ -51,12 +67,35 @@ namespace BlazingApple.Components
             }
         }
 
-        private void OnSearchChange(ChangeEventArgs args)
+        [Inject]
+        private FontSearchService SearchService { get; set; } = null!;
+
+        private async Task DoSearch(string? searchQuery)
+        {
+            _isLoading = true;
+            IEnumerable<FontAwesomeIcon>? results = await SearchService.Search(searchQuery);
+            if (results == null)
+            {
+                _searchResultIcons = null;
+            }
+            else
+            {
+                _searchResultIcons = results.ToDictionary(i => i.Label ?? "", i => i.GetCode());
+            }
+            _isLoading = false;
+        }
+
+        private async Task OnSearchChange(ChangeEventArgs args)
         {
             _searchString = (string?)args.Value;
 
-            if (_searchString != null)
+            if (!string.IsNullOrEmpty(_searchString))
                 _searchString = _searchString.ToLower();
+
+            await DoSearch(_searchString);
+
+            if (OnSearchChanged.HasDelegate)
+                await OnSearchChanged.InvokeAsync(_searchString);
         }
 
         private void Set(IconData icon) => BoundValue = icon;

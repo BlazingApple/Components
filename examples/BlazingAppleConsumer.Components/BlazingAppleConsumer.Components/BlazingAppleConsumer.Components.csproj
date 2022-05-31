@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BlazingApple.FontAwesome" Version="0.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\src\BlazingApple.Components\BlazingApple.Components\BlazingApple.Components.csproj" />
   </ItemGroup>
 

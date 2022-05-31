@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazingApple.FontAwesome.Models;
+using BlazingApple.FontAwesome.Services;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazingAppleConsumer.Components.Pages
 {
