@@ -57,6 +57,9 @@ public partial class Badge : ComponentBase
 
         if (useFullString || IsAllUpper(name))
         {
+            if (name.Length > 4)
+                name = name[..4];
+
             return name;
         }
         else
