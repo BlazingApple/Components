@@ -765,7 +765,7 @@
   color: rgba(32, 33, 36, 0.28);
   padding-right: 0.25rem;
 }
-.og-search .og-clear-seach {
+.og-search .og-clear-search, .og-search .og-search-button {
   border: none;
   background: none;
   /* TODO: Add text-dark scss variable color on hover.*/

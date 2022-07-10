@@ -9,8 +9,10 @@ namespace BlazingApple.Components.Search
     /// <summary>A search box, for searching.</summary>
     public partial class SearchBox : ComponentBase
     {
-        private string _clearButtonClasses = "og-clear-seach text-muted hidden";
+        private string _clearButtonClasses = "og-clear-search text-muted hidden";
         private bool _displayClearButton;
+        private string? _oldSearchTerm;
+        private string _searchButtonClasses = "og-search-button text-muted";
         private string? _searchTerm;
 
         /// <summary>Fired when the user's focus leaves or enter is pressed.</summary>
@@ -40,13 +42,20 @@ namespace BlazingApple.Components.Search
         /// <summary>Update whether or not the "x" is shown based on the value.</summary>
         private void InternalOnSearchChange()
         {
+            bool isDisabled = SearchTerm == _oldSearchTerm;
+            _searchButtonClasses = isDisabled ? "text-muted disabled" : "text-muted";
+
+            if (isDisabled)
+                return;
+
             _displayClearButton = !string.IsNullOrEmpty(SearchTerm);
             if (_displayClearButton)
-                _clearButtonClasses = "og-clear-seach text-muted";
+                _clearButtonClasses = "og-clear-search text-muted";
             else
-                _clearButtonClasses = "og-clear-seach text-muted hidden";
+                _clearButtonClasses = "og-clear-search text-muted hidden";
 
             OnSearchChange.InvokeAsync(new ChangeEventArgs() { Value = SearchTerm });
+            _oldSearchTerm = _searchTerm;
         }
 
         /// <summary>Click handler for clicking the "Clear" button.</summary>
