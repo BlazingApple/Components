@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingAppleConsumer.Compon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components", "..\..\src\BlazingApple.Components\BlazingApple.Components\BlazingApple.Components.csproj", "{2FDBC132-D2BD-4B8E-ACC9-EFB0ECF928B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingApple.Components.Tests", "..\..\tests\BlazingApple.Components.Tests\BlazingApple.Components.Tests.csproj", "{40C93509-B3F1-46B8-9E4E-19A1EC24BBA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components.Tests", "..\..\tests\BlazingApple.Components.Tests\BlazingApple.Components.Tests.csproj", "{40C93509-B3F1-46B8-9E4E-19A1EC24BBA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

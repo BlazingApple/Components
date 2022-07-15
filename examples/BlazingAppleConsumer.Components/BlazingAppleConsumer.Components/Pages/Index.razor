@@ -1,11 +1,12 @@
 ﻿@page "/"
+@using BlazingApple.Components.Calendar
 @using BlazingApple.Components.Lists
 <PageTitle>Index</PageTitle>
 
 <h1 class="d-flex" style="align-items:center;">
-    <img src="../../../BlazingApple.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;"/>
+    <img src="../../../BlazingApple.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;" />
     Hello, world!
-    </h1>
+</h1>
 
 Welcome to your BlazingApples's component library! Glad you're here.
 
@@ -14,46 +15,103 @@ Welcome to your BlazingApples's component library! Glad you're here.
 <div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
 
 <h4>A few days from now</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(5)"/>
+<DueDate Date="@DateTime.Now.Date.AddDays(5)" />
 
 <h4>Tomorrow</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(1)"/>
+<DueDate Date="@DateTime.Now.Date.AddDays(1)" />
 
 <h4>Overdue</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(-1)"/>
+<DueDate Date="@DateTime.Now.Date.AddDays(-1)" />
 
 <h4><i>Really</i> Overdue</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(-5)"/>
+<DueDate Date="@DateTime.Now.Date.AddDays(-5)" />
 
 <h3>Icon Chooser</h3>
 <div class="code"><code>@("<IconChooser/>")</code></div>
-<IconChooser/>
+<IconChooser />
 
 <h2>Badges</h2>
 <div class="code"><code>@("<Badge Name=\"Senate Bill 133\"/>")</code></div>
-<Badge Name="Senate Bill 133"/>
-<Badge UseFullString="true" Name="@("\"133\"")"/>
-<Badge UseFullString="true" Name="@("\"1334\"")"/>
-<Badge Name="Hello *World*, I Love You!"/>
+<Badge Name="Senate Bill 133" />
+<Badge UseFullString="true" Name="@("\"133\"")" />
+<Badge UseFullString="true" Name="@("\"1334\"")" />
+<Badge Name="Hello *World*, I Love You!" />
 
 @code {
     string badgeString = "hello world";
 }
 <EditForm Model="@badgeString">
-    <InputText @bind-Value="badgeString"/>
+    <InputText @bind-Value="badgeString" />
 </EditForm>
-<Badge Name="@badgeString"/>
+<Badge Name="@badgeString" />
 
-<hr/>
+<hr />
 <h2>Lists</h2>
 <h3>Paginator</h3>
 <div class="code"><code>@("<ListPaginator BatchSize=\"25\" ResultCount=\"126\" @bind-Value=\"_currentPage\"/>")</code></div>
 
 <div class="d-flex">
-<label>Current Page: </label>
-<EditForm Model="_resultCount">
-    <InputNumber @bind-Value="_resultCount"></InputNumber>
-</EditForm>
-<span class="ml-2">@(_currentPage+1)</span>
+    <label>Current Page: </label>
+    <EditForm Model="_resultCount">
+        <InputNumber @bind-Value="_resultCount"></InputNumber>
+    </EditForm>
+    <span class="ml-2">@(_currentPage+1)</span>
 </div>
 <ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage"></ListPaginator>
+
+<hr />
+<h2>Calendar</h2>
+@code {
+    CalendarEvent calEvent = new ();
+}
+<div class="row">
+    <div class="col-lg-9">
+        <EditForm Model="@badgeString">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>Title</label>
+                    <InputText @bind-Value="calEvent.Title"></InputText>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>Location</label>
+                    <InputText @bind-Value="calEvent.Location"></InputText>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>Description</label>
+                    <InputTextArea @bind-Value="calEvent.Description"></InputTextArea>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>Start date</label>
+                    <InputDateTime @bind-Value="calEvent.Start"></InputDateTime>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>End date</label>
+                    <InputDateTime @bind-Value="calEvent.End"></InputDateTime>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column">
+                    <label>Full day</label>
+                    <InputCheckbox @bind-Value="calEvent.IsFullDay"></InputCheckbox>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+    <div class="col-lg-3">
+        <AddToCalendar Title="@calEvent.Title" Description="@calEvent.Description" Location="@calEvent.Location" Start="@calEvent.Start" End="@calEvent.End" IsFullDay="@calEvent.IsFullDay">
+            <i class="fas fa-calendar"></i>
+        </AddToCalendar>
+    </div>
+</div>

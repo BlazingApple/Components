@@ -1,0 +1,21 @@
+﻿@using BlazingApple.Components.Calendar
+@if (_event is not null)
+{
+    <button @attributes="AdditionalAttributes" @onclick="ToggleDropdown">
+        @if(ChildContent is not null)
+        {
+            @ChildContent
+        }
+        else {
+            @Label
+        }
+    </button>
+    @if (_dropdownExposed)
+    {
+        @* z-index 1029 to be 1 below the top bar menu *@
+        <div class="@BackdropClasses" style="width: 100%; height: 100%; top: 0%; left: 0%; position: fixed; z-index:1028;" @onclick="() => ToggleDropdown()"></div>
+        <div class="@DropdownClasses" style="z-index:1029; position:relative;">
+            <AddToGoogleCalendar Event="_event" />
+        </div>
+    }
+}
