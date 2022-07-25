@@ -1,6 +1,6 @@
 ﻿@import "../themes/_siteColors.scss";
 
-.og-search
+.ba-search
 {
     display: flex;
     border: 1px solid $og-accent-border;
@@ -25,19 +25,24 @@
 
     i
     {
-        color: rgba(32,33,36,0.28);
         padding-right: .25rem;
     }
 
-    .og-clear-search, .og-search-button
+    > button
     {
         border: none;
         background: none;
-        /* TODO: Add text-dark scss variable color on hover.*/
+    }
+
+    .ba-clear-search
+    {
+        border: none;
+        background: none;
+        color: $og-accent-color;
     }
 }
 
-.og-no-results
+.ba-no-results
 {
     font-style: italic;
 }

@@ -1,6 +1,6 @@
 ﻿@if (Event is not null)
 {
-    <BrowserLink AdditionalAttributes="@AdditionalAttributes">
+    <button type="button" class="btn btn-link p-0" @attributes="@AdditionalAttributes" @onclick="DownloadEvent">
         @if (ChildContent is not null)
         {
             @ChildContent
@@ -9,5 +9,5 @@
         {
             @Label
         }
-    </BrowserLink>
+    </button>
 }

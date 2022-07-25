@@ -3,11 +3,11 @@
 	https://codepen.io/thebabydino/pen/zdhmt
 	https://stackoverflow.com/questions/12813573/position-icons-into-circle
 *@
-<div class="og-circle-container" style="--m: @count; --d:@ItemSize; --tan: @tan">
+<div class="ba-circle-container" style="--m: @count; --d:@ItemSize; --tan: @tan">
 	@for (int i = 0; i < Items.Count; i++)
 	{
 		TItem item = Items[i];
-		<div class="og-circle-item" style="--i: @i">
+		<div class="ba-circle-item" style="--i: @i">
 			@RowTemplate(item)
 		</div>
 	}

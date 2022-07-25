@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components
 {
@@ -13,24 +8,33 @@ namespace BlazingApple.Components
     {
         private NavigationManager? _navManager;
 
+        /// <summary>Excess attributes.</summary>
         [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> AdditionalAttributes { get; set; }
+        public IDictionary<string, object> AdditionalAttributes { get; set; } = null!;
 
+        /// <summary>The rendered content of the link.</summary>
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment ChildContent { get; set; } = null!;
 
+        /// <summary>the class(es) to apply.</summary>
         [Parameter]
-        public string className { get; set; }
+        public string? className { get; set; }
 
+        /// <summary>The route/path to the url.</summary>
+        [Parameter, EditorRequired]
+        public string href { get; set; } = null!;
+
+        /// <summary>Used to indicate when a link is clicked.</summary>
         [Parameter]
-        public string href { get; set; }
+        public EventCallback<string> OnClick { get; set; }
 
         /// <inheritdoc cref="IServiceProvider" />
         [Inject]
         public IServiceProvider ServiceProvider { get; set; } = null!;
 
+        /// <summary>The title attribute/hover text.</summary>
         [Parameter]
-        public string title { get; set; }
+        public string? title { get; set; }
 
         /// <inheritdoc />
         protected override void OnInitialized()
@@ -51,13 +55,13 @@ namespace BlazingApple.Components
             {
                 linkUrl = new Uri(url).AbsoluteUri;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // We know this is a relative path if this operation fails
                 return false;
             }
 
-            Regex internalLinkRegex = new Regex("^((((http:\\/\\/|https:\\/\\/)(www\\.)?)?"
+            Regex internalLinkRegex = new("^((((http:\\/\\/|https:\\/\\/)(www\\.)?)?"
                                     + currentHost
                                     + ")|(localhost:\\d{4})|(\\/.*))(\\/.*)?$");
 
@@ -67,6 +71,12 @@ namespace BlazingApple.Components
                 return false;
             }
             return true;
+        }
+
+        private async Task OnClickInternal()
+        {
+            if (OnClick.HasDelegate)
+                await OnClick.InvokeAsync(href);
         }
     }
 }

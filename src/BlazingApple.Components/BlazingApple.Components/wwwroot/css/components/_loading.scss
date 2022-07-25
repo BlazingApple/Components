@@ -1,0 +1,60 @@
+﻿@import "../themes/_siteColors.scss";
+
+.ba-loading-subtle
+{
+    animation-name: full-spin;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.ba-loading-default
+{
+    animation-name: full-spin;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.ba-page-loading-container
+{
+    position: relative; /* Position within parent. */
+    top: 0;
+    left: 0;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.ba-page-loading-container.full-page
+{
+    position: absolute;
+}
+
+.ba-pre-render-loading-container
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.ba-pre-render-loading-header
+{
+    color: $og-background-mode;
+}
+
+@keyframes full-spin
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+
+    to
+    {
+        transform: rotate(360deg);
+    }
+}

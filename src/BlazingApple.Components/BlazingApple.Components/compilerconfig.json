@@ -1,7 +1,7 @@
 ﻿[
   {
-    "outputFile": "wwwroot/blazing-apple/css/components/blazingAppleComponents.css",
-    "inputFile": "wwwroot/blazing-apple/css/components/blazingAppleComponents.scss"
+    "outputFile": "wwwroot/css/blazingAppleComponents.css",
+    "inputFile": "wwwroot/css/blazingAppleComponents.scss"
   },
   {
     "outputFile": "IconChooser.razor.css",

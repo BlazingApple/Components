@@ -1,0 +1,45 @@
+﻿@import "../themes/_siteColors.scss";
+
+.recordList
+{
+    border-collapse: separate; /* Don't collapse */
+    border-spacing: 0;
+
+    th
+    {
+        position: sticky;
+        background: $og-content-background;
+        top: 0;
+    }
+
+    tr, .recordListRow
+    {
+        .recordActions
+        {
+            display: flex;
+            justify-content: flex-end;
+
+            a
+            {
+                margin-left: .3rem;
+                margin-right: .3rem;
+            }
+        }
+
+        &:not(:hover)
+        {
+            .recordActions
+            {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+:not(:hover)
+{
+    .hiddenUntilHover
+    {
+        visibility: hidden;
+    }
+}

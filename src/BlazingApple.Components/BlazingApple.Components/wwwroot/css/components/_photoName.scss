@@ -1,0 +1,139 @@
+﻿@import "../themes/_siteColors.scss";
+
+.og-photo-inline
+{
+    display: inline-flex;
+    flex-direction: row;
+
+    &:not(.compact)
+    {
+        .img-fluid
+        {
+            width: 3.5rem;
+        }
+    }
+
+    margin-right: .5rem;
+    vertical-align: middle;
+
+    img
+    {
+        border-radius: 50%;
+    }
+}
+
+.og-photo-medium
+{
+    max-width: 8rem;
+}
+
+.og-badge-title-container
+{
+    display: inline-flex;
+    align-items: center;
+}
+
+.og-badge-title-container-large
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image-large
+{
+    min-width: 10rem !important;
+    min-height: 10rem !important;
+    font-size: 5rem;
+}
+
+.og-badge-subtle
+{
+    border-radius: 50%;
+    display: inline-flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    vertical-align: middle;
+    align-items: center;
+    user-select: none;
+    flex-shrink: 0;
+
+    &.profile-image
+    {
+        height: 34px;
+        width: 34px;
+    }
+
+    &.large
+    {
+        font-size: 3rem;
+        height: 5rem;
+        width: 5rem;
+        transition: transform .25s linear;
+
+        &:hover
+        {
+            transform: rotate(15deg);
+        }
+    }
+
+    span
+    {
+        margin: auto;
+    }
+}
+
+.og-photo-badge
+{
+    display: flex;
+    position: relative;
+    bottom: 15%;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ba-card-title
+{
+    margin-left: .5rem;
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+.person-list-row
+{
+    display: flex;
+    flex-direction: row;
+    padding: .3rem;
+    max-height: 4rem;
+
+    .person-list-avatar
+    {
+        flex: .25 0 15%;
+        padding-left: .25rem;
+
+        img
+        {
+            border-radius: 50%;
+            max-height: 100%;
+            max-width: 2.8rem; /* Having trouble with the image getting wider */
+        }
+    }
+
+    .person-list-details
+    {
+        flex: 1 0 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        .person-list-header
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

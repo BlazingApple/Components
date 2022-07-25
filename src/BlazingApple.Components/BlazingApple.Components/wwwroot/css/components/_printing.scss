@@ -1,0 +1,12 @@
+﻿@media print
+{
+    button.btn.btn-primary, button.btn.btn-secondary
+    {
+        display: none;
+    }
+
+    .ba-search, textarea
+    {
+        display: none;
+    }
+}

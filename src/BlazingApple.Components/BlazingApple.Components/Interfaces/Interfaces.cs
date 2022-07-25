@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlazingApple.Components.Interfaces
+﻿namespace BlazingApple.Components.Interfaces
 {
+    /// <summary>Defines a "comment" that a user can create.</summary>
     public interface IComment
     {
+        /// <summary>The string content of the comment.</summary>
         public string Content { get; set; }
 
+        /// <summary>The date the comment was authored.</summary>
         public DateTimeOffset DateCreated { get; set; }
 
+        /// <summary>The identifier of the comment.</summary>
         public string Id { get; set; }
 
+        /// <summary>The author's user identifier.</summary>
         public string UserId { get; set; }
     }
 
     /// <summary>Ids are required for records.</summary>
     public interface IRecord
     {
+        /// <summary>The record's Identifier.</summary>
         string Id { get; set; }
     }
 
@@ -44,39 +44,40 @@ namespace BlazingApple.Components.Interfaces
         /// <summary>The identifier for the record.</summary>
         public string Id { get; set; }
 
-        /* Includes # hash */
-
+        /// <summary>The name of the color in the code.</summary>
         public string NameInCode { get; }
     }
 
-    public class Colors
+    /// <summary>A collection of <see cref="IThemeColor" /></summary>
+    public class Colors : List<IThemeColor>
     {
-        public List<IThemeColor> _colors { get; set; }
-
-        public Colors()
+        /// <summary>Initialized the colors.</summary>
+        public Colors() : base()
         {
-            _colors = new List<IThemeColor>();
-            _colors.Add(new ThemeColor("1", "Altitude", "#0091ea", "og-altitude", "#80c8f5"));
-            _colors.Add(new ThemeColor("2", "Azure", "#0085f2", "og-azure", "#80c2f9"));
-            _colors.Add(new ThemeColor("3", "Blush", "#FF6665", "og-blush", "#ffb3b2"));
-            _colors.Add(new ThemeColor("4", "Caribbean", "#00bfd4", "og-caribbean", "#80dfea"));
-            _colors.Add(new ThemeColor("5", "Dahlia", "#b429cc", "og-dahlia", "#da94e6"));
-            _colors.Add(new ThemeColor("6", "Fuchsia", "#dd299d", "og-fuchsia", "#ee94ce"));
-            _colors.Add(new ThemeColor("7", "Golden", "#f4c100", "og-golden", "#fae080"));
-            _colors.Add(new ThemeColor("8", "Lime", "#69c300", "og-lime", "#b4e180"));
-            _colors.Add(new ThemeColor("9", "Mediterranean", "#19c295", "og-mediterranean", "#8ce1ca"));
-            _colors.Add(new ThemeColor("10", "Rose", "#d94e6f", "og-rose", "#eca7b7"));
-            _colors.Add(new ThemeColor("11", "Sky", "#24a4ee", "og-sky", "#92d2f7"));
-            _colors.Add(new ThemeColor("12", "Tangerine", "#ff9200", "og-tangerine", "#ffc980"));
-            _colors.Add(new ThemeColor("13", "Wisteria", "#6a4ce0", "og-wisteria", "#b5a6f0"));
+            AddRange(new List<IThemeColor>
+            {
+                new ThemeColor("1", "Altitude", "#0091ea", "og-altitude", "#80c8f5"),
+                new ThemeColor("2", "Azure", "#0085f2", "og-azure", "#80c2f9"),
+                new ThemeColor("3", "Blush", "#FF6665", "og-blush", "#ffb3b2"),
+                new ThemeColor("4", "Caribbean", "#00bfd4", "og-caribbean", "#80dfea"),
+                new ThemeColor("5", "Dahlia", "#b429cc", "og-dahlia", "#da94e6"),
+                new ThemeColor("6", "Fuchsia", "#dd299d", "og-fuchsia", "#ee94ce"),
+                new ThemeColor("7", "Golden", "#f4c100", "og-golden", "#fae080"),
+                new ThemeColor("8", "Lime", "#69c300", "og-lime", "#b4e180"),
+                new ThemeColor("9", "Mediterranean", "#19c295", "og-mediterranean", "#8ce1ca"),
+                new ThemeColor("10", "Rose", "#d94e6f", "og-rose", "#eca7b7"),
+                new ThemeColor("11", "Sky", "#24a4ee", "og-sky", "#92d2f7"),
+                new ThemeColor("12", "Tangerine", "#ff9200", "og-tangerine", "#ffc980"),
+                new ThemeColor("13", "Wisteria", "#6a4ce0", "og-wisteria", "#b5a6f0")
+            });
         }
 
         /// <summary>Gets a color within the range.</summary>
         /// <returns></returns>
         public IThemeColor GetRandomThemeColor()
         {
-            int randomIndex = new Random().Next(_colors.Count - 1);
-            return _colors[randomIndex];
+            int randomIndex = new Random().Next(Count - 1);
+            return this[randomIndex];
         }
     }
 
@@ -93,29 +94,28 @@ namespace BlazingApple.Components.Interfaces
         }
 
         /// <inheritdoc />
-        public string BackgroundHexCode { get; set; }
+        public string BackgroundHexCode { get; set; } = null!;
 
         /// <inheritdoc />
-        public string CssClass { get; set; }
+        public string CssClass { get; set; } = null!;
 
         /// <inheritdoc />
-        public string DisplayName { get; set; }
+        public string DisplayName { get; set; } = null!;
 
         /// <inheritdoc />
-        public string ForegroundHexCode { get; set; }
+        public string ForegroundHexCode { get; set; } = null!;
 
         /// <inheritdoc />
-        public string Id { get; set; } // todo change back to ID
+        public string Id { get; set; } = null!;
 
-        /* Includes # hash */
-
+        /// <summary>The name in code for the color.</summary>
         public string NameInCode
         {
             get
             {
                 return "theme" + DisplayName;
             }
-        } /* Use this in code... */
+        }
 
         /// <summary>DI Constructor.</summary>
         public ThemeColor()

@@ -1,0 +1,173 @@
+﻿@import "../themes/_colors.scss";
+
+.card
+{
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ba-card
+{
+    background-color: var(--og-background-theme-mode);
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid;
+    padding-left: .5px; /* Doing this because there is an odd overlap with the header and the border. */
+    margin-bottom: .5rem;
+
+    .ba-header
+    {
+        border-top-right-radius: 2em;
+        border-bottom-right-radius: 2em;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        display: inline-flex;
+        align-items: center;
+        padding: .1rem 1rem .1rem .5rem;
+        flex: 1 1 .33%; /* Grow width after 33% of card, otherwise, stay 33% */
+        h1, h2, h3, h4, h5
+        {
+            margin-bottom: 0;
+            margin-left: .5rem;
+        }
+    }
+
+    .card-content
+    {
+        padding: .75rem;
+    }
+
+    &.og-altitude
+    {
+        border-left-color: $og-altitude;
+
+        .ba-header
+        {
+            color: $og-altitude;
+            background-color: $og-altitude-site-background-light;
+        }
+    }
+
+    &.og-blush
+    {
+        border-left-color: $og-blush;
+
+        .ba-header
+        {
+            color: $og-blush;
+            background-color: $og-blush-bg;
+        }
+    }
+
+    &.og-caribbean
+    {
+        border-left-color: $og-caribbean;
+
+        .ba-header
+        {
+            color: $og-caribbean;
+            background-color: $og-caribbean-bg;
+        }
+    }
+
+    &.og-dahlia
+    {
+        border-left-color: $og-dahlia;
+
+        .ba-header
+        {
+            color: $og-dahlia;
+            background-color: $og-dahlia-bg;
+        }
+    }
+
+    &.og-fuchsia
+    {
+        border-left-color: $og-fuchsia;
+
+        .ba-header
+        {
+            color: $og-fuchsia;
+            background-color: $og-fuchsia-bg;
+        }
+    }
+
+    &.og-golden
+    {
+        border-left-color: $og-golden;
+
+        .ba-header
+        {
+            color: $og-golden;
+            background-color: $og-golden-bg;
+        }
+    }
+
+    &.og-lime
+    {
+        border-left-color: $og-lime;
+
+        .ba-header
+        {
+            color: $og-lime;
+            background-color: $og-lime-bg;
+        }
+    }
+
+    &.og-mediterranean
+    {
+        border-left-color: $og-mediterranean;
+
+        .ba-header
+        {
+            color: $og-mediterranean;
+            background-color: $og-mediterranean-bg;
+        }
+    }
+
+    &.og-rose
+    {
+        border-left-color: $og-rose;
+
+        .ba-header
+        {
+            color: $og-rose;
+            background-color: $og-rose-bg;
+        }
+    }
+
+    &.og-sky
+    {
+        border-left-color: $og-sky;
+
+        .ba-header
+        {
+            color: $og-sky;
+            background-color: $og-sky-bg;
+        }
+    }
+
+    &.og-tangerine
+    {
+        border-left-color: $og-tangerine;
+
+        .ba-header
+        {
+            color: $og-tangerine;
+            background-color: $og-tangerine-bg;
+        }
+    }
+
+    &.og-wisteria
+    {
+        border-left-color: $og-wisteria;
+
+        .ba-header
+        {
+            color: $og-wisteria;
+            background-color: $og-wisteria-bg;
+        }
+    }
+}

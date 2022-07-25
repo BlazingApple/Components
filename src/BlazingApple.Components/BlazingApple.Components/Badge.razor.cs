@@ -121,7 +121,7 @@ public partial class Badge : ComponentBase
             if (UseRandomColor)
                 Color = _colors.GetRandomThemeColor();
             else
-                Color = Card.GetColorForName(_colors._colors, _badgeString);
+                Color = Card.GetColorForName(_colors, _badgeString);
         }
     }
 }

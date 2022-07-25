@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace BlazingApple.Components.HTMLElements
+﻿namespace BlazingApple.Components.HTMLElements
 {
     /// <summary>Allows rendering a list of checkboxes bound to the SelectedValue.</summary>
-    /// <typeparam name="TItem"></typeparam>
+    /// <typeparam name="TItem">The objects used to render.</typeparam>
+    /// <typeparam name="TValue">The values of the items selected.</typeparam>
     public partial class InputCheckboxList<TItem, TValue> : ComponentBase
     {
         /// <summary>HTML attributes to apply to the containing div.</summary>
@@ -31,7 +27,7 @@ namespace BlazingApple.Components.HTMLElements
 
         /// <summary>Contains the list of selected checkboxes.</summary>
         [Parameter]
-        public List<TValue> SelectedValues { get; set; }
+        public List<TValue> SelectedValues { get; set; } = null!;
 
         /// <summary>The display text to be shown adjacent to checkbox</summary>
         [Parameter]
@@ -46,19 +42,19 @@ namespace BlazingApple.Components.HTMLElements
         /// <param name="aChecked">Whether or not the box was checked.</param>
         private void CheckboxClicked(string aSelectedId, object aChecked)
         {
-            TValue matchingValue = ValueField.Invoke(Data.First(item => item.ToString() == aSelectedId));
+            TValue matchingValue = ValueField.Invoke(Data.First(item => item!.ToString() == aSelectedId));
             if ((bool)aChecked)
             {
-                if (!SelectedValues.Any(item => item.ToString() == aSelectedId))
+                if (!SelectedValues.Any(item => item!.ToString() == aSelectedId))
                     SelectedValues.Add(matchingValue);
             }
             else
             {
-                if (SelectedValues.Any(item => item.ToString() == aSelectedId))
+                if (SelectedValues.Any(item => item!.ToString() == aSelectedId))
                     SelectedValues.Remove(matchingValue);
             }
             if (OnChange != null)
-                OnChange.Invoke(null, null);
+                OnChange.Invoke(null, EventArgs.Empty);
 
             StateHasChanged();
         }

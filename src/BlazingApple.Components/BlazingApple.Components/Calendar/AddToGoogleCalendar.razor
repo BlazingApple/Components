@@ -1,6 +1,6 @@
 ﻿@if (Event is not null)
 {
-    <BrowserLink href=@LinkUrl AdditionalAttributes="@AdditionalAttributes">
+    <BrowserLink href=@LinkUrl OnClick="OnClickInternal" AdditionalAttributes="@AdditionalAttributes">
         @if (ChildContent is not null)
         {
             @ChildContent

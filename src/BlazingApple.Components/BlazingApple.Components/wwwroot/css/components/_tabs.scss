@@ -1,0 +1,22 @@
+﻿.tabstrip
+{
+    display: flex;
+}
+
+.tabstrip
+{
+    .tab
+    {
+        &:not(:hover)
+        {
+            background: none !important;
+            border-color: transparent !important;
+        }
+
+        &.active
+        {
+            font-weight: 600;
+            color: var(--og-theme-color) !important;
+        }
+    }
+}

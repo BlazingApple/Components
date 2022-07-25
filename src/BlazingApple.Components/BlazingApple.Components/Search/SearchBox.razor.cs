@@ -9,7 +9,7 @@ namespace BlazingApple.Components.Search;
 /// <summary>A search box, for searching.</summary>
 public partial class SearchBox : ComponentBase
 {
-    private string _clearButtonClasses = "og-clear-search text-muted hidden";
+    private string _clearButtonClasses = "ba-clear-search text-muted hidden";
     private bool _displayClearButton;
     private string? _oldSearchTerm;
 
@@ -71,9 +71,9 @@ public partial class SearchBox : ComponentBase
 
         _displayClearButton = !string.IsNullOrEmpty(BoundValue);
         if (_displayClearButton)
-            _clearButtonClasses = "og-clear-search text-muted";
+            _clearButtonClasses = "ba-clear-search text-muted";
         else
-            _clearButtonClasses = "og-clear-search text-muted hidden";
+            _clearButtonClasses = "ba-clear-search text-muted hidden";
 
         OnSearchChange.InvokeAsync(new ChangeEventArgs() { Value = BoundValue });
         _oldSearchTerm = BoundValue;

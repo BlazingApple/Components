@@ -1,0 +1,209 @@
+﻿/* Html Elements */
+$og-label: #5f7c8a;
+$og-label-dark: #bfcbd0;
+$og-dark-mode-text: #e9ecef;
+
+/* #region Background Color Mode */
+$og-light-mode: white;
+$og-light-mode-inverse: #212529;
+$og-light-mode-white: white;
+
+$og-dark-mode: #263943;
+$og-dark-mode-inverse: white;
+$og-dark-mode-white: #676D70;
+
+/* #endregion */
+$og-primary: #0085f2; /* Will be overwritten by theme sheet. */
+$og-dark-mode-bg: $og-dark-mode; /* Will be overwritten by theme sheet. */
+$og-light-mode-bg: $og-light-mode; /* Will be overwritten by theme sheet. */
+
+/* #region Altitude */
+$og-altitude: #0091ea;
+$og-altitude-site-background-light: #80c8f5; /* Site Background Color - White backdrop, 50% of #0091ea overlay */
+$og-altitude-site-background-dark: #00243a; /* Site Background Color */
+
+$og-altitude-content-accent-light: #eef7ff; /* Accent Background Color */
+$og-altitude-content-accent-dark: #007bc7; /* Accent Background Color */
+
+$og-altitude-content-background-light: #f2fafe; /* This is the bg-theme transposed at 10% opacity */
+$og-altitude-content-background-dark: #314149; /* This is the bg-theme transposed at 10% opacity */
+/* #endregion */
+
+/* #region Azure */
+$og-azure: #0085f2;
+$og-azure-bg: #80c2f9; /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
+
+$og-azure-site-background-light: #80c2f9; /* Site Background Color */
+$og-azure-site-background-dark: #00213c; /* Site Background Color */
+$og-azure-content-background-light: #f2f9fe; /* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+$og-azure-content-background-dark: #304149; /* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+
+$og-azure-content-accent-light: #e6f3fe; /* Accent Background Color */
+$og-azure-content-accent-dark: #0071ce; /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
+
+/* #endregion */
+
+/* #region Blush */
+$og-blush: #FF6665;
+$og-blush-bg: #fff0f0;
+
+$og-blush-content-accent-light: #fff0f0; /* Accent Background Color */
+$og-blush-content-accent-dark: #ff3130;
+
+$og-blush-site-background-light: #ffb3b2; /* Site Background Color */
+$og-blush-site-background-dark: #590100;
+
+$og-blush-content-background-light: #fff7f7; /* "Content background" color, like the white/black color text sits above */
+$og-blush-content-background-dark: #334047;
+
+/* #endregion */
+
+/* #region Caribbean */
+$og-caribbean: #00bfd4;
+$og-caribbean-bg: #e6f9fb;
+
+$og-caribbean-content-accent-light: #e6f9fb; /* Accent Background Color */
+$og-caribbean-content-accent-dark: #00a2b4;
+
+$og-caribbean-site-background-light: #80dfea; /* Site Background Color */
+$og-caribbean-site-background-dark: #003035;
+
+$og-caribbean-content-background-light: #f2fcfd; /* "Content background" color, like the white/black color text sits above */
+$og-caribbean-content-background-dark: #304148;
+
+/* #endregion */
+
+/* #region Dahlia */
+$og-dahlia: #b429cc;
+$og-dahlia-bg: #f8eafa;
+
+$og-dahlia-content-accent-light: #f8eafa; /* Accent Background Color */
+$og-dahlia-content-accent-dark: #9923ad;
+
+$og-dahlia-site-background-light: #da94e6; /* Site Background Color */
+$og-dahlia-site-background-dark: #2d0a33;
+
+$og-dahlia-content-background-light: #fbf4fd; /* "Content background" color, like the white/black color text sits above */
+$og-dahlia-content-background-dark: #324048;
+
+/* #endregion */
+
+/* #region Fuchsia */
+$og-fuchsia: #dd299d;
+$og-fuchsia-bg: #fceaf5;
+
+$og-fuchsia-content-accent-light: #fceaf5; /* Accent Background Color */
+$og-fuchsia-content-accent-dark: #c01f87;
+
+$og-fuchsia-site-background-light: #ee94ce; /* Site Background Color */
+$og-fuchsia-site-background-dark: #390928;
+
+$og-fuchsia-content-background-light: #fdf4fa; /* "Content background" color, like the white/black color text sits above */
+$og-fuchsia-content-background-dark: #324048;
+
+/* #endregion */
+
+/* #region Golden */
+$og-golden: #f4c100;
+$og-golden-bg: #fef9e6;
+
+$og-golden-content-accent-light: #fef9e6; /* Accent Background Color */
+$og-golden-content-accent-dark: #cfa400;
+
+$og-golden-site-background-light: #fae080; /* Site Background Color */
+$og-golden-site-background-dark: #3d3000;
+
+$og-golden-content-background-light: #fffcf2; /* "Content background" color, like the white/black color text sits above */
+$og-golden-content-background-dark: #334147;
+
+/* #endregion */
+
+/* #region Lime */
+$og-lime: #69c300;
+$og-lime-bg: #f0f9e6;
+
+$og-lime-content-accent-light: #f0f9e6; /* Accent Background Color */
+$og-lime-content-accent-dark: #59a600;
+
+$og-lime-site-background-light: #b4e180; /* Site Background Color */
+$og-lime-site-background-dark: #1a3100;
+
+$og-lime-content-background-light: #f8fcf2; /* "Content background" color, like the white/black color text sits above */
+$og-lime-content-background-dark: #314147;
+
+/* #endregion */
+
+/* #region Mediterranean */
+$og-mediterranean: #19c295;
+$og-mediterranean-bg: #8ce1ca;
+
+$og-mediterranean-content-accent-light: #e8f9f4; /* Accent Background Color */
+$og-mediterranean-content-accent-dark: #15a57f;
+
+$og-mediterranean-site-background-light: #8ce1ca; /* Site Background Color */
+$og-mediterranean-site-background-dark: #063025;
+
+$og-mediterranean-content-background-light: #f4fcfa; /* "Content background" color, like the white/black color text sits above */
+$og-mediterranean-content-background-dark: #304148;
+
+/* #endregion */
+
+/* #region Rose */
+$og-rose: #d94e6f;
+$og-rose-bg: #fbedf1;
+
+$og-rose-content-accent-light: #fbedf1; /* Accent Background Color */
+$og-rose-content-accent-dark: #ce2c53;
+
+$og-rose-site-background-light: #eca7b7; /* Site Background Color */
+$og-rose-site-background-dark: #3d0d18;
+
+$og-rose-content-background-light: #fdf6f8; /* "Content background" color, like the white/black color text sits above */
+$og-rose-content-background-dark: #324047;
+
+/* #endregion */
+
+/* #region Sky */
+$og-sky: #24a4ee;
+$og-sky-bg: #e9f6fd;
+
+$og-sky-content-accent-light: #e9f6fd; /* Accent Background Color */
+$og-sky-content-accent-dark: #118fd8;
+
+$og-sky-site-background-light: #92d2f7; /* Site Background Color */
+$og-sky-site-background-dark: #052a40;
+
+$og-sky-content-background-light: #f4fbfe; /* "Content background" color, like the white/black color text sits above */
+$og-sky-content-background-dark: #314149;
+
+/* #endregion */
+
+/* #region Tangerine */
+$og-tangerine: #ff9200;
+$og-tangerine-bg: #fff4e6;
+
+$og-tangerine-content-accent-light: #fff4e6; /* Accent Background Color */
+$og-tangerine-content-accent-dark: #d97c00;
+
+$og-tangerine-site-background-light: #ffc980; /* Site Background Color */
+$og-tangerine-site-background-dark: #402500;
+
+$og-tangerine-content-background-light: #fffaf2; /* "Content background" color, like the white/black color text sits above */
+$og-tangerine-content-background-dark: #334147;
+
+/* #endregion */
+
+/* #region Wisteria */
+$og-wisteria: #6a4ce0;
+$og-wisteria-bg: #f0edfc;
+
+$og-wisteria-content-accent-light: #f0edfc; /* Accent Background Color */
+$og-wisteria-content-accent-dark: #4a26d9;
+
+$og-wisteria-site-background-light: #b5a6f0; /* Site Background Color */
+$og-wisteria-site-background-dark: #160b40;
+
+$og-wisteria-content-background-light: #f8f6fe; /* "Content background" color, like the white/black color text sits above */
+$og-wisteria-content-background-dark: #314049;
+
+/* #endregion */

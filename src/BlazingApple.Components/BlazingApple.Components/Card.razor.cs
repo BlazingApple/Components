@@ -1,39 +1,37 @@
 ﻿using BlazingApple.Components.Interfaces;
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components
 {
+    /// <summary>A "card" component, modeled after the Bootstrap card with various enhanced stylings.</summary>
     public partial class Card : ComponentBase
     {
-        private Colors _colors;
+        private Colors _colors = null!;
 
-        private string _titleStyle;
+        private string _titleStyle = null!;
         private string? _tooltipGuid;
         private bool isDismissed;
 
+        /// <summary>The string content to pass to the badge. If empty, then the <see cref="Title" /> property is used.</summary>
         [Parameter]
-        public string BadgeTitle { get; set; }
+        public string BadgeTitle { get; set; } = null!;
 
         /// <summary>If passed, a complex tooltip will be rendered when the user hovers over the badge.</summary>
         [Parameter]
         public RenderFragment? BadgeTooltipContent { get; set; }
 
+        /// <summary>Custom content to inject into the body of the card.</summary>
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment? ChildContent { get; set; }
 
         /// <summary>The color to use for the badge</summary>
         [Parameter]
-        public dynamic Color { get; set; }
+        public dynamic? Color { get; set; }
 
         /// <summary>Appears on the right hand side of the card header, left of the dismiss button (if dismissable).</summary>
         [Parameter]
-        public RenderFragment HeaderContent { get; set; }
+        public RenderFragment? HeaderContent { get; set; }
 
+        /// <summary>Whether or not the user can dismiss the card. If <c>true</c>, then a cancel "x" button is added.</summary>
         [Parameter]
         public bool IsDismissable { get; set; }
 
@@ -41,12 +39,13 @@ namespace BlazingApple.Components
         [Parameter]
         public TooltipOpenOn OpenTooltipOn { get; set; } = TooltipOpenOn.Click;
 
-        [Parameter]
-        public string Title { get; set; }
+        /// <summary>The title/header of the card.</summary>
+        [Parameter, EditorRequired]
+        public string Title { get; set; } = null!;
 
         /// <summary>If passed, the title will be made a link to the provided URL.</summary>
         [Parameter]
-        public string TitleUrl { get; set; }
+        public string? TitleUrl { get; set; }
 
         /// <summary>The classes to apply to the tooltip, if not passed, none.</summary>
         [Parameter]
@@ -94,6 +93,7 @@ namespace BlazingApple.Components
             isDismissed = true;
         }
 
+        [MemberNotNull(nameof(Color))]
         private void SetColorIfNull()
         {
             if (Color == null)
@@ -102,7 +102,7 @@ namespace BlazingApple.Components
                 if (UseRandomColor)
                     Color = _colors.GetRandomThemeColor();
                 else
-                    Color = GetColorForName(_colors._colors, BadgeTitle);
+                    Color = GetColorForName(_colors, BadgeTitle);
             }
         }
     }

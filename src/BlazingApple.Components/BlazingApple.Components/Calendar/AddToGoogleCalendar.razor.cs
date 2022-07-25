@@ -26,10 +26,20 @@ namespace BlazingApple.Components.Calendar
 
         /// <summary>The label to apply to the button, if any.</summary>
         [Parameter]
-        public string Label { get; set; } = "Add to Google Calendar";
+        public string Label { get; set; } = "Google";
+
+        /// <summary>Called when the component is clicked.</summary>
+        [Parameter]
+        public EventCallback OnClick { get; set; }
 
         private string LinkUrl => Event is not null ? $"https://calendar.google.com/calendar/render?action=TEMPLATE&text={Event.Title}&details={Event.Description}&dates={Event.Start.ToString(TimeFormat)}/{Event.End.ToString(TimeFormat)}&location={Event.Location}" : "";
 
         private string TimeFormat => Event?.IsFullDay ?? false ? _withoutTimeFormat : _withTimeFormat;
+
+        private async Task OnClickInternal()
+        {
+            if (OnClick.HasDelegate)
+                await OnClick.InvokeAsync();
+        }
     }
 }

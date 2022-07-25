@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.Contracts;
 
 namespace BlazingApple.Components.Services
 {
@@ -13,53 +8,6 @@ namespace BlazingApple.Components.Services
         private const string DATE_FORMAT = "MMM dd \\'yy";
         private const string DATE_MONTH_YEAR_FORMAT = "MMM \\'yy";
         private const string TIME_FORMAT = " h:mm tt";
-
-        public static string AddQueryStringValue(string queryString, string parameterName, string parameterValue)
-        {
-            Contract.Assert(!string.IsNullOrEmpty(parameterName));
-
-            if (string.IsNullOrEmpty(parameterValue))
-            {
-                return queryString;
-            }
-            if (string.IsNullOrEmpty(queryString))
-            {
-                queryString = "?" + parameterName + "=" + parameterValue;
-            }
-            else
-            {
-                queryString = queryString + "&" + parameterName + "=" + parameterValue;
-            }
-            return queryString;
-        }
-
-        /// <summary>
-        ///     Removes characters that should not be in urls, like periods, spaces, commas. Spaces and commas are swapped with a "-", while other
-        ///     characters are removed entirely.
-        ///
-        ///     Do not call this function with "slashes (/)" in the slug, they will be removed. Prepend those after calling this function.
-        /// </summary>
-        /// <param name="name">Name to turn into a slug</param>
-        /// <returns></returns>
-        public static string CreateSlugFromName(string name)
-        {
-            string slug;
-            slug = name.Replace(".", "");
-            slug = slug.Replace(", ", "-");
-            slug = slug.Replace(",", "-");
-            slug = slug.Replace("{", "");
-            slug = slug.Replace("}", "");
-            slug = slug.Replace("}", "");
-            slug = slug.Replace("^", "");
-            slug = slug.Replace("~", "");
-            slug = slug.Replace("[", "");
-            slug = slug.Replace("]", "");
-            slug = slug.Replace("`", "");
-            slug = slug.Replace("\\", "");
-            slug = slug.Replace(" ", "-");
-            slug = slug.ToLowerInvariant();
-            return slug;
-        }
 
         /// <summary>Returns, in local time, the date string formatted as "Sep 22 '20 8:00 AM".</summary>
         /// <param name="dateTime">The date object to render to a user friendly string</param>
@@ -172,19 +120,6 @@ namespace BlazingApple.Components.Services
         private static string GetPercentageFormatString(int decimals)
         {
             string formatString = "{0:P" + decimals + "}";
-            return formatString;
-            for (int i = 0; i < decimals; i++)
-            {
-                if (i == 1)
-                {
-                    formatString += ".0";
-                }
-                else
-                {
-                    formatString += "0";
-                }
-            }
-            formatString += "}%";
             return formatString;
         }
     }

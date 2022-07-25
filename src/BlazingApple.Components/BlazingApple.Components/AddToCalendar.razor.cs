@@ -30,11 +30,15 @@ public partial class AddToCalendar : ComponentBase
 
     /// <summary>The Css classes to the dropdown, if any.</summary>
     [Parameter]
-    public string DropdownClasses { get; set; } = "";
+    public string DropdownClasses { get; set; } = "dropdown-menu show add-to-calendar-dropdown";
 
     /// <summary>The end date/time. If null, the event is full day.</summary>
     [Parameter]
     public DateTime End { get; set; }
+
+    /// <summary>Used if the user clicks on a calendar type that requires generation/downloading of a file.</summary>
+    [Parameter]
+    public string? Filename { get; set; }
 
     /// <summary>If true, uses the entire date.</summary>
     [Parameter]

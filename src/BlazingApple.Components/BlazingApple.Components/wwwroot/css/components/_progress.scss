@@ -1,0 +1,21 @@
+﻿.ba-progress-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.ba-progress-bar
+{
+    flex: 1 0 70%;
+}
+
+.ba-progress-text
+{
+    flex: 0 1 30%;
+}
+
+progress[value]::after
+{
+    content: calc(#{attr(value)} / #{attr(max)});
+    top: -125%;
+}
