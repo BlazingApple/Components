@@ -2,12 +2,12 @@
 @using s = BlazingApple.Components.Services
 
 <div class="ba-search">
-	<button @onclick="InternalOnSearchChange" type="button" title="Search!">
+	<button @onclick="InternalOnSearchChange" type="button" title="Search!" >
 		<Icon I="s.IconType.Search" AdditionalClasses="subtle-icon" />
 	</button>
 
 	<input placeholder="@TitleText" @bind="@BoundValue" type="input" />
-	<button class="@_clearButtonClasses" @onclick="OnClearClick" disabled="@(BoundValue==_oldSearchTerm)" type="button" title="Remove your search term!">
+	<button class="@_clearButtonClasses" @onclick="OnClearClick" type="button" title="Remove your search term!">
 		<Icon I="s.IconType.Cancel" />
 	</button>
 </div>

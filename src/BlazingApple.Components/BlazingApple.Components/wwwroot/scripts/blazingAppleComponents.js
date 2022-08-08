@@ -14,3 +14,8 @@ var downloadCalendarEvent = function downloadCalendarEvent(subject, description,
     cal.addEvent(subject, description, location, begin, end)
     cal.download(filename);
 }
+
+var scrollToCarouselSlide = function scrollToCarouselSlide(elementId) {
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}

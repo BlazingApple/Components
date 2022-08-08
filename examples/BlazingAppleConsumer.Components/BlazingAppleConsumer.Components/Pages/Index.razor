@@ -59,6 +59,23 @@ Welcome to your BlazingApples's component library! Glad you're here.
 </div>
 <ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage"></ListPaginator>
 
+<h3>Carousel</h3>
+<div class="code"><code>@("")</code></div>
+@code {
+    List<string> imageList = new List<string>()
+    {
+        "https://i.ytimg.com/an_webp/6OKrDa07rwM/mqdefault_6s.webp?du=3000&sqp=CMPpxZcG&rs=AOn4CLD-5PNJpC0mUxPgAZquZZ2eCp4W9A",
+        "https://i.ytimg.com/an_webp/sH1KvVgVSIA/mqdefault_6s.webp?du=3000&sqp=CODGxZcG&rs=AOn4CLDibprnukeTP5XvbnWHUPQK2WsEbQ",
+        "https://i.ytimg.com/an_webp/ianrUWxJblI/mqdefault_6s.webp?du=3000&sqp=CPj1xZcG&rs=AOn4CLCgmsnl5_LasTGgQRahbAckh3LhUw",
+        "https://i.ytimg.com/an_webp/-dTN__nPWv4/mqdefault_6s.webp?du=3000&sqp=CMbsxZcG&rs=AOn4CLAc2RgO5jqR3ZZBZQgGGVrFlPJSsQ",
+        "https://i.ytimg.com/an_webp/IifijsurvFE/mqdefault_6s.webp?du=3000&sqp=CM3vxZcG&rs=AOn4CLDkRp-cSxBV2rGumsGJFB-cSs0rrA",
+        "https://i.ytimg.com/an_webp/p2ZxRUltRZY/mqdefault_6s.webp?du=3000&sqp=CIzAxZcG&rs=AOn4CLD4Px7tP7CAyvzkiJ5k6UMGUlQ-eQ",
+    };
+}
+<Carousel Items="imageList" Context="imageSource">
+    <img class="img-fluid" src="@imageSource"/>
+</Carousel>
+
 <hr />
 <h2>Calendar</h2>
 @code {

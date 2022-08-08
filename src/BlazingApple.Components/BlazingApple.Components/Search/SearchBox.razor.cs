@@ -11,6 +11,9 @@ public partial class SearchBox : ComponentBase
 {
     private string _clearButtonClasses = "ba-clear-search text-muted hidden";
     private bool _displayClearButton;
+
+    // really, this is the previous search term...
+    private string? _oldOldSearchTerm;
     private string? _oldSearchTerm;
 
     /// <summary>Used internally to trigger other event callbacks.</summary>
@@ -65,7 +68,7 @@ public partial class SearchBox : ComponentBase
     private void InternalOnSearchChange()
     {
         bool isDisabled = BoundValue == _oldSearchTerm;
-
+        _oldOldSearchTerm = _oldSearchTerm;
         if (isDisabled)
             return;
 

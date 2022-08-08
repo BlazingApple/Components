@@ -1,0 +1,62 @@
+﻿@typeparam TItem
+
+@if (Items is not null && ChildContent is not null)
+{
+    <div class="carouselContainer">
+        <div class="carouselWithNavContainer">
+
+            @if(!HideNavButtons)
+            {
+                <button @onclick="PreviousButtonClicked"
+                    class=@($"btnCarouselPrevNav carouselPrevNexButtons{(_activeItem==0 ? " slideStart hidden" : "")}")>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            }
+
+            <div class="carouselWindowWrapper snap">
+                <div class="carouselWindow" role="list">
+                    @for (int i = 0; i < Items.Count; i++)
+                    {
+                        int currentIndex;
+                        {
+                            currentIndex = i;
+                        }
+                        <div id="@($"{ElementId}{currentIndex}")" class="slide" role="listitem" @onclick=@(()=>ItemButtonClicked(currentIndex))>
+                            @ChildContent(Items[i])
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if(!HideNavButtons)
+            {
+                <button 
+                    @onclick="NextButtonClicked"
+                    class=@($"btnCarouselNextNav carouselPrevNexButtons{(_activeItem==Items.Count-1 ? " slideEnd hidden" : "")}")>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            }
+        </div>
+        @if(!HideIndicatorButtons)
+        {
+            <div class="carouselButtons">
+                <div class="carouselButtonContainer">
+                    <div class="carouselIndicators">
+                        @for (int i = 0; i < Items.Count; i++)
+                        {
+                            int currentIndex;
+                            {
+                                currentIndex = i;
+                            }
+                            <button type="button" class=@($"carouselButton{(i==_activeItem ? " active" : "")}") title="Go to this item" @onclick="@(() => ItemButtonClicked(currentIndex))">
+                                <div class="carouselButtonInner">
+                                    <span class="clearlabel">@i of @Items.Count</span>
+                                </div>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
