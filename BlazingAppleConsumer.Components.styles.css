@@ -1,6 +1,6 @@
 @import '_content/BlazingApple.Components/BlazingApple.Components.bundle.scp.css';
 
-/* _content/BlazingAppleConsumer.Components/Shared/MainLayout.razor.rz.scp.css */
+/* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-i59m2z3a4h] {
     position: relative;
     display: flex;
@@ -24,12 +24,17 @@ main[b-i59m2z3a4h] {
     align-items: center;
 }
 
-    .top-row[b-i59m2z3a4h]  a, .top-row .btn-link[b-i59m2z3a4h] {
+    .top-row[b-i59m2z3a4h]  a, .top-row[b-i59m2z3a4h]  .btn-link {
         white-space: nowrap;
         margin-left: 1.5rem;
+        text-decoration: none;
     }
 
-    .top-row a:first-child[b-i59m2z3a4h] {
+    .top-row[b-i59m2z3a4h]  a:hover, .top-row[b-i59m2z3a4h]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-i59m2z3a4h]  a:first-child {
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -43,7 +48,7 @@ main[b-i59m2z3a4h] {
         justify-content: space-between;
     }
 
-    .top-row a[b-i59m2z3a4h], .top-row .btn-link[b-i59m2z3a4h] {
+    .top-row[b-i59m2z3a4h]  a, .top-row[b-i59m2z3a4h]  .btn-link {
         margin-left: 0;
     }
 }
@@ -66,12 +71,18 @@ main[b-i59m2z3a4h] {
         z-index: 1;
     }
 
+    .top-row.auth[b-i59m2z3a4h]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
     .top-row[b-i59m2z3a4h], article[b-i59m2z3a4h] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
 }
-/* _content/BlazingAppleConsumer.Components/Shared/NavMenu.razor.rz.scp.css */
+/* /Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-gcvnkisvv2] {
     background-color: rgba(255, 255, 255, 0.1);
 }
