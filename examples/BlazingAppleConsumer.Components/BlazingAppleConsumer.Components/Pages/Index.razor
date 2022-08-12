@@ -57,7 +57,7 @@ Welcome to your BlazingApples's component library! Glad you're here.
     </EditForm>
     <span class="ml-2">@(_currentPage+1)</span>
 </div>
-<ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage"></ListPaginator>
+<ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>
 
 <h3>Carousel</h3>
 <div class="code"><code>@("")</code></div>
