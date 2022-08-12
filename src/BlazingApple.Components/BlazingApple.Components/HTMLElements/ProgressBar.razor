@@ -7,29 +7,3 @@
 	</div>
 	<span class="text-muted"></span>
 }
-
-@code {
-	[Parameter]
-	public int CurrentIndex { get; set; }
-	[Parameter]
-	public int TotalCount { get; set; }
-
-	[Parameter]
-	public string Units { get; set; }
-
-	[Parameter]
-	public DateTimeOffset AsOfTime { get; set; }
-
-	private string? _progressTooltip, _asOfTime, _percentComplete;
-	protected override void OnParametersSet()
-	{
-		if (TotalCount <= 0)
-		{
-			return;
-		}
-		_asOfTime = "As of " + s.CommonViewUtils.GetDateTimeString(AsOfTime);
-		_percentComplete = s.CommonViewUtils.GetPercentString((((float)CurrentIndex) / TotalCount));
-		_progressTooltip = CurrentIndex + " of " + TotalCount + " " + Units;
-
-	}
-}

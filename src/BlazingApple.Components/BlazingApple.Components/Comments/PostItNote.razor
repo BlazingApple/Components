@@ -1,6 +1,6 @@
-﻿<Tooltip OpenOn="TooltipOpenOn.Hover">
+﻿<Tooltip OpenOn="TooltipOpenOn.Hover" TargetId="@($"post-{_postItGuid}")">
 	<ChildContent>
-		<div class="og-post-it">
+		<div id="@($"post-{_postItGuid}")" class="og-post-it">
 			<div class="og-post-it-contents">
 				@Comment
 			</div>
@@ -16,15 +16,3 @@
 		</div>
 	</TooltipContent>
 </Tooltip>
-
-@code {
-
-	[Parameter]
-	public string Title { get; set; }
-
-	[Parameter]
-	public string Subtitle { get; set; }
-
-	[Parameter]
-	public string Comment { get; set; }
-}

@@ -15,17 +15,17 @@
 </div>
 
 @code {
-	[Parameter]
-	public IReadOnlyList<TItem> Items { get; set; }
+	[Parameter, EditorRequired]
+	public IReadOnlyList<TItem> Items { get; set; } = null!;
 
-	[Parameter]
-	public RenderFragment<TItem> RowTemplate { get; set; }
+	[Parameter, EditorRequired]
+	public RenderFragment<TItem> RowTemplate { get; set; } = null!;
 
 	/// <summary>
 	/// The Css/Html compliant format for the item size
 	/// </summary>
-	[Parameter]
-	public string ItemSize { get; set; }
+	[Parameter, EditorRequired]
+	public string ItemSize { get; set; } = null!;
 
 	private int count;
 	private double tan;

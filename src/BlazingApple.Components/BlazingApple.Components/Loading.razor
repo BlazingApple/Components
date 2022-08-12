@@ -1,65 +1,12 @@
 ﻿@if (Style == LoadingStyle.FullPage || Style == LoadingStyle.Default)
 {
-	<div class="@containerCssClass">
+	<div class="@_containerCssClass">
 		<div class="og-badge-with-border-all-sizes">
-			<Icon I="s.IconType.LoadingFullPage" AdditionalClasses="@loadingIcon" AltText="Loading" />
+			<Icon I="s.IconType.LoadingFullPage" AdditionalClasses="@_loadingIcon" AltText="Loading" />
 		</div>
 	</div>
 }
 else
 {
 	<p><em><Icon I="s.IconType.Loading" AltText="Loading" /> Loading</em></p>
-}
-
-
-@code {
-	[Parameter]
-	public LoadingStyle Style { get; set; }
-	private string loadingIcon;
-	private string containerCssClass;
-
-	List<string> loadingIcons = new List<string>()
-{
-		"fas fa-compact-disc",
-		"fas fa-compass",
-		"far fa-compass",
-		"fas fa-sync-alt",
-		"fas fa-atom",
-		"fas fa-yin-yang",
-		"fas fa-fan",
-		"fas fa-asterisk",
-		"fas fa-sun",
-		"far fa-snowflake",
-		"far fa-life-ring",
-		"fas fa-circle-notch",
-		"fas fa-bahai",
-		"fas fa-stroopwafel",
-		"fas fa-spinner",
-		"fas fa-cog"
-	};
-
-	protected override void OnInitialized()
-	{
-		int randomIndex = new Random().Next(loadingIcons.Count);
-		loadingIcon = loadingIcons[randomIndex];
-	}
-
-	protected override void OnParametersSet()
-	{
-		containerCssClass = "ba-page-loading-container";
-		if (Style == LoadingStyle.FullPage)
-		{
-			containerCssClass += " full-page";
-		}
-	}
-
-	public enum LoadingStyle
-	{
-		/* Position Relatively within parent */
-		Default,
-		/* Position Subtle, with text */
-		Subtle,
-		/* Position Absolutely */
-		FullPage
-	}
 } 

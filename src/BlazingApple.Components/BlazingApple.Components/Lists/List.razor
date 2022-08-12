@@ -2,101 +2,40 @@
 @inject HttpClient Http
 @inject IToastService ToastService
 
-@if (list != null)
+@if (list != null && list.Count > 0)
 {
-	@if (list.Count() > 0)
-	{
-		<table class="table table-hover">
-			<thead>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				@foreach (PropertyInfo property in _properties)
+				{
+					<th>@property.Name</th>
+				}
+				<th></th>
+			</tr>
+			@if (ShowAdminLinks)
+			{
 				<tr>
-					@foreach (PropertyInfo property in properties)
-					{
-						<th>@property.Name</th>
-					}
 					<th></th>
 				</tr>
-				@if (ShowAdminLinks)
-				{
-					<tr>
-						<th></th>
-					</tr>
-				}
-			</thead>
-			<tbody>
-				@foreach (IRecord listObject in list)
-				{
-					<tr>
-						@foreach (PropertyInfo property in properties)
-						{
-							<td>@property.GetValue(listObject).ToString()</td>
-						}
-						@if (ShowAdminLinks)
-						{
-							<td>
-								<RecordAction record="@listObject" route="@recordActionRouteString" OnDeleteClick="DeleteRecord" />
-							</td>
-						}
-					</tr>
-				}
-			</tbody>
-		</table>
-	}
-}
-
-@code {
-	#region Parameter
-	[Parameter]
-	public List<dynamic> list { get; set; }
-
-	/// <summary>
-	/// Whether to show the Edit/Details/Delete buttons at the end of each row.
-	/// </summary>
-	[Parameter]
-	public bool ShowAdminLinks { get; set; } = false; // TODO: Should this just be built in looking at the user?
-
-	/// <summary>
-	/// This only needs to be populated if ShowAdminLinks is set to true.
-	/// Used to send a request to the server to get or delete an object.
-	/// </summary>
-	[Parameter]
-	public string Route { get; set; }
-
-	private Type listType;
-	private PropertyInfo[] properties;
-	private string recordActionRouteString = string.Empty;
-	#endregion
-
-	#region Functions
-	protected override void OnParametersSet()
-	{
-		if (list == null)
-		{
-			return;
-		}
-		listType = list.GetType().GetGenericTypeDefinition();
-		properties = listType.GetProperties();
-		if (ShowAdminLinks)
-		{
-			recordActionRouteString = "/" + Route;
-		}
-	}
-
-	/// <summary>
-	/// Send a web request to delete a record.
-	/// </summary>
-	/// <param name="id">The id to send to the platform to delete.</param>
-	private async void DeleteRecord(string id)
-	{
-		HttpResponseMessage response = await Http.DeleteAsync("api/" + Route + "/" + id);
-		if (response.IsSuccessStatusCode)
-		{
-			list.RemoveAll(obj => obj.Id.ToString() == id);
-			this.StateHasChanged();
-		}
-		else
-		{
-			ToastService.ShowError(ResponseError.GetResponse(ResponseError.ErrorType.ServerError));
-		}
-	}
-	#endregion
+			}
+		</thead>
+		<tbody>
+			@foreach (IRecord listObject in list)
+			{
+				<tr>
+					@foreach (PropertyInfo property in _properties)
+					{
+						<td>@property.GetValue(listObject)?.ToString()</td>
+					}
+					@if (ShowAdminLinks)
+					{
+						<td>
+							<RecordAction record="@listObject" route="@recordActionRouteString" OnDeleteClick="DeleteRecord" />
+						</td>
+					}
+				</tr>
+			}
+		</tbody>
+	</table>
 }

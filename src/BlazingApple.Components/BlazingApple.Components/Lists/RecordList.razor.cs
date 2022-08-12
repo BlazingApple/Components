@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BlazingApple.Components.Lists
 {
+    /// <summary>A list of items to render.</summary>
+    /// <typeparam name="TItem">The type of model to render.</typeparam>
     public partial class RecordList<TItem> : ComponentBase
     {
         private bool awaitingLoadMoreResponse;
@@ -30,8 +32,8 @@ namespace BlazingApple.Components.Lists
         public RenderFragment? HeadRow { get; set; }
 
         /// <summary>The item models to render.</summary>
-        [Parameter]
-        public ICollection<TItem> Items { get; set; }
+        [Parameter, EditorRequired]
+        public ICollection<TItem> Items { get; set; } = null!;
 
         /// <summary>Used to provide a more data to the row.</summary>
         [Parameter]

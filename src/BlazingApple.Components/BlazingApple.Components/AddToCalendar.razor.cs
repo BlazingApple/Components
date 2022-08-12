@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlazingApple.Components;
 
+/// <summary>Allows adding an event to a local calendar, in google or on the device.</summary>
 public partial class AddToCalendar : ComponentBase
 {
     private bool _dropdownExposed;

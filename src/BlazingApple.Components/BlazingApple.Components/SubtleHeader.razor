@@ -1,8 +1,7 @@
 ﻿<div class="text-muted">@Name</div>
 
 @code {
-	#region Parameters
-	[Parameter]
-	public string Name { get; set; }
-	#endregion
+	/// <summary>The header details to show.</summary>
+	[Parameter, EditorRequired]
+	public string Name { get; set; } = null!;
 }

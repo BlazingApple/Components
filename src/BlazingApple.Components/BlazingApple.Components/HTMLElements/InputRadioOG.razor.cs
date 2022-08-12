@@ -29,7 +29,7 @@ public partial class InputRadioOG<TValue> : InputBase<TValue>
 
     /// <summary>The selected/bound value.</summary>
     [Parameter]
-    public TValue SelectedValue { get; set; }
+    public TValue? SelectedValue { get; set; }
 
     /// <inheritdoc />
     protected override async Task OnParametersSetAsync()
@@ -81,7 +81,7 @@ public partial class InputRadioOG<TValue> : InputBase<TValue>
 
     private string ActiveClass()
     {
-        if (SelectedValue.Equals(Value))
+        if (SelectedValue!.Equals(Value))
             return " active";
 
         return string.Empty;

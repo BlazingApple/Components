@@ -5,7 +5,7 @@
 <label class=@string.Concat("btn ",@LabelCssClasses,ActiveClass()) @attributes="AdditionalAttributes">
 
 	<input type="radio" value="@SelectedValue"
-		   checked="@(SelectedValue.Equals(Value))"
+		   checked="@(SelectedValue is not null ? SelectedValue.Equals(Value) : false)"
 		   @onchange="OnChangeInternal"
 		   disabled="@Disabled" />
 

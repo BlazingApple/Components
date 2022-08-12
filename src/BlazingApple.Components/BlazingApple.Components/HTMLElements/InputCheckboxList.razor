@@ -7,18 +7,21 @@
 		{
 			var Text = TextField?.Invoke(item);
 			TValue Value = ValueField.Invoke(item);
-			var ValueId = Value.ToString();
-			bool Checked = false;
-			if (SelectedValues.Contains(Value))
-			{
-				Checked = true;
-			}
-			<div class="form-group" style="margin-bottom:0;">
-				<div class="form-check" style="line-height: initial;">
-					<input id="@ValueId" disabled="@Disabled" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(ValueId, eventArgs.Value); }" />
-					<label for="@ValueId" class="form-check-label">@Text</label>
+
+			if(Value is not null) {
+				var ValueId = Value.ToString()!;
+				bool Checked = false;
+				if (SelectedValues.Contains(Value))
+				{
+					Checked = true;
+				}
+				<div class="form-group" style="margin-bottom:0;">
+					<div class="form-check" style="line-height: initial;">
+						<input id="@ValueId" disabled="@Disabled" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(ValueId, eventArgs.Value); }" />
+						<label for="@ValueId" class="form-check-label">@Text</label>
+					</div>
 				</div>
-			</div>
+			}
 		}
 	}
 	@ChildContent
