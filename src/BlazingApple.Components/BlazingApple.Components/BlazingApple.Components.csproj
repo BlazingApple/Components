@@ -41,6 +41,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageIcon>wwwroot/BlazingApple.png</PackageIcon>
 		<None Include="compilerconfig.json" />
 	</ItemGroup>
 </Project>
