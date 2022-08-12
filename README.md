@@ -42,8 +42,8 @@ services.AddBlazingAppleComponents(configuration);
 
 1. [Taylor White](https://twitter.com/taychasewhite)
 
-## :scroll: License
-
+## :scroll: License & Status
+[![Deploy to GitHub Pages](https://github.com/BlazingApple/Components/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/BlazingApple/Components/actions/workflows/main.yml)
 ![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
 
 - **[GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)**
