@@ -34,7 +34,7 @@
             else if (GetKeyValue() is IComparable<TKey> key)
                 return key.CompareTo(other.GetKeyValue());
             else
-                throw new ArgumentOutOfRangeException("Unsupported value type provided");
+                throw new ArgumentOutOfRangeException(nameof(other), "Unsupported value type provided");
         }
 
         /// <inheritdoc />
@@ -45,12 +45,12 @@
             else if (obj is not ComparableModelBase<TModel, TKey> other)
                 return false;
             else
-                return GetKeyValue().Equals(other.GetKeyValue());
+                return GetKeyValue()!.Equals(other.GetKeyValue());
         }
 
         /// <inheritdoc />
         public override int GetHashCode()
-            => GetKeyValue().GetHashCode();
+            => GetKeyValue()?.GetHashCode() ?? 0;
 
         /// <summary>Expression to provide the sort by property.</summary>
         /// <returns>Returns the member to use in the compare to.</returns>

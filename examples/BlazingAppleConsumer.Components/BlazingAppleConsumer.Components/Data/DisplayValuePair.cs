@@ -22,7 +22,7 @@ namespace BlazingAppleConsumer.Components.Data
         }
 
         /// <inheritdoc />
-        public override string? ToString() => Value.ToString();
+        public override string? ToString() => Value?.ToString();
 
         /// <inheritdoc />
         protected override TValue GetKeyValue() => Value;
