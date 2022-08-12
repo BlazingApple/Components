@@ -6,18 +6,17 @@ This front-end Razor Class Library is intended to be used by Blazor WASM project
 ## About BlazingApples
 BlazingApples is an open-source set of packages that aims to speed application development for Blazor WebAssembly organizations.
 
-:zap: Check out the [demo site here](https://blazorsimplesurvey.azurewebsites.net/displaysurvey), [or this blog post on how the components work](https://blazorhelpwebsite.com/ViewBlogPost/44)!
+:zap: Check out the demo site here. (TODO -- host on Vercel).
 
-# Demo :video_camera:
-  `TODO: Add Demo gif`.
+# :video_camera: Demo
+![BlazingAppleComponents](https://user-images.githubusercontent.com/3686217/184403126-a8302242-6aac-4277-a5fe-8314e6851ad3.gif)
 
-# Installation :wrench:
+# :wrench: Installation
 
 ## 1. Get the required dependencies.
 
 1. On Client Project, right click and get to the NuGet Package Manager ("Manage NuGetPackages").
-2. Install `BlazingApple.Components`
-<img alt="Package Administration" src="https://github.com/BlazingApple/Survey/blob/main/README/InstallBlazingApplePackage.png?raw=true" style="max-width:1000px;">
+2. Install `BlazingApple.Components` ([package also located here](https://www.nuget.org/packages/BlazingApple.Components/)).
 
 3. Add the following to `Program.cs's Main`:
 ```
@@ -35,15 +34,15 @@ services.AddBlazingAppleComponents(configuration);
 
 <hr/>
 
-## Credits :white_flower:
+## :white_flower: Credits
 
 - Build with love :blue_heart:, using [Radzen's Component Library](https://razor.radzen.com/).
 
-## Authors :pencil:
+## :pencil: Authors
 
 1. [Taylor White](https://twitter.com/taychasewhite)
 
-## License :scroll:
+## :scroll: License
 
 ![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
 
