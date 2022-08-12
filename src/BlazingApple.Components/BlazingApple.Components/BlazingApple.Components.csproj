@@ -41,10 +41,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="wwwroot/BlazingApple.png">
+		<Content Include="wwwroot/BlazingApple.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
-		</None>
+		</Content>
 		<None Include="compilerconfig.json" />
 	</ItemGroup>
 </Project>
