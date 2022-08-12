@@ -7,7 +7,6 @@
 		<Authors>Taylor White</Authors>
 		<Company>BlazingApple</Company>
 		<Copyright>2022</Copyright>
-		<PackageIcon>BlazingApple.png</PackageIcon>
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
