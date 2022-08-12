@@ -9,7 +9,7 @@ BlazingApples is an open-source set of packages that aims to speed application d
 :zap: Check out the [demo site here](https://blazorsimplesurvey.azurewebsites.net/displaysurvey), [or this blog post on how the components work](https://blazorhelpwebsite.com/ViewBlogPost/44)!
 
 # :video_camera: Demo
-  `TODO: Add Demo gif`.
+![BlazingAppleComponents](https://user-images.githubusercontent.com/3686217/184403126-a8302242-6aac-4277-a5fe-8314e6851ad3.gif)
 
 # :wrench: Installation
 
