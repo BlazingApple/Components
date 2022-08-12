@@ -1,0 +1,29 @@
+/* _content/BlazingApple.Components/IconChooser.razor.rz.scp.css */
+/* Arrange buttons */
+.btn-matrix[b-pdsm2ou22h] {
+  flex-wrap: wrap;
+}
+
+.btn-matrix > .btn[b-pdsm2ou22h] {
+  width: 20%;
+  max-width: 10rem;
+  margin: 0.5rem;
+}
+/* _content/BlazingApple.Components/ZeroState.razor.rz.scp.css */
+@keyframes animate-middle-b-wrdbijrg8y {
+  animation-name: example;
+  animation-duration: 4s; }
+
+.og-zero-state[b-wrdbijrg8y] {
+  background-image: url("../../images/foreground-images/space-cosmos.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 20rem; }
