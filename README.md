@@ -6,7 +6,7 @@ This front-end Razor Class Library is intended to be used by Blazor WASM project
 ## About BlazingApples
 BlazingApples is an open-source set of packages that aims to speed application development for Blazor WebAssembly organizations.
 
-:zap: Check out the [demo site here](https://blazorsimplesurvey.azurewebsites.net/displaysurvey), [or this blog post on how the components work](https://blazorhelpwebsite.com/ViewBlogPost/44)!
+:zap: Check out the demo site here. (TODO -- host on Vercel).
 
 # :video_camera: Demo
 ![BlazingAppleComponents](https://user-images.githubusercontent.com/3686217/184403126-a8302242-6aac-4277-a5fe-8314e6851ad3.gif)
