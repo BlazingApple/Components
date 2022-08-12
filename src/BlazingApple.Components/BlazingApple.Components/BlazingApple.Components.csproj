@@ -41,7 +41,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="wwwroot/BlazingApple.png" PackagePath="" Pack="true" />
+		<None Include="wwwroot/BlazingApple.png" Pack="true" PackagePath="" />
 		<None Include="compilerconfig.json" />
 	</ItemGroup>
 </Project>
