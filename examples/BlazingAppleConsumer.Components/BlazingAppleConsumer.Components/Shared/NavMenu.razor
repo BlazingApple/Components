@@ -1,6 +1,8 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex" href="" style="align-items:center;"><img src="_content/BlazingApple.Components/BlazingApple.png" class="img-fluid" style="margin-right: .25rem; max-height:2.5rem;" /><span>Blazing Apple</span></a>
+        <div class="d-flex nav align-items-center justify-content-center">
+            <img style="max-width: 2rem;" src="_content/BlazingApple.Components/BlazingAppleApple.png" class="img-fluid mr-1" /> <h3 style="color: white;">Components</h3>
+        </div>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,6 +14,11 @@
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter
             </NavLink>
         </div>
         <div class="nav-item px-3">
