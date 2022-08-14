@@ -204,6 +204,13 @@
 }
 
 /* Owned Components */
+.background-color-animate {
+  -webkit-transition: background-color 200ms ease-out;
+  -moz-transition: background-color 200ms ease-out;
+  -o-transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+}
+
 .add-to-calendar-dropdown {
   position: absolute;
   top: 100%;

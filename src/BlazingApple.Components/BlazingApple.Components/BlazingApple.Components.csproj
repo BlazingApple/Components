@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>1.5.0</AssemblyVersion>
-		<FileVersion>1.5.0</FileVersion>
-		<Version>1.5.0</Version>
-		<PackageReleaseNotes>1.5.0 - Add carousel/</PackageReleaseNotes>
+		<AssemblyVersion>1.5.1</AssemblyVersion>
+		<FileVersion>1.5.1</FileVersion>
+		<Version>1.5.1</Version>
+		<PackageReleaseNotes>1.5.1 - Add Copy to Clipboard</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

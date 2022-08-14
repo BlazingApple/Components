@@ -9,5 +9,6 @@ namespace BlazingAppleConsumer.Components.Pages
     {
         private int _currentPage = 0;
         private int _resultCount = 500;
+        private string _textToCopy = "You didn't type anything!";
     }
 }

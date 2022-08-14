@@ -1,4 +1,5 @@
-﻿using BlazingApple.FontAwesome.Services;
+﻿using BlazingApple.Components.Services;
+using BlazingApple.FontAwesome.Services;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,7 @@ namespace BlazingApple.Components.Configuration
             IConfigurationSection config = configRoot.GetSection("FontAwesome");
             services.Configure<FontAwesomeSettings>(config);
             services.AddScoped<FontSearchService>();
+            services.AddScoped<IClipboardService, ClipboardService>();
             return services;
         }
     }

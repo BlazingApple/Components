@@ -14,17 +14,38 @@ Welcome to your BlazingApples's component library! Glad you're here.
 <h3>Due Date</h3>
 <div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
 
-<h4>A few days from now</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(5)" />
-
-<h4>Tomorrow</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(1)" />
-
-<h4>Overdue</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(-1)" />
-
-<h4><i>Really</i> Overdue</h4>
-<DueDate Date="@DateTime.Now.Date.AddDays(-5)" />
+<table>
+    <colgroup>
+        <col style="width: 25%;" />
+        <col style="width: 25%;" />
+        <col style="width: 25%;" />
+        <col style="width: 25%;" />
+    </colgroup>
+    <thead>
+            <tr>
+        <th>A few days from now</th>
+        <th>Tomorrow</th>
+        <th>Overdue</th>
+        <th>Really overdue</th>        
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <DueDate Date="@DateTime.Now.Date.AddDays(5)" />
+            </td>
+            <td>
+                <DueDate Date="@DateTime.Now.Date.AddDays(1)" />
+            </td>
+            <td>
+                <DueDate Date="@DateTime.Now.Date.AddDays(-1)" />
+            </td>
+            <td>
+                <DueDate Date="@DateTime.Now.Date.AddDays(-5)" />
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <h3>Icon Chooser</h3>
 <div class="code"><code>@("<IconChooser/>")</code></div>
@@ -77,7 +98,19 @@ Welcome to your BlazingApples's component library! Glad you're here.
 </Carousel>
 
 <hr />
-<h2>Calendar</h2>
+<h2>Utilities</h2>
+<h3>Copy to Clipboard</h3>
+<div class="d-flex align-items-center">
+    <EditForm Model="_resultCount">
+    <FormGroup ColumnWidthClass="col-lg-6" Label="Text to copy">
+        <InputText @bind-Value="_textToCopy"></InputText>
+    </FormGroup>
+    </EditForm>
+    <div class="ml-2">
+        <CopyToClipboard Text="@_textToCopy"></CopyToClipboard>
+    </div>
+</div>
+<h3>Calendar</h3>
 @code {
     CalendarEvent calEvent = new ();
 }
