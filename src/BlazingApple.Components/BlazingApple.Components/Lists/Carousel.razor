@@ -7,7 +7,7 @@
 
             @if(!HideNavButtons)
             {
-                <button @onclick="PreviousButtonClicked"
+                <button type="button" @onclick="PreviousButtonClicked"
                     class=@($"btnCarouselPrevNav carouselPrevNexButtons{(_activeItem==0 ? " slideStart hidden" : "")}")>
                     <i class="fas fa-chevron-left"></i>
                 </button>
@@ -30,7 +30,7 @@
 
             @if(!HideNavButtons)
             {
-                <button 
+                <button type="button"
                     @onclick="NextButtonClicked"
                     class=@($"btnCarouselNextNav carouselPrevNexButtons{(_activeItem==Items.Count-1 ? " slideEnd hidden" : "")}")>
                     <i class="fas fa-chevron-right"></i>

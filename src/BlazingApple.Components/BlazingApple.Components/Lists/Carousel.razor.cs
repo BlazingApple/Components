@@ -40,7 +40,10 @@ public partial class Carousel<TItem> : ComponentBase
         if (Items is null)
             throw new ArgumentNullException(nameof(Items));
 
-        itemNumber = itemNumber % Items.Count;
+        if (itemNumber < 0)
+            itemNumber = Items.Count - 1;
+
+        itemNumber %= Items.Count;
         _activeItem = itemNumber;
 
         await JsRuntime.InvokeVoidAsync("scrollToCarouselSlide", $"{ElementId}{itemNumber}");

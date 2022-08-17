@@ -1,3 +1,9 @@
-﻿<button type="button" @onclick="OnClick" title="Copy to clipboard" class="@($"{_buttonClass} d-flex align-items-center justify-content-center background-color-animate")" style="border-radius:50%; width: 2rem; height: 2rem;" disabled=@(string.IsNullOrEmpty(Text)) @attributes="AdditionalAttributes">
-    <i class="fas fa-copy"></i>
+﻿<button 
+    type="button" @onclick="OnClick" 
+    title="Copy to clipboard" 
+    class="@ButtonClass"
+        style="@($"{(string.IsNullOrEmpty(ButtonDisplayText) ? "border-radius:50%;" : "")} width: 2rem; height: 2rem;")"
+        disabled=@(string.IsNullOrEmpty(Text)) 
+    @attributes="AdditionalAttributes">
+    <i class="@($"{(!string.IsNullOrEmpty(ButtonDisplayText) ? "mr-1" : "")} fas fa-copy")"></i>@ButtonDisplayText
 </button>
