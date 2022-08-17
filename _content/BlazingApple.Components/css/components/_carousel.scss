@@ -39,10 +39,15 @@
             box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
         }
 
+        > i {
+            box-shadow:none !important;
+        }
+
         &.slideEnd,
         &.slideStart
         {
             opacity: 0;
+            cursor: initial !important;
         }
     }
 
@@ -122,7 +127,6 @@
 .slide
 {
     flex: 1 0 66%;
-    border-radius: 0.5rem;
     margin: 0rem 0.75rem;
     box-sizing: border-box;
     overflow: visible;
@@ -170,9 +174,11 @@
     display: inline-flex;
     vertical-align: middle;
 
-    button.carouselButton.active {
-        background:none;
+    button.carouselButton.active
+    {
+        background: none;
     }
+
     .carouselButton
     {
         padding: 0.1rem 0.4rem;
@@ -230,15 +236,6 @@
         display: none;
     }
 }
-
-@media only screen and (min-width: 768px)
-{
-    .carouselContainer .slide
-    {
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    }
-}
-
 
 .clearlabel
 {
