@@ -9,8 +9,7 @@
 </h1>
 
 Welcome to your BlazingApples's component library! Glad you're here.
-
-<h2>Forms</h2>
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 <h3>Due Date</h3>
 <div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
 
@@ -46,11 +45,11 @@ Welcome to your BlazingApples's component library! Glad you're here.
         </tr>
     </tbody>
 </table>
-
-<h3>Icon Chooser</h3>
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
+<h2>Icon Chooser</h2>
 <div class="code"><code>@("<IconChooser/>")</code></div>
 <IconChooser />
-
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 <h2>Badges</h2>
 <div class="code"><code>@("<Badge Name=\"Senate Bill 133\"/>")</code></div>
 <Badge Name="Senate Bill 133" />
@@ -66,8 +65,8 @@ Welcome to your BlazingApples's component library! Glad you're here.
 </EditForm>
 <Badge Name="@badgeString" />
 
-<hr />
-<h2>Lists</h2>
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
+
 <h3>Paginator</h3>
 <div class="code"><code>@("<ListPaginator BatchSize=\"25\" ResultCount=\"126\" @bind-Value=\"_currentPage\"/>")</code></div>
 
@@ -80,6 +79,7 @@ Welcome to your BlazingApples's component library! Glad you're here.
 </div>
 <ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>
 
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 <h3>Carousel</h3>
 <div class="code"><code>@("")</code></div>
 @code {
@@ -94,12 +94,15 @@ Welcome to your BlazingApples's component library! Glad you're here.
     };
 }
 <Carousel Items="imageList" Context="imageSource">
-    <img class="img-fluid" src="@imageSource"/>
+    <div class="d-flex align-items-start" style="box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);">
+        <img class="img-fluid" src="@imageSource"/>
+    </div>
 </Carousel>
 
-<hr />
-<h2>Utilities</h2>
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
+
 <h3>Copy to Clipboard</h3>
+
 <div class="d-flex align-items-center">
     <EditForm Model="_resultCount">
     <FormGroup ColumnWidthClass="col-lg-6" Label="Text to copy">
@@ -110,6 +113,7 @@ Welcome to your BlazingApples's component library! Glad you're here.
         <CopyToClipboard Text="@_textToCopy"></CopyToClipboard>
     </div>
 </div>
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 <h3>Calendar</h3>
 @code {
     CalendarEvent calEvent = new ();
@@ -160,7 +164,7 @@ Welcome to your BlazingApples's component library! Glad you're here.
         </EditForm>
     </div>
     <div class="col-lg-3">
-        <AddToCalendar Title="@calEvent.Title" Description="@calEvent.Description" Location="@calEvent.Location" Start="@calEvent.Start" End="@calEvent.End" IsFullDay="@calEvent.IsFullDay">
+        <AddToCalendar Title="@calEvent.Title" Description="@calEvent.Description" Location="@calEvent.Location" Start="@calEvent.Start" End="@calEvent.End" IsFullDay="@calEvent.IsFullDay" class="btn btn-primary">
             <i class="fas fa-calendar"></i>
         </AddToCalendar>
     </div>
