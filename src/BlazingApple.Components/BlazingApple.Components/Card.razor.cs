@@ -11,6 +11,17 @@ namespace BlazingApple.Components
         private string? _tooltipGuid;
         private bool isDismissed;
 
+        /// <summary>Additional styles to apply to the badge.</summary>
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+        /// <summary>
+        ///     The FontAwesome icon class to use, if any. If passed, this overrides the <see cref="BadgeTitle" /> and <see cref="Title" /> text that
+        ///     might otherwise have been used.
+        /// </summary>
+        [Parameter]
+        public string? BadgeIconClass { get; set; }
+
         /// <summary>The string content to pass to the badge. If empty, then the <see cref="Title" /> property is used.</summary>
         [Parameter]
         public string BadgeTitle { get; set; } = null!;
@@ -78,12 +89,12 @@ namespace BlazingApple.Components
         {
             base.OnParametersSet();
             isDismissed = false;
+            if (string.IsNullOrEmpty(BadgeTitle))
+                BadgeTitle = Title;
+
             SetColorIfNull();
             _titleStyle = "color: " + Color.ForegroundHexCode + ";";
-            if (string.IsNullOrEmpty(BadgeTitle))
-            {
-                BadgeTitle = Title;
-            }
+
             if (BadgeTooltipContent is not null)
                 _tooltipGuid = Guid.NewGuid().ToString();
         }

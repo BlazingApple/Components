@@ -1,6 +1,11 @@
 ﻿@if (_isLoaded)
 {
     <div class="@_badgeClass" style="@_badgeStyle" title="@Tooltip" @attributes="AdditionalAttributes">
-        <span>@_badgeString</span>
+        @if(string.IsNullOrEmpty(IconClass)) {
+            <span>@_badgeString</span>
+        }
+        else {
+            <i class="@IconClass"></i>
+        }
     </div>
 }

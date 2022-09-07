@@ -1001,7 +1001,7 @@
 .og-badge-subtle.large:hover {
   transform: rotate(15deg);
 }
-.og-badge-subtle span {
+.og-badge-subtle span, .og-badge-subtle i {
   margin: auto;
 }
 

@@ -1,4 +1,5 @@
 ﻿using BlazingApple.Components.Interfaces;
+using Syncfusion.Blazor.TreeMap.Internal;
 using System;
 using System.Text.RegularExpressions;
 
@@ -24,6 +25,12 @@ public partial class Badge : ComponentBase
     /// <summary>The color of the badge to render.</summary>
     [Parameter]
     public dynamic? Color { get; set; }
+
+    /// <summary>
+    ///     The FontAwesome icon class to use, if any. If passed, this overrides the <see cref="Name" /> text that might otherwise have been used.
+    /// </summary>
+    [Parameter]
+    public string? IconClass { get; set; }
 
     /// <summary>If true, the badge is rendered as a larger component on the page.</summary>
     [Parameter]

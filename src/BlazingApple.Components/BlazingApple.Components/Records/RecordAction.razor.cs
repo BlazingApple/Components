@@ -58,6 +58,10 @@ public partial class RecordAction : ComponentBase
     [Parameter]
     public string route { get; set; } = null!;
 
+    /// <summary>If true, uses a vertical bar to space the buttons from one another.</summary>
+    [Parameter]
+    public bool ShowSpacer { get; set; }
+
     /// <summary>If record is not populated, we use this as the route Identifier.</summary>
     [Parameter]
     public string slug { get; set; } = null!;

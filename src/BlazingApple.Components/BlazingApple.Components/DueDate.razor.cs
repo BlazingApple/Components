@@ -51,9 +51,9 @@ namespace BlazingApple.Components
         public int UpcomingDays { get; set; } = 1;
 
         /// <inheritdoc />
-        protected override void OnInitialized()
+        protected override void OnParametersSet()
         {
-            base.OnInitialized();
+            base.OnParametersSet();
             Validate();
 
             int daysBetween = (Date.Value.Date - DateTime.Now.Date).Days;

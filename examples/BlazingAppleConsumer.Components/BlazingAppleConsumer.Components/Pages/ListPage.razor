@@ -1,0 +1,28 @@
+﻿@page "/lists"
+<h2>Lists</h2>
+
+@if (_items != null) {
+    <RecordList Context="item" ColumnsPerRow="3" Items="_items">
+        <HeadRow></HeadRow>
+        <RowTemplate>
+            <Badge Name="@item.ToString()" />
+        </RowTemplate>
+    </RecordList>
+}
+<hr style="width:80%;"/>
+@if (_items != null)
+{
+    <EditForm Model="@(new {})">
+        <label>Number of items to show</label>
+        <InputNumber @bind-Value="_itemCount" />
+    </EditForm>
+
+    @if(_selectedItems is not null && _selectedItems.Count != 0) {
+        <RecordList Context="item" ColumnsPerRow="3" Items="_items.Take(_itemCount).ToList()">
+            <HeadRow></HeadRow>
+            <RowTemplate>
+                <Badge Name="@item.ToString()" />
+            </RowTemplate>
+        </RecordList>
+    }
+}

@@ -28,11 +28,23 @@ else
 				{
 					if (DisplayEditAsIcon)
 					{
-						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")" ><Icon I="s.IconType.Edit" AltText="Edit" /></BrowserLink> @vertBar
+						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")" ><Icon I="s.IconType.Edit" AltText="Edit" /></BrowserLink>
+						@if(ShowSpacer) {
+							<span class="mx-1"></span>
+						}
+						else {
+							<span class="mx-1">@vertBar</span>
+						}
 					}
 					else
 					{
-						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")">Edit</BrowserLink> @vertBar
+						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")">Edit</BrowserLink>
+						@if(ShowSpacer) {
+							<span class="mx-1"></span>
+						}
+						else {
+							<span class="mx-1">@vertBar</span>
+						}
 					}
 				}
 				else

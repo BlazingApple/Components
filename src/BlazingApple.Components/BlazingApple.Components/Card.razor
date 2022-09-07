@@ -1,6 +1,6 @@
 ﻿@if (!isDismissed)
 {
-	<div class="card my-1">
+	<div class="card my-1" @attributes="AdditionalAttributes">
 		<div class="card-header" style="display: flex; justify-content:space-between;">
 			<div style="display: inline-flex; align-items: center;">
 				@if(BadgeTooltipContent is not null) {
@@ -9,13 +9,13 @@
 							@BadgeTooltipContent
 						</TooltipContent>
 						<ChildContent>
-							<Badge id="@_tooltipGuid" Name="@BadgeTitle" Color="@Color" AdditionalClasses="@(OpenTooltipOn==TooltipOpenOn.Click ? "cursor-pointer" : "")" />					
+							<Badge id="@_tooltipGuid" Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" AdditionalClasses="@(OpenTooltipOn==TooltipOpenOn.Click ? "cursor-pointer" : "")" />					
 						</ChildContent>
 					</Tooltip>
 				}
 				else
 				{
-					<Badge Name="@BadgeTitle" Color="@Color" />					
+					<Badge Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" />					
 				}
 				<div class="ba-card-title" style="@_titleStyle">
 					@if(!string.IsNullOrEmpty(TitleUrl)) {
