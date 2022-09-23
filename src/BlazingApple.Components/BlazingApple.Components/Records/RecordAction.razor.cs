@@ -15,6 +15,10 @@ public partial class RecordAction : ComponentBase
     private string _editRoute = null!;
     private string _idForRoute = null!;
 
+    /// <summary>Additional styles to apply to each action.</summary>
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
     /// <summary>If true, the links will be shown as disabled.</summary>
     [Parameter]
     public bool Disabled { get; set; }
@@ -65,6 +69,10 @@ public partial class RecordAction : ComponentBase
     /// <summary>If record is not populated, we use this as the route Identifier.</summary>
     [Parameter]
     public string slug { get; set; } = null!;
+
+    private string AdditionalClassNames => (AdditionalAttributes?.ContainsKey("class") ?? false) ? (string)AdditionalAttributes["class"] : "";
+
+    private string LinkClassNames => Disabled ? $"btn btn-link disabled p-0" : AdditionalClassNames;
 
     /// <inheritdoc />
     protected override void OnParametersSet()

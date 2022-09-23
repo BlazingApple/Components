@@ -1018,6 +1018,7 @@
   margin-left: 0.5rem;
   vertical-align: middle;
   display: inline-flex;
+  text-overflow: ellipsis;
 }
 
 .person-list-row {

@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>1.6.2</AssemblyVersion>
-		<FileVersion>1.6.2</FileVersion>
-		<Version>1.6.2</Version>
-		<PackageReleaseNotes>1.6.2 - Improve spacing for record actions.</PackageReleaseNotes>
+		<AssemblyVersion>1.6.7</AssemblyVersion>
+		<FileVersion>1.6.7</FileVersion>
+		<Version>1.6.7</Version>
+		<PackageReleaseNotes>1.6.7 - Actually allow for text-overflow on card headers.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

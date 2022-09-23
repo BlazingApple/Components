@@ -2,13 +2,13 @@
 
 @if (IsExternal(href))
 {
-	<a class="@className" title="@title" href="@href" target="_blank" @onclick="OnClickInternal" @attributes="AdditionalAttributes">
+	<a class="@className" title="@title" href="@href" target="_blank" disabled="@disabled" @onclick="OnClickInternal" @attributes="AdditionalAttributes">
 		@ChildContent
 	</a>
 }
 else
 {
-	<a class="@className" title="@title" href="@href" @onclick="OnClickInternal" @attributes="AdditionalAttributes">
+	<a class="@className" title="@title" href="@href" disabled="@disabled" @onclick="OnClickInternal" @attributes="AdditionalAttributes">
 		@ChildContent
 	</a>
 }

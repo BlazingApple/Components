@@ -4,7 +4,10 @@
 <PageTitle>Index</PageTitle>
 
 <h1 class="d-flex" style="align-items:center;">
-    <img src="_content/BlazingApple.Components/BlazingApple.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;" />
+    <img 
+        src="_content/BlazingApple.Components/BlazingApple.png" 
+        class="img-fluid" 
+        style="margin-right: .5rem; max-height:2.5rem;" />
     Hello, world!
 </h1>
 
@@ -165,8 +168,44 @@ Welcome to your BlazingApples's component library! Glad you're here.
         </EditForm>
     </div>
     <div class="col-lg-3">
-        <AddToCalendar Title="@calEvent.Title" Description="@calEvent.Description" Location="@calEvent.Location" Start="@calEvent.Start" End="@calEvent.End" IsFullDay="@calEvent.IsFullDay" class="btn btn-primary">
+        <AddToCalendar 
+            Title="@calEvent.Title" 
+            Description="@calEvent.Description" 
+            Location="@calEvent.Location" 
+            Start="@calEvent.Start" 
+            End="@calEvent.End" 
+            IsFullDay="@calEvent.IsFullDay" 
+            class="btn btn-primary">
             <i class="fas fa-calendar"></i>
         </AddToCalendar>
     </div>
 </div>
+
+                    <h3>Links</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>
+                                    <RecordAction class="text-muted" DisplayEditAsIcon="true" route="tags" slug="abc"/>
+                                </li>
+                                <li>
+                                    <RecordAction DisplayEditAsIcon="true" route="tags" ShowSpacer="true" slug="abc"/>
+                                </li>                                
+                                <li>
+                                    <RecordAction route="tags" ShowSpacer="true" slug="abc"/>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>
+                                    <BrowserLink href="https://google.com">Link to Google!</BrowserLink>
+                                    <div class="text-muted small">Should open in a new tab</div>                                    
+                                </li>
+                                <li>
+                                    <BrowserLink href="lists">Link to List page</BrowserLink>
+                                    <div class="text-muted small">Should open in this tab</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>

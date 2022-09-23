@@ -4,7 +4,7 @@
 	{
 		@HeadRow
 		<ul style="list-style-type:none; padding-left:0;" @attributes="AdditionalAttributes">
-			<Virtualize Context="item" Items="Items" TItem="TItem">
+			<Virtualize Context="item" Items="(ICollection<TItem>)Items" TItem="TItem">
 				@RowTemplate(item)
 			</Virtualize>
 
@@ -30,7 +30,7 @@
 			</thead>
 			<tbody>
 				@if(ColumnsPerRow == 1) {
-					<Virtualize Context="item" Items="Items" TItem="TItem">
+					<Virtualize Context="item" Items="(ICollection<TItem>)Items" TItem="TItem">
 						@RowTemplate(item)
 					</Virtualize>
 				}

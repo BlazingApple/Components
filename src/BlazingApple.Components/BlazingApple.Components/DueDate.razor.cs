@@ -56,6 +56,8 @@ namespace BlazingApple.Components
             base.OnParametersSet();
             Validate();
 
+            _styleString = "";
+
             int daysBetween = (Date.Value.Date - DateTime.Now.Date).Days;
 
             if (daysBetween > UpcomingDays)

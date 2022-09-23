@@ -7,17 +7,17 @@ else
 	<span class="recordActions" title="@DisabledTooltip">
 		@if (OnEditPage)
 		{
-			<BrowserLink href="@_detailsRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")">Details</BrowserLink>
+			<BrowserLink href="@_detailsRoute" AdditionalAttributes="@AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames">Details</BrowserLink>
 		}
 		else if (OnDetailsPage)
 		{
 			if (!OnEditClick.HasDelegate)
 			{
-				<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")">Edit</BrowserLink>
+				<BrowserLink href="@_editRoute" AdditionalAttributes="@AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames">Edit</BrowserLink>
 			}
 			else
 			{
-				<a href="javascript:void(0);" disabled="@Disabled" role="button" class="@(Disabled ? "btn btn-link disabled p-0" : "")" @onclick="_OnEditClick">Edit</a>
+				<a href="javascript:void(0);" @attributes="@AdditionalAttributes" disabled="@Disabled" role="button" class="@LinkClassNames" @onclick="_OnEditClick">Edit</a>
 			}
 		}
 		else
@@ -28,22 +28,22 @@ else
 				{
 					if (DisplayEditAsIcon)
 					{
-						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")" ><Icon I="s.IconType.Edit" AltText="Edit" /></BrowserLink>
+						<BrowserLink href="@_editRoute" AdditionalAttributes="AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames" ><Icon I="s.IconType.Edit" AltText="Edit" /></BrowserLink>
 						@if(ShowSpacer) {
-							<span class="mx-1"></span>
+							<span class="mx-1">@vertBar</span>
 						}
 						else {
-							<span class="mx-1">@vertBar</span>
+							<span class="mx-1"></span>
 						}
 					}
 					else
 					{
-						<BrowserLink href="@_editRoute" disabled="@Disabled" className="@(Disabled ? "btn btn-link disabled p-0" : "")">Edit</BrowserLink>
+						<BrowserLink href="@_editRoute" AdditionalAttributes="AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames">Edit</BrowserLink>
 						@if(ShowSpacer) {
-							<span class="mx-1"></span>
+							<span class="mx-1">@vertBar</span>
 						}
 						else {
-							<span class="mx-1">@vertBar</span>
+							<span class="mx-1"></span>
 						}
 					}
 				}
@@ -51,15 +51,15 @@ else
 				{
 					if (DisplayEditAsIcon)
 					{
-						<a href="javascript:void(0);" role="button" disabled="@Disabled" class="@(Disabled ? "mr-1 btn btn-link disabled p-0" : "mr-1")"  @onclick="_OnEditClick"><Icon I="s.IconType.Edit" AltText="Edit"></Icon></a>
+						<a href="javascript:void(0);" role="button" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames"  @onclick="_OnEditClick"><Icon I="s.IconType.Edit" AltText="Edit"></Icon></a>
 					}
 					else
 					{
-						<a href="javascript:void(0);" role="button" disabled="@Disabled" class="@(Disabled ? "btn btn-link disabled p-0" : "")" @onclick="_OnEditClick">Edit</a>
+						<a href="javascript:void(0);" role="button" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames" @onclick="_OnEditClick">Edit</a>
 					}
 				}
 			}
-			<a href="javascript:void(0);" @onclick="_OnDeleteClick" disabled="@Disabled" class="@(Disabled ? "btn btn-link disabled p-0" : "")"><Icon I="s.IconType.Delete" AltText="Delete" /></a>
+			<a href="javascript:void(0);" @onclick="_OnDeleteClick" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames"><Icon I="s.IconType.Delete" AltText="Delete" /></a>
 		}
 	</span>
 }

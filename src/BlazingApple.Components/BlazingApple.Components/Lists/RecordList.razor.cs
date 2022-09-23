@@ -39,7 +39,7 @@ namespace BlazingApple.Components.Lists
 
         /// <summary>The item models to render.</summary>
         [Parameter, EditorRequired]
-        public ICollection<TItem> Items { get; set; } = null!;
+        public IReadOnlyList<TItem> Items { get; set; } = null!;
 
         /// <summary>Used to provide a more data to the row.</summary>
         [Parameter]

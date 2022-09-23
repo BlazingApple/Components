@@ -20,6 +20,10 @@ namespace BlazingApple.Components
         [Parameter]
         public string? className { get; set; }
 
+        /// <summary>Whether or not to disable the link.</summary>
+        [Parameter]
+        public bool disabled { get; set; }
+
         /// <summary>The route/path to the url.</summary>
         [Parameter, EditorRequired]
         public string href { get; set; } = null!;
