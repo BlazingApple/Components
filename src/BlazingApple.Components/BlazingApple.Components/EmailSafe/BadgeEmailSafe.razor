@@ -2,9 +2,9 @@
 
 @if (IsLoaded)
 {
-    <div class="@_badgeClass" style="@_badgeStyle" title="@Tooltip" @attributes="AdditionalAttributes">
+    <div style="@_badgeStyle" title="@Tooltip" @attributes="AdditionalAttributes">
         @if(string.IsNullOrEmpty(IconClass)) {
-            <span>@BadgeString</span>
+            <span style="line-height: 2.5rem;">@BadgeString</span>
         }
         else {
             <i class="@IconClass"></i>

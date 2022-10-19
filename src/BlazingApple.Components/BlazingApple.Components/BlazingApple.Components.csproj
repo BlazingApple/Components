@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>1.6.7</AssemblyVersion>
-		<FileVersion>1.6.7</FileVersion>
-		<Version>1.6.7</Version>
-		<PackageReleaseNotes>1.6.7 - Actually allow for text-overflow on card headers.</PackageReleaseNotes>
+		<AssemblyVersion>2.0.7.2</AssemblyVersion>
+		<FileVersion>2.0.7.2</FileVersion>
+		<Version>2.0.7.2</Version>
+		<PackageReleaseNotes>2.0.7.2 - Use scroll spy.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -37,6 +37,10 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
 		<PackageReference Include="Syncfusion.Blazor" Version="18.4.0.35" />
 		<PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

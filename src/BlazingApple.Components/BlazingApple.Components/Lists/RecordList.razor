@@ -4,9 +4,11 @@
 	{
 		@HeadRow
 		<ul style="list-style-type:none; padding-left:0;" @attributes="AdditionalAttributes">
-			<Virtualize Context="item" Items="(ICollection<TItem>)Items" TItem="TItem">
-				@RowTemplate(item)
-			</Virtualize>
+			<ListRenderer Virtualize="@ShouldVirtualize" Items="Items" TItem="TItem" Context="item">
+				<RowTemplate>
+					@RowTemplate(item)
+				</RowTemplate>
+			</ListRenderer>
 
 			@if (LoadMoreCallback.HasDelegate)
 			{
@@ -30,20 +32,25 @@
 			</thead>
 			<tbody>
 				@if(ColumnsPerRow == 1) {
-					<Virtualize Context="item" Items="(ICollection<TItem>)Items" TItem="TItem">
-						@RowTemplate(item)
-					</Virtualize>
+                    <ListRenderer Virtualize="@ShouldVirtualize" Items="Items" TItem="TItem" Context="item">
+						<RowTemplate>
+							@RowTemplate(item)
+						</RowTemplate>
+                    </ListRenderer>
 				}
 				else {
-					<Virtualize Context="rowItems" Items="_rowItems" TItem="IList<TItem>">
-						<div class="row">
-							@for (int i= 0; i < rowItems.Count; i++ ) {
-								<div class="@_colWidthClass">
-									@RowTemplate(rowItems[i])
-								</div>
-							}
-						</div>
-					</Virtualize>
+					<ListRenderer Virtualize="@ShouldVirtualize" Items="_rowItems" TItem="IList<TItem>" Context="rowItems">
+                        <RowTemplate>
+							<div class="row">
+								@for (int i = 0; i < rowItems.Count; i++)
+								{
+									<div class="@_colWidthClass">
+										@RowTemplate(rowItems[i])
+									</div>
+								}
+							</div>
+						</RowTemplate>
+                    </ListRenderer>
 				}
 				<tr>
 				</tr>

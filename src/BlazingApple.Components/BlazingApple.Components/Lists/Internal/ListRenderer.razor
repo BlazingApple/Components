@@ -1,0 +1,12 @@
+﻿@typeparam TItem
+
+@if(Virtualize) {
+    <Virtualize Context="item" Items="(ICollection<TItem>)Items" TItem="TItem">
+        @RowTemplate(item)
+    </Virtualize>
+}
+else {
+    @foreach(var item in Items) {
+        @RowTemplate(item)
+    }
+}
