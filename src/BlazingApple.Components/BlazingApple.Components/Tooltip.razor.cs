@@ -47,5 +47,18 @@ namespace BlazingApple.Components
 		/// <summary>The css style width.</summary>
 		[Parameter]
 		public string? WidthStyle { get; set; }
+
+		[Inject]
+		private DeviceManager DeviceManager { get; set; } = null!;
+
+		/// <inheritdoc />
+		protected override async Task OnParametersSetAsync()
+		{
+			await base.OnParametersSetAsync();
+			bool isTouchDevice = await DeviceManager.IsTouchDevice();
+
+			if (isTouchDevice)
+				OpenOn = TooltipOpenOn.Click;
+		}
 	}
 }

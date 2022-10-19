@@ -120,6 +120,7 @@
 			}
 		}
 
+		/// <summary>The background content slightly offwhite color.</summary>
 		public string PageContentHexCode { get; set; } = null!;
 
 		/// <summary>DI Constructor.</summary>

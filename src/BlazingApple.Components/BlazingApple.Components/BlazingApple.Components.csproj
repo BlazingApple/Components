@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.0.7.2</AssemblyVersion>
-		<FileVersion>2.0.7.2</FileVersion>
-		<Version>2.0.7.2</Version>
-		<PackageReleaseNotes>2.0.7.2 - Use scroll spy.</PackageReleaseNotes>
+		<AssemblyVersion>2.0.8</AssemblyVersion>
+		<FileVersion>2.0.8</FileVersion>
+		<Version>2.0.8</Version>
+		<PackageReleaseNotes>2.0.8 - Tooltip and Post It fixes</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
