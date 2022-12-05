@@ -20,6 +20,8 @@ namespace BlazingApple.Components
 	/// <summary>A generic tooltip.</summary>
 	public partial class Tooltip : ComponentBase
 	{
+		private bool _isLoaded;
+
 		/// <summary>Additional classes to apply to the tooltip.</summary>
 		[Parameter]
 		public string? AdditionalClasses { get; set; }
@@ -54,11 +56,14 @@ namespace BlazingApple.Components
 		/// <inheritdoc />
 		protected override async Task OnParametersSetAsync()
 		{
+			_isLoaded = false;
 			await base.OnParametersSetAsync();
 			bool isTouchDevice = await DeviceManager.IsTouchDevice();
 
 			if (isTouchDevice)
 				OpenOn = TooltipOpenOn.Click;
+
+			_isLoaded = true;
 		}
 	}
 }
