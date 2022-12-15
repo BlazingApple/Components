@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BlazingApple.Components.Services;
 
 /// <summary>Determine information about the user's device.</summary>
-public class DeviceManager
+public partial class DeviceManager
 {
 	private readonly IJSRuntime _jSRuntime;
 

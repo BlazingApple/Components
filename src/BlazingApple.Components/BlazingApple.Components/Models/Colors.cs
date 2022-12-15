@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BlazingApple.Components.Models;
 
 /// <summary>A collection of <see cref="IThemeColor" /></summary>
-public class Colors : List<IThemeColor>
+public partial class Colors : List<IThemeColor>
 {
 	/// <summary>Initialized the colors.</summary>
 	public Colors() : base()

@@ -1,4 +1,5 @@
 ﻿using BlazingApple.Components.Interfaces;
+using BlazingApple.Components.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ public abstract class BadgeBase : ComponentBase
 
 	/// <summary>The color of the badge to render.</summary>
 	[Parameter]
-	public dynamic? Color { get; set; }
+	public IThemeColor? Color { get; set; }
 
 	/// <summary>
 	///     The FontAwesome icon class to use, if any. If passed, this overrides the <see cref="Name" /> text that might otherwise have been used.

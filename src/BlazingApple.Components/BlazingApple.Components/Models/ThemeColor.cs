@@ -3,7 +3,7 @@
 namespace BlazingApple.Components.Models;
 
 /// <summary>Represents a theme color for the site.</summary>
-public class ThemeColor : IThemeColor
+public partial class ThemeColor : IThemeColor
 {
 	/// <inheritdoc />
 	public virtual string BackgroundCssClass
