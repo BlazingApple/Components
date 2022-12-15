@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.0.8.4</AssemblyVersion>
-		<FileVersion>2.0.8.4</FileVersion>
-		<Version>2.0.8.4</Version>
-		<PackageReleaseNotes>2.0.8.4 - Minor enhancements to Progress Bar</PackageReleaseNotes>
+		<AssemblyVersion>2.0.9</AssemblyVersion>
+		<FileVersion>2.0.9</FileVersion>
+		<Version>2.0.9</Version>
+		<PackageReleaseNotes>2.0.9 - Remove dynamic and offer interfaces</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
