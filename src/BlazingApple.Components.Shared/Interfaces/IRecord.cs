@@ -10,5 +10,5 @@ namespace BlazingApple.Components.Shared.Interfaces;
 public interface IRecord
 {
 	/// <summary>The record's Identifier.</summary>
-	string Id { get; set; }
+	object Id { get; set; }
 }

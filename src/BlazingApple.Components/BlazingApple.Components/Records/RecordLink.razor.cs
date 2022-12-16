@@ -29,7 +29,7 @@ public partial class RecordLink : ComponentBase
 		string idForRoute;
 
 		if (Record != null)
-			idForRoute = Record.Id.ToString();
+			idForRoute = Record.Id.ToString()!;
 		else
 			idForRoute = Slug!;
 

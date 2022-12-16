@@ -78,15 +78,12 @@ public partial class RecordAction : ComponentBase
 	protected override void OnParametersSet()
 	{
 		if (Record != null)
-		{
-			_idForRoute = Record.Id;
-		}
+			_idForRoute = Record.Id.ToString()!;
 		else
-		{
 			_idForRoute = Slug;
-		}
-		_editRoute = Route + "/edit/" + _idForRoute;
-		_detailsRoute = Route + "/" + _idForRoute;
+
+		_editRoute = $"{Route}/edit/{_idForRoute}";
+		_detailsRoute = $"{Route}/{_idForRoute}";
 	}
 
 	private void _OnDeleteClick()
