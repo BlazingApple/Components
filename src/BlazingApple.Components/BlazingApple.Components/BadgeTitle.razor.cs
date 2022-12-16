@@ -1,5 +1,5 @@
-﻿using BlazingApple.Components.Interfaces;
-using BlazingApple.Components.Models;
+﻿using BlazingApple.Components.Shared.Interfaces;
+using BlazingApple.Components.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

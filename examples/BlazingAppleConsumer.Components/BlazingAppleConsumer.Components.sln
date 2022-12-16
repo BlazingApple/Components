@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingAppleConsumer.Compon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components", "..\..\src\BlazingApple.Components\BlazingApple.Components\BlazingApple.Components.csproj", "{D22E18CB-C648-47A9-A88E-283A2AD86D1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingApple.Components.Shared", "..\..\src\BlazingApple.Components.Shared\BlazingApple.Components.Shared.csproj", "{906800DA-9CE8-45C0-A570-307E5B6CDD2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D22E18CB-C648-47A9-A88E-283A2AD86D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D22E18CB-C648-47A9-A88E-283A2AD86D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D22E18CB-C648-47A9-A88E-283A2AD86D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906800DA-9CE8-45C0-A570-307E5B6CDD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906800DA-9CE8-45C0-A570-307E5B6CDD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906800DA-9CE8-45C0-A570-307E5B6CDD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906800DA-9CE8-45C0-A570-307E5B6CDD2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

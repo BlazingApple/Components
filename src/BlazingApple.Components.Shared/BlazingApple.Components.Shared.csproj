@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Description>BlazingApple is a collection of business objects and corresponding components to speed application development. BlazingApple.Components provides a set of core components to easily create beautiful applications</Description>
+		<Authors>Taylor White</Authors>
+		<Company>BlazingApple</Company>
+		<Copyright>2022</Copyright>
+		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AssemblyVersion>0.1.1</AssemblyVersion>
+		<FileVersion>0.1.1</FileVersion>
+		<Version>0.1.1</Version>
+		<PackageReleaseNotes>0.1.1 - Add package symbol</PackageReleaseNotes>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageIcon>BlazingApple.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\..\BlazingApple.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+</Project>

@@ -1,4 +1,4 @@
-﻿namespace BlazingApple.Components.Interfaces;
+﻿namespace BlazingApple.Components.Shared.Interfaces;
 
 /// <summary>Defines a "comment" that a user can create.</summary>
 public interface IComment

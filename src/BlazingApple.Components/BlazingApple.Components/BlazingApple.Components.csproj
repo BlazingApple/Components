@@ -10,15 +10,16 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.0.9</AssemblyVersion>
-		<FileVersion>2.0.9</FileVersion>
-		<Version>2.0.9</Version>
-		<PackageReleaseNotes>2.0.9 - Remove dynamic and offer interfaces</PackageReleaseNotes>
+		<AssemblyVersion>2.0.10</AssemblyVersion>
+		<FileVersion>2.0.10</FileVersion>
+		<Version>2.0.10</Version>
+		<PackageReleaseNotes>2.0.10 - Move interfaces to external package, add back packge icon</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageIcon>BlazingApple.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -30,6 +31,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BlazingApple.Components.Shared" Version="0.1.0" />
 		<PackageReference Include="BlazingApple.FontAwesome" Version="0.4.0" />
 		<PackageReference Include="Blazored.Toast" Version="3.1.2" />
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.5.4" />
@@ -44,6 +46,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="..\..\..\..\BlazingApple.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="wwwroot/BlazingApple.png" Pack="true" PackagePath="" />
 		<None Include="compilerconfig.json" />
 	</ItemGroup>

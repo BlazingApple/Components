@@ -1,4 +1,4 @@
-﻿using BlazingApple.Components.Interfaces;
+﻿using BlazingApple.Components.Shared.Interfaces;
 
 namespace BlazingApple.Components.Records;
 

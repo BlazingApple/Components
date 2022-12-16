@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazingApple.Components.Interfaces;
+namespace BlazingApple.Components.Shared.Interfaces;
 
 /// <summary>Represents a theme color.</summary>
 public interface IThemeColor

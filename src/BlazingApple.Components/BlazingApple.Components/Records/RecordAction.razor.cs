@@ -1,4 +1,4 @@
-﻿using BlazingApple.Components.Interfaces;
+﻿using BlazingApple.Components.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,6 @@ namespace BlazingApple.Components.Records;
 public partial class RecordAction : ComponentBase
 {
 	private readonly string vertBar = "|";
-	private string _deleteRoute = null!;
 	private string _detailsRoute = null!;
 	private string _editRoute = null!;
 	private string _idForRoute = null!;
@@ -88,7 +87,6 @@ public partial class RecordAction : ComponentBase
 		}
 		_editRoute = Route + "/edit/" + _idForRoute;
 		_detailsRoute = Route + "/" + _idForRoute;
-		_deleteRoute = "/api" + Route + "/" + _idForRoute; // Route starts with /
 	}
 
 	private void _OnDeleteClick()

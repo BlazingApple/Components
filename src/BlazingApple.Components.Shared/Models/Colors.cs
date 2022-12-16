@@ -1,11 +1,11 @@
-﻿using BlazingApple.Components.Interfaces;
+﻿using BlazingApple.Components.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazingApple.Components.Models;
+namespace BlazingApple.Components.Shared.Models;
 
 /// <summary>A collection of <see cref="IThemeColor" /></summary>
 public partial class Colors : List<IThemeColor>

@@ -1,6 +1,6 @@
-﻿using BlazingApple.Components.Interfaces;
+﻿using BlazingApple.Components.Shared.Interfaces;
 
-namespace BlazingApple.Components.Models;
+namespace BlazingApple.Components.Shared.Models;
 
 /// <summary>Represents a theme color for the site.</summary>
 public partial class ThemeColor : IThemeColor

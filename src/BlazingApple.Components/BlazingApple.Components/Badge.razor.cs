@@ -1,4 +1,4 @@
-﻿using BlazingApple.Components.Interfaces;
+﻿using BlazingApple.Components.Shared.Interfaces;
 using Syncfusion.Blazor.TreeMap.Internal;
 using System;
 using System.Text.RegularExpressions;
