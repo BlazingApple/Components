@@ -28,7 +28,7 @@ else
 				{
 					if (DisplayEditAsIcon)
 					{
-						<BrowserLink href="@_editRoute" AdditionalAttributes="AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames" ><Icon I="s.IconType.Edit" AltText="Edit" /></BrowserLink>
+						<BrowserLink href="@_editRoute" AdditionalAttributes="AdditionalAttributes" disabled="@Disabled" className="@LinkClassNames" ><Icon I="BlazingAppleServices.IconType.Edit" AltText="Edit" /></BrowserLink>
 						@if(ShowSpacer) {
 							<span class="mx-1">@vertBar</span>
 						}
@@ -51,7 +51,7 @@ else
 				{
 					if (DisplayEditAsIcon)
 					{
-						<a href="javascript:void(0);" role="button" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames"  @onclick="_OnEditClick"><Icon I="s.IconType.Edit" AltText="Edit"></Icon></a>
+						<a href="javascript:void(0);" role="button" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames" @onclick="_OnEditClick"><Icon I="BlazingAppleServices.IconType.Edit" AltText="Edit"></Icon></a>
 					}
 					else
 					{
@@ -59,7 +59,7 @@ else
 					}
 				}
 			}
-			<a href="javascript:void(0);" @onclick="_OnDeleteClick" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames"><Icon I="s.IconType.Delete" AltText="Delete" /></a>
+			<a href="javascript:void(0);" @onclick="_OnDeleteClick" @attributes="@AdditionalAttributes" disabled="@Disabled" class="@LinkClassNames"><Icon I="BlazingAppleServices.IconType.Delete" AltText="Delete" /></a>
 		}
 	</span>
 }

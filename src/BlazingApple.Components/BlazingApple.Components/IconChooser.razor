@@ -1,6 +1,6 @@
 ﻿@using BlazingApple.Components.Services
 @using BlazingApple.Components.Search
-@using s = BlazingApple.Components.Services
+@using IconType = BlazingApple.Components.Services.IconType
 
 <div class="d-flex align-items-center" style="flex-direction:column;">
     <BlazingApple.Components.Search.SearchBox OnSearchChange="OnSearchChange" TitleText="@SearchGhostText" />
@@ -46,7 +46,7 @@
         <div class="btn-matrix" role="group" aria-label="Three Column Button Matrix">
             @foreach (BlazingApple.Components.Services.IconType icon in Enum.GetValues<BlazingApple.Components.Services.IconType>().OrderBy(val => val.ToString()))
             {
-                if (icon is s.IconType.OurGov or s.IconType.SealHouse or s.IconType.SealPresident or s.IconType.GovTrack or s.IconType.CSpan or s.IconType.Null or s.IconType.SealSenate or s.IconType.LoadingFullPage)
+                if (icon is IconType.OurGov or IconType.SealHouse or IconType.SealPresident or IconType.GovTrack or IconType.CSpan or IconType.Null or IconType.SealSenate or IconType.LoadingFullPage)
                 {
                     continue;
                 }

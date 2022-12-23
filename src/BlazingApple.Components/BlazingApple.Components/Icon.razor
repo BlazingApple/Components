@@ -1,30 +1,32 @@
-﻿@if (I != s.IconType.Null && string.IsNullOrEmpty(CustomIcon))
+﻿@using IconType = BlazingApple.Components.Services.IconType
+
+@if (I != IconType.Null && string.IsNullOrEmpty(CustomIcon))
 {
 	@switch (I)
 	{
-		case s.IconType.CSpan:
+		case IconType.CSpan:
 			<img title="@AltText" class="@AdditionalClasses" src="https://static.c-span.org/assets/images/CSPAN_Navy-and-Blue.svg" />
 			break;
-		case s.IconType.GovTrack:
+		case IconType.GovTrack:
 			<img title="@AltText" class="@AdditionalClasses" src="https://www.govtrack.us/static/images/logo.png?201906" @attributes="AdditionalAttributes"/>
 			break;
-		case s.IconType.OurGov:
+		case IconType.OurGov:
 			<svg title="@AltText" class="@AdditionalClasses og-fill-primary branded" height="40" width="40" @attributes="AdditionalAttributes">
 				<!--<use href="/images/OurGov Logo - Rounded Rectangle.svg#roundedRectIcon"></use>-->
 				<use href="/images/OurGov Logo - Rounded.svg#roundIcon"></use>
 			</svg>
 			break;
-		case s.IconType.SealHouse:
+		case IconType.SealHouse:
 			<svg title="@AltText" viewBox="0 0 420.20125 648.03126" class="@AdditionalClasses" @attributes="AdditionalAttributes">
 				<use xlink:href="/images/organizations/government/usa/legislative/seal_us_house.svg"></use>
 			</svg>
 			break;
-		case s.IconType.SealPresident:
+		case IconType.SealPresident:
 			<svg title="@AltText" viewBox="0 0 1000 999.999" class="@AdditionalClasses" @attributes="AdditionalAttributes">
 				<use xlink:href="/images/organizations/government/usa/executive/seal_office_president.svg"></use>
 			</svg>
 			break;
-		case s.IconType.SealSenate:
+		case IconType.SealSenate:
 			<svg title="@AltText" viewBox="0 0 420.28283 648.15706" class="@AdditionalClasses" @attributes="AdditionalAttributes">
 				<use xlink:href="/images/organizations/government/usa/legislative/seal_us_senate.svg"></use>
 			</svg>
