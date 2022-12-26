@@ -85,7 +85,7 @@ public partial class RecordList<TItem> : ComponentBase
 		}
 		else if (ColumnsPerRow != 1)
 		{
-			_colWidthClass = $"col-md-{12 / ColumnsPerRow} d-flex align-items-center justify-content-center";
+			_colWidthClass = $"col-md-{12 / ColumnsPerRow} d-flex align-items-stretch justify-content-center";
 
 			_rowItems = ToGrid(Items, ColumnsPerRow);
 		}

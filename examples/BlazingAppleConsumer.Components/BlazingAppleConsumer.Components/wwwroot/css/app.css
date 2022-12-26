@@ -87,11 +87,6 @@ div.code
 	color: #d63384;
 }
 
-input[type="radio"]
-{
-	display: none;
-}
-
 .loading-progress
 {
 	position: relative;
