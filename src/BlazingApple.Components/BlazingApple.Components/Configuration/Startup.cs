@@ -30,8 +30,9 @@ namespace BlazingApple.Components.Configuration
 				string? syncfusionKey = syncfusionSection["LicenseKey"];
 				if (syncfusionKey is not null)
 					SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
-				services.AddSyncfusionBlazor();
 			}
+
+			services.AddSyncfusionBlazor();
 			return services;
 		}
 	}
