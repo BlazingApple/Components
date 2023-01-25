@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>BlazingApple.</Title>
+    <UserSecretsId>f7b387c1-9fb5-425d-a599-6d88ee3d1661</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

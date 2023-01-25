@@ -1,0 +1,24 @@
+﻿<h3>Tooltips</h3>
+<div class="d-flex justify-content-between align-items-center">
+	<Tooltip TargetId="#btn-on-click" OpenOn="TooltipOpenOn.Click">
+		<TooltipContent>
+			<div class="d-flex align-items-center justify-content-center" style="height:20rem; width:20rem;">
+				Opened on click
+			</div>
+		</TooltipContent>
+		<ChildContent>
+			<button id="btn-on-click" class="btn btn-outline-primary">On Click!</button>
+		</ChildContent>
+	</Tooltip>
+	
+	<Tooltip TargetId="#btn-on-hover" OpenOn="TooltipOpenOn.Hover">
+		<TooltipContent>
+			<div class="d-flex align-items-center justify-content-center" style="height:20rem; width:20rem;">
+				Opened on click
+			</div>
+		</TooltipContent>
+		<ChildContent>
+			<button id="btn-on-hover" class="btn btn-outline-primary">On Hover</button>
+		</ChildContent>
+	</Tooltip>
+</div>

@@ -17,7 +17,8 @@
         <InputNumber @bind-Value="_itemCount" />
     </EditForm>
 
-    @if(_selectedItems is not null && _selectedItems.Count != 0) {
+    @if (_items is not null && _items.Count != 0)
+    {
         <RecordList Context="item" ColumnsPerRow="3" Items="_items.Take(_itemCount).ToList()">
             <HeadRow></HeadRow>
             <RowTemplate>

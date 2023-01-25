@@ -1,0 +1,35 @@
+﻿<h3>Due Date</h3>
+<div class="code"><code>@("<DueDate Date=\"@DateTime.Now.Date.AddDays(5)\"/>")</code></div>
+
+<table>
+	<colgroup>
+		<col style="width: 25%;" />
+		<col style="width: 25%;" />
+		<col style="width: 25%;" />
+		<col style="width: 25%;" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>A few days from now</th>
+			<th>Tomorrow</th>
+			<th>Overdue</th>
+			<th>Really overdue</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<DueDate Date="@DateTime.Now.Date.AddDays(5)" />
+			</td>
+			<td>
+				<DueDate Date="@DateTime.Now.Date.AddDays(1)" />
+			</td>
+			<td>
+				<DueDate Date="@DateTime.Now.Date.AddDays(-1)" />
+			</td>
+			<td>
+				<DueDate Date="@DateTime.Now.Date.AddDays(-5)" />
+			</td>
+		</tr>
+	</tbody>
+</table>

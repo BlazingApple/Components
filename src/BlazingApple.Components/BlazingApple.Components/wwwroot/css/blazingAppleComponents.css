@@ -415,6 +415,10 @@
   background-color: #f0edfc;
 }
 
+.table .card {
+  padding: 0;
+}
+
 /* #region CarouselContainer */
 .carouselContainer .carouselWithNavContainer {
   position: relative;

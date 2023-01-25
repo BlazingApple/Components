@@ -1,7 +1,7 @@
 ﻿@if (TotalCount > 0)
 {
 	<div class="ba-progress-container" @attributes="AdditionalAttributes">
-		<progress style="width: 100%;" value="@CurrentIndex" max="@TotalCount" title="@_progressTooltip" class="ba-progress-bar my-auto mr-2">
+		<progress style="width: 100%;" value="@CurrentIndex" max="@TotalCount" title="@_progressTooltip" class="ba-progress-bar my-auto me-2">
 		</progress>
 
 		@if(ShowPercentComplete) {

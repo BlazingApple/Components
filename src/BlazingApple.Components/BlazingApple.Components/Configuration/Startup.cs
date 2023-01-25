@@ -3,6 +3,8 @@ using BlazingApple.FontAwesome.Services;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Syncfusion.Blazor;
+using Syncfusion.Licensing;
 
 namespace BlazingApple.Components.Configuration
 {
@@ -21,6 +23,15 @@ namespace BlazingApple.Components.Configuration
 			services.AddScoped<FontSearchService>();
 			services.AddScoped<IClipboardService, ClipboardService>();
 			services.AddScoped<DeviceManager>();
+
+			IConfigurationSection? syncfusionSection = configRoot.GetSection("Syncfusion");
+			if (syncfusionSection is not null)
+			{
+				string? syncfusionKey = syncfusionSection["LicenseKey"];
+				if (syncfusionKey is not null)
+					SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+				services.AddSyncfusionBlazor();
+			}
 			return services;
 		}
 	}

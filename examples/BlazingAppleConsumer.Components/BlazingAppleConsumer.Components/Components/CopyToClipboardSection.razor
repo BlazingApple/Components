@@ -1,0 +1,13 @@
+﻿
+<h3>Copy to Clipboard</h3>
+
+<div class="d-flex align-items-center">
+	<EditForm Model="@(new {})">
+		<FormGroup ColumnWidthClass="col-lg-6" Label="Text to copy">
+			<InputText @bind-Value="_textToCopy"></InputText>
+		</FormGroup>
+	</EditForm>
+	<div class="ms-2">
+		<CopyToClipboard Text="@_textToCopy"></CopyToClipboard>
+	</div>
+</div>

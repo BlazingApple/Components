@@ -1,0 +1,61 @@
+﻿<h3>Calendar</h3>
+@code {
+	CalendarEvent calEvent = new();
+}
+<div class="row">
+	<div class="col-lg-9">
+		<EditForm Model="@(new{})">
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>Title</label>
+					<InputText @bind-Value="calEvent.Title"></InputText>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>Location</label>
+					<InputText @bind-Value="calEvent.Location"></InputText>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>Description</label>
+					<InputTextArea @bind-Value="calEvent.Description"></InputTextArea>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>Start date</label>
+					<InputDateTime @bind-Value="calEvent.Start"></InputDateTime>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>End date</label>
+					<InputDateTime @bind-Value="calEvent.End"></InputDateTime>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column">
+					<label>Full day</label>
+					<InputCheckbox @bind-Value="calEvent.IsFullDay"></InputCheckbox>
+				</div>
+			</div>
+		</EditForm>
+	</div>
+	<div class="col-lg-3">
+		<AddToCalendar Title="@calEvent.Title"
+					   Description="@calEvent.Description"
+					   Location="@calEvent.Location"
+					   Start="@calEvent.Start"
+					   End="@calEvent.End"
+					   IsFullDay="@calEvent.IsFullDay"
+					   class="btn btn-primary">
+			<i class="fas fa-calendar"></i>
+		</AddToCalendar>
+	</div>
+</div>
