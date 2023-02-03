@@ -9,6 +9,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components.Shared", "..\..\src\BlazingApple.Components.Shared\BlazingApple.Components.Shared.csproj", "{906800DA-9CE8-45C0-A570-307E5B6CDD2F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BDB2E988-972F-4B2F-AC5D-5D265487BE48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{8BA48F85-CCF4-4D9A-B75C-69EAA29E7B2E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.github\FUNDING.yml = ..\..\.github\FUNDING.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8CD39FF4-150F-4D12-94F1-A7E211ABC221}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.github\workflows\main.yml = ..\..\.github\workflows\main.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BA48F85-CCF4-4D9A-B75C-69EAA29E7B2E} = {BDB2E988-972F-4B2F-AC5D-5D265487BE48}
+		{8CD39FF4-150F-4D12-94F1-A7E211ABC221} = {8BA48F85-CCF4-4D9A-B75C-69EAA29E7B2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C350039B-C612-41CD-AA69-E28D26006BC9}
