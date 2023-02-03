@@ -1,5 +1,5 @@
-﻿import Inputmask from "./vendors/inputmask.js";
-import { getRequiredElement } from "./utilities.js";
+﻿import Inputmask from "./vendors/inputmask.js?v=1.1.5.0";
+import { getRequiredElement } from "./utilities.js?v=1.1.5.0";
 
 let _instances = [];
 
@@ -37,8 +37,8 @@ export function initialize(dotnetAdapter, element, elementId, options) {
     };
 
     const finalOptions = options.alias
-        ? { ...aliasOptions, ...otherOptions }
-        : { ...maskOptions, ...regexOptions, ...otherOptions };
+        ? Object.assign({}, aliasOptions, otherOptions)
+        : Object.assign({}, maskOptions, regexOptions, otherOptions);
 
     var inputMask = new Inputmask(finalOptions);
 

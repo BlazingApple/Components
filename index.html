@@ -10,8 +10,10 @@
 	<script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 	<script src="_content/Blazored.Modal/blazored.modal.js"></script>
 	<link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
-	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+	<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="css/app.css" rel="stylesheet" />
+	<link href="_content/Syncfusion.Blazor/styles/bootstrap5.css" rel="stylesheet" />
+	<script src="_content/Syncfusion.Blazor/scripts/syncfusion-blazor.min.js" type="text/javascript"></script>
 	<link href="BlazingAppleConsumer.Components.styles.css" rel="stylesheet" />
 	<link href="_content/BlazingApple.Components/css/blazingAppleComponents.css" rel="stylesheet" /> <!-- Blazored Toasts -->
 	<script src="_content/BlazingApple.Components/scripts/blazingAppleComponents.js"></script>
@@ -21,7 +23,13 @@
 </head>
 
 <body>
-	<div id="app">Loading...</div>
+	<div id="app">
+		<svg class="loading-progress">
+			<circle r="40%" cx="50%" cy="50%" />
+			<circle r="40%" cx="50%" cy="50%" />
+		</svg>
+		<div class="loading-progress-text"></div>
+	</div>
 
 	<div id="blazor-error-ui">
 		An unhandled error has occurred.

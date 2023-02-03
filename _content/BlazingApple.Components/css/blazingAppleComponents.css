@@ -1,5 +1,4 @@
-﻿/*Plugin Overrides */
-/* Html Elements */
+﻿/*Plugin Overrides */ /* Html Elements */
 /* #region Background Color Mode */
 /* #endregion */
 /* Will be overwritten by theme sheet. */
@@ -17,10 +16,8 @@
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -138,8 +135,7 @@
 
 /* ListView */
 .e-list-item {
-  cursor: pointer;
-  /* Make it appear as a selection option */
+  cursor: pointer; /* Make it appear as a selection option */
 }
 
 .e-list-item-header {
@@ -151,8 +147,7 @@
 }
 
 .e-list-item.e-level-1.e-active i {
-  color: white !important;
-  /* Override the style of the icon if the row is selected, it should contrast with the selected color. */
+  color: white !important; /* Override the style of the icon if the row is selected, it should contrast with the selected color. */
 }
 
 /* Tooltip */
@@ -211,6 +206,10 @@
   transition: background-color 200ms ease-out;
 }
 
+.btn input[type=radio] {
+  display: none;
+}
+
 .add-to-calendar-dropdown {
   position: absolute;
   top: 100%;
@@ -239,10 +238,8 @@
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -313,8 +310,7 @@
   display: flex;
   flex-direction: column;
   border-left: 5px solid;
-  padding-left: 0.5px;
-  /* Doing this because there is an odd overlap with the header and the border. */
+  padding-left: 0.5px; /* Doing this because there is an odd overlap with the header and the border. */
   margin-bottom: 0.5rem;
 }
 .ba-card .ba-header {
@@ -325,8 +321,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.1rem 1rem 0.1rem 0.5rem;
-  flex: 1 1 0.33%;
-  /* Grow width after 33% of card, otherwise, stay 33% */
+  flex: 1 1 0.33%; /* Grow width after 33% of card, otherwise, stay 33% */
 }
 .ba-card .ba-header h1, .ba-card .ba-header h2, .ba-card .ba-header h3, .ba-card .ba-header h4, .ba-card .ba-header h5 {
   margin-bottom: 0;
@@ -418,6 +413,10 @@
 .ba-card.og-wisteria .ba-header {
   color: #6a4ce0;
   background-color: #f0edfc;
+}
+
+.table .card {
+  padding: 0;
 }
 
 /* #region CarouselContainer */
@@ -567,8 +566,7 @@
   vertical-align: middle;
 }
 .carouselIndicators .carouselButton .carouselButtonInner {
-  background-color: #0091ea;
-  /*var(--og-theme-color)*/
+  background-color: #0091ea; /*var(--og-theme-color)*/
 }
 .carouselIndicators .carouselButton:not(.active) {
   opacity: 0.2;
@@ -583,7 +581,6 @@
     	effect and not lose it until the next button is selected.
     */
   }
-
   #carouselIndicators .carouselButton:not(.active):hover {
     opacity: 0.4;
   }
@@ -610,12 +607,9 @@
 }
 
 .ba-circle-container {
-  --rel: 1.25;
-  /* how much extra space we want between images, 1 = one image size */
-  --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan));
-  /* circle radius */
-  --s: calc(2*var(--r) + var(--d));
-  /* container size */
+  --rel: 1.25; /* how much extra space we want between images, 1 = one image size */
+  --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
+  --s: calc(2*var(--r) + var(--d)); /* container size */
   position: relative;
   width: var(--s);
   height: var(--s);
@@ -650,10 +644,8 @@
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -741,10 +733,8 @@
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -824,8 +814,7 @@
 }
 
 .ba-page-loading-container {
-  position: relative;
-  /* Position within parent. */
+  position: relative; /* Position within parent. */
   top: 0;
   left: 0;
   height: 100%;
@@ -876,10 +865,8 @@
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -1034,8 +1021,7 @@
 .person-list-row .person-list-avatar img {
   border-radius: 50%;
   max-height: 100%;
-  max-width: 2.8rem;
-  /* Having trouble with the image getting wider */
+  max-width: 2.8rem; /* Having trouble with the image getting wider */
 }
 .person-list-row .person-list-details {
   flex: 1 0 75%;
@@ -1055,7 +1041,6 @@
   button.btn.btn-primary, button.btn.btn-secondary {
     display: none;
   }
-
   .ba-search, textarea {
     display: none;
   }
@@ -1096,10 +1081,8 @@ progress[value]::after {
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -1165,8 +1148,7 @@ progress[value]::after {
 /* #region */
 /* #endregion*/
 .recordList {
-  border-collapse: separate;
-  /* Don't collapse */
+  border-collapse: separate; /* Don't collapse */
   border-spacing: 0;
 }
 .recordList th {
@@ -1208,10 +1190,8 @@ progress[value]::after {
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */
@@ -1342,10 +1322,8 @@ progress[value]::after {
 /* Site Background Color - White backdrop, 50% of #0085f2 overlay */
 /* Site Background Color */
 /* Site Background Color */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
-/* This is the "content background" color for light mode */
-/* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
+/* This is the "content background" color for light mode */ /* This is the bg-theme transposed at 10% opacity */
 /* Accent Background Color */
 /* Accent Background Color - This is $og-azure backdrop with a .15 opacity black overlay. */
 /* #endregion */

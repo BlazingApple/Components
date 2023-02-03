@@ -1,5 +1,5 @@
-﻿import "./vendors/flatpickr.js";
-import * as utilities from "./utilities.js";
+﻿import "./vendors/flatpickr.js?v=1.1.5.0";
+import * as utilities from "./utilities.js?v=1.1.5.0";
 
 const _pickers = [];
 
@@ -42,7 +42,7 @@ export function initialize(element, elementId, options) {
         allowInput: true,
         altInput: true,
         altFormat: options.displayFormat ? options.displayFormat : (options.inputMode === 1 ? 'Y-m-d H:i' : 'Y-m-d'),
-        defaultValue: options.default,
+        defaultDate: options.defaultDate,
         minDate: options.min,
         maxDate: options.max,
         locale: options.localization || {
@@ -50,8 +50,13 @@ export function initialize(element, elementId, options) {
         },
         time_24hr: options.timeAs24hr ? options.timeAs24hr : false,
         clickOpens: !(options.readOnly || false),
-        disable: options.disabledDates || []
+        disable: options.disabledDates || [],
+        inline: options.inline || false,
+        disableMobile: true
     };
+
+    if (options.selectionMode)
+        defaultOptions.mode = options.selectionMode;
 
     const pluginOptions = options.inputMode === 2 ? {
         plugins: [new monthSelectPlugin({
@@ -61,10 +66,7 @@ export function initialize(element, elementId, options) {
         })]
     } : {};
 
-    const picker = flatpickr(element, {
-        ...defaultOptions,
-        ...pluginOptions
-    });
+    const picker = flatpickr(element, Object.assign({}, defaultOptions, pluginOptions));
 
     if (options) {
         picker.altInput.disabled = options.disabled || false;
@@ -76,6 +78,13 @@ export function initialize(element, elementId, options) {
 
 export function destroy(element, elementId) {
     const instances = _pickers || {};
+
+    const instance = instances[elementId];
+
+    if (instance) {
+        instance.destroy();
+    }
+
     delete instances[elementId];
 }
 
@@ -122,6 +131,14 @@ export function updateOptions(element, elementId, options) {
 
         if (options.disabledDates.changed) {
             picker.set("disable", options.disabledDates.value || []);
+        }
+
+        if (options.selectionMode.changed) {
+            picker.set("mode", options.selectionMode.value);
+        }
+
+        if (options.inline.changed) {
+            picker.set("inline", options.inline.value || false);
         }
     }
 }

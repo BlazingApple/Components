@@ -1,4 +1,4 @@
-﻿import { getRequiredElement } from "./utilities.js";
+﻿import { getRequiredElement } from "./utilities.js?v=1.1.5.0";
 
 export function initializeTableFixedHeader(element, elementId) {
     element = getRequiredElement(element, elementId);
@@ -58,7 +58,11 @@ export function destroyTableFixedHeader(element, elementId) {
 
 export function fixedHeaderScrollTableToPixels(element, elementId, pixels) {
     if (element && element.parentElement) {
-        element.parentElement.scrollTop = pixels;
+
+        element.parentElement.scroll({
+            top: pixels,
+            behavior: "smooth"
+        });
     }
 }
 

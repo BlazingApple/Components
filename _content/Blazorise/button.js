@@ -1,4 +1,4 @@
-﻿import { getRequiredElement } from "./utilities.js";
+﻿import { getRequiredElement } from "./utilities.js?v=1.1.5.0";
 
 const _instances = [];
 
@@ -29,10 +29,6 @@ export function click(buttonInfo, e) {
 }
 
 class ButtonInfo {
-    elementId = null;
-    element = null;
-    options = {};
-
     constructor(element, elementId, options) {
         this.elementId = elementId;
         this.element = element;
