@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components", "BlazingApple.Components\BlazingApple.Components.csproj", "{62F9F9A4-7E61-4FBA-9ED5-85673EA0FD01}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingApple.Components.Tests", "..\..\tests\BlazingApple.Components.Tests\BlazingApple.Components.Tests.csproj", "{C0466045-8794-4F4C-BC89-FBFE793B6F7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{62F9F9A4-7E61-4FBA-9ED5-85673EA0FD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F9F9A4-7E61-4FBA-9ED5-85673EA0FD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F9F9A4-7E61-4FBA-9ED5-85673EA0FD01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0466045-8794-4F4C-BC89-FBFE793B6F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0466045-8794-4F4C-BC89-FBFE793B6F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0466045-8794-4F4C-BC89-FBFE793B6F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0466045-8794-4F4C-BC89-FBFE793B6F7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

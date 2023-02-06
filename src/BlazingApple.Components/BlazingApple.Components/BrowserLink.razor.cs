@@ -47,12 +47,19 @@ namespace BlazingApple.Components
             _navManager = ServiceProvider.GetService<NavigationManager>();
         }
 
-        private bool IsExternal(string url)
+        internal bool IsExternal(string url)
         {
             if (_navManager is null)
+            {
                 return false;
+            }
 
             string currentHost = new Uri(_navManager.BaseUri).Host;
+            return IsExternal(currentHost, url);
+        }
+
+        internal static bool IsExternal(string currentHost, string url)
+        {
             string linkUrl;
 
             try
@@ -70,17 +77,15 @@ namespace BlazingApple.Components
                                     + ")|(localhost:\\d{4})|(\\/.*))(\\/.*)?$");
 
             MatchCollection matches = internalLinkRegex.Matches(linkUrl);
-            if (matches.Count > 0)
-            {
-                return false;
-            }
-            return true;
+            return matches.Count <= 0;
         }
 
         private async Task OnClickInternal()
         {
             if (OnClick.HasDelegate)
+            {
                 await OnClick.InvokeAsync(href);
+            }
         }
     }
 }
