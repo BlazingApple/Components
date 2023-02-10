@@ -1,0 +1,17 @@
+﻿@if (Value is not null)
+{
+	<EditForm Model="@Value" style="width:100%;">
+		<DataAnnotationsValidator />
+		<div class="row">
+			<FormGroup for="start-filter-date" ColumnWidthClass="col-lg-6" Label="Start Date">
+				<InputDate id="start-filter-date" class="form-control" Type="DateType " @bind-Value="BoundStartValue"></InputDate>
+				<ValidationMessage For="@(() => Value.StartDate)" />
+			</FormGroup>
+
+			<FormGroup for="end-filter-date" ColumnWidthClass="col-lg-6" Label="End Date">
+				<InputDate id="end-filter-date" class="form-control" Type="DateType" @bind-Value="BoundEndValue"></InputDate>
+				<ValidationMessage For="@(() => Value.EndDate)" />
+			</FormGroup>
+		</div>
+	</EditForm>
+}

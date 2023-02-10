@@ -1,4 +1,5 @@
-﻿<h3>Links</h3>
+﻿@inject NavigationManager NavManager
+<h3>Links</h3>
 <div class="row">
 	<div class="col-md-6">
 		<ul>
@@ -21,6 +22,14 @@
 			</li>
 			<li>
 				<BrowserLink href="lists">Link to List page</BrowserLink>
+				<div class="text-muted small">Should open in this tab</div>
+			</li>
+			<li>
+				<BrowserLink href="/email-safe">Link to email-safe page</BrowserLink>
+				<div class="text-muted small">Should open in this tab</div>
+			</li>
+			<li>
+				<BrowserLink href="@(new Uri(NavManager.BaseUri).Host + "/lists")">Link to list page</BrowserLink>
 				<div class="text-muted small">Should open in this tab</div>
 			</li>
 		</ul>
