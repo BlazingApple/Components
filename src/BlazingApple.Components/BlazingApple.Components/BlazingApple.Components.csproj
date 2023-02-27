@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.3</AssemblyVersion>
-		<FileVersion>2.3</FileVersion>
-		<Version>2.3</Version>
-		<PackageReleaseNotes>2.3 - Add InputDateRange</PackageReleaseNotes>
+		<AssemblyVersion>2.3.1</AssemblyVersion>
+		<FileVersion>2.3.1</FileVersion>
+		<Version>2.3.1</Version>
+		<PackageReleaseNotes>2.3.1 - Fix BrowserLink regex</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

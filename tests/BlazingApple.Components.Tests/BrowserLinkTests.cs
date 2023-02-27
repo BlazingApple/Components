@@ -10,6 +10,9 @@ public class BrowserLinkTests
         {
             yield return new object[] { "https://ourgov.app", false };
             yield return new object[] { "https://ourgov.app/tags", false };
+            yield return new object[] { "file://ourgov.app/tags", false };
+            yield return new object[] { "file://tags", false };
+            yield return new object[] { "file:///tags", false };
             yield return new object[] { "ourgov.app/tags", false };
             yield return new object[] { "docs.ourgov.app/tags", true };
             yield return new object[] { "/", false };
