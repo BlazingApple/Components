@@ -9,7 +9,7 @@
 	[Parameter]
 	public EventCallback<bool> ValueChanged { get; set; }
 
-	private string toggleMoreLessDisplayString = "See more";
+	private string toggleMoreLessDisplayString => Value ? "See less" : "See more";
 
 	public bool BoundValue
 	{
@@ -26,14 +26,6 @@
 	private void OnSeeMoreClick()
 	{
 		/* Going from already seeing all, to seeing less */
-		if (BoundValue)
-		{
-			toggleMoreLessDisplayString = "See More";
-		}
-		else
-		{
-			toggleMoreLessDisplayString = "See Less";
-		}
 		BoundValue = !BoundValue;
 	}
 }

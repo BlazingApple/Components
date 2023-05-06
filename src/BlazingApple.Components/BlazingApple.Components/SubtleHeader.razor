@@ -1,7 +1,7 @@
-﻿<div class="text-muted">@Name</div>
-
-@code {
-	/// <summary>The header details to show.</summary>
-	[Parameter, EditorRequired]
-	public string Name { get; set; } = null!;
-}
+﻿<div class="text-muted" @attributes="AdditionalAttributes">
+	@Name
+	@if(ChildContent is not null)
+	{
+		@ChildContent
+	}
+</div>

@@ -11,12 +11,39 @@
 		}
 
 		<li class="@previousClasses">
-			<button class="page-link" @onclick="OnPreviousClick">Previous</button>
+			<button class="page-link" @onclick="() => OnPreviousClick(true)" title="Go to beginning">
+				<i class="fas fa-angle-double-left"></i>
+			</button>
+		</li>
+		<li class="@previousClasses">
+			<button class="page-link" @onclick="() => OnPreviousClick()" title="Go to previous page">
+				<i class="fas fa-angle-left"></i>
+			</button>
 		</li>
 
-		@for (int i = Math.Min(Math.Max(0,Value-5),Math.Max(0,Math.Min(Value-5,_pageCount-10))); i < Math.Min(Math.Max(Value+5,10), _pageCount); i++)
-		{
+		@{
+			int leftIndexStart = Math.Min(Math.Max(0,Value-5), Math.Max(0,Math.Min(Value-5,_pageCount-10)));
+			int rightIndexEnd = Math.Min(Math.Max(Value + 5, 10), _pageCount);
+		}
 
+		@if (leftIndexStart > 0 && rightIndexEnd >= _pageCount)
+		{
+			<li class="page-item">
+				<button class="page-link justify-content-center d-flex" style="width:2.5rem;" @onclick="()=> OnPageNumberClick(0)">
+					1
+				</button>
+			</li>
+
+			<li class="page-item">
+				<button class="page-link justify-content-center disabled" style="width:2.5rem;" disabled>
+					<i class="fas fa-ellipsis-h"></i>
+				</button>
+			</li>
+
+		}
+
+		@for (int i = leftIndexStart; i < rightIndexEnd; i++)
+		{
 			string classes = "page-item";
 			int buttonIndex = i;
 			if(Value == i)
@@ -29,8 +56,30 @@
 			</li>
 		}
 
+		@if(rightIndexEnd < _pageCount)
+		{
+			<li class="page-item">
+				<button class="page-link justify-content-center disabled" style="width:2.5rem;" disabled>
+					<i class="fas fa-ellipsis-h"></i>
+				</button>
+			</li>
+
+			<li class="page-item">
+				<button class="page-link justify-content-center d-flex" style="width:2.5rem;" @onclick="()=> OnPageNumberClick(_pageCount-1)">
+					@_pageCount
+				</button>
+			</li>
+		}
+
 		<li class="@nextClasses">
-			<button class="page-link" @onclick="OnNextClick">Next</button>
+			<button class="page-link" @onclick="() => OnNextClick()" title="Go to next page">
+				<i class="fas fa-angle-right"></i>
+			</button>
+		</li>
+		<li class="@nextClasses">
+			<button class="page-link" @onclick="() => OnNextClick(true)" title="Go to end">
+				<i class="fas fa-angle-double-right"></i>
+			</button>
 		</li>
 	</ul>
 </nav>
