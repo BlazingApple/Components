@@ -3,46 +3,58 @@
 	<div class="card my-1" @attributes="AdditionalAttributes">
 		<div class="card-header" style="display: flex; justify-content:space-between;">
 			<div style="display: inline-flex; align-items: center;">
-				@if(BadgeTooltipContent is not null) {
+				@if (BadgeTooltipContent is not null)
+				{
 					<Tooltip OpenOn="OpenTooltipOn" AdditionalClasses="@TooltipClasses" WidthStyle="@TooltipWidth" TargetId="@_tooltipGuid">
 						<TooltipContent>
 							@BadgeTooltipContent
 						</TooltipContent>
 						<ChildContent>
-							<Badge id="@_tooltipGuid" Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" AdditionalClasses="@(OpenTooltipOn==TooltipOpenOn.Click ? "cursor-pointer" : "")" />					
+							<Badge id="@_tooltipGuid" Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" AdditionalClasses="@(OpenTooltipOn==TooltipOpenOn.Click ? "cursor-pointer" : "")" />
 						</ChildContent>
 					</Tooltip>
 				}
 				else
 				{
-					<Badge Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" />					
+					<Badge Name="@BadgeTitle" IconClass="@BadgeIconClass" Color="@Color" />
 				}
 				<div class="ba-card-title" style="@_titleStyle">
-					@if(!string.IsNullOrEmpty(TitleUrl)) {
+					@if (!string.IsNullOrEmpty(TitleUrl))
+					{
 						<a href="@TitleUrl">@Title</a>
 					}
-					else {
+					else
+					{
 						<span style="">
 							@Title
 						</span>
 					}
 				</div>
 			</div>
-			<div>
-				@if(HeaderContent is not null) {
-					@HeaderContent
-				}
-				@if (IsDismissable)
-				{
-					<div>
-						<button type="button" class="close" aria-label="Close" @onclick="DismissCard">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				}
-			</div>
+			@if (HeaderContent is not null || IsDismissable)
+			{
+				<div class="ms-2" style="flex-shrink: 0;">
+					@if (HeaderContent is not null)
+					{
+						@HeaderContent
+					}
+					@if (IsDismissable)
+					{
+						<div>
+							<button type="button" class="close" aria-label="Close" @onclick="DismissCard">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					}
+				</div>
+			}
+			else
+			{
+				<div></div>
+			}
 		</div>
-		<div class="card-body">
+
+		<div class="card-body" style="overflow-wrap: break-word; hyphens:auto;">
 			@ChildContent
 		</div>
 	</div>

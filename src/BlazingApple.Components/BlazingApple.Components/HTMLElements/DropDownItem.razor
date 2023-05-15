@@ -1,0 +1,6 @@
+﻿@typeparam T
+
+@if (ChildContent is not null)
+{
+	<li><button class="dropdown-item" type="button" @onclick="OnClick" @attributes="@AdditionalAttributes">@ChildContent</button></li>
+}

@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.3.4</AssemblyVersion>
-		<FileVersion>2.3.4</FileVersion>
-		<Version>2.3.4</Version>
-		<PackageReleaseNotes>2.3.4 - Pagination improvements</PackageReleaseNotes>
+		<AssemblyVersion>2.3.6</AssemblyVersion>
+		<FileVersion>2.3.6</FileVersion>
+		<Version>2.3.6</Version>
+		<PackageReleaseNotes>2.3.6 - Card display improvements</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
