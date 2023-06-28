@@ -1,3 +1,49 @@
+/* _content/BlazingApple.Components/HTMLElements/PillRadioGroup.razor.rz.scp.css */
+.pill-radio-group-container[b-iem2zekg1a] {
+  display: flex;
+}
+
+.pill-radio-group[b-iem2zekg1a] {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+.pill-radio-group > .segment[b-iem2zekg1a] {
+  text-align: center;
+  z-index: 1;
+}
+.pill-radio-group > .segment > label[b-iem2zekg1a] {
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.5s ease;
+}
+.pill-radio-group > .segment.active label[b-iem2zekg1a] {
+  color: #fff;
+}
+
+.pill-radio-group[b-iem2zekg1a]::before {
+  content: "";
+  background-color: var(--bs-primary) !important;
+  border-radius: 999px;
+  width: calc(1 / var(--segment-count) * 100% - 10px);
+  transition: transform 0.3s ease, width 0.3s ease;
+  transform: translateX(calc((var(--selected-segment-index) - 1) * (100% + 10px)));
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 5px;
+  z-index: 0;
+}
 /* _content/BlazingApple.Components/IconChooser.razor.rz.scp.css */
 /* Arrange buttons */
 .btn-matrix[b-pdsm2ou22h] {
