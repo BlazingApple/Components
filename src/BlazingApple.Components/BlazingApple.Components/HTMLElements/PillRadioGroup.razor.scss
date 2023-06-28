@@ -1,0 +1,63 @@
+﻿.pill-radio-group-container
+{
+	display: flex;
+}
+
+@media (min-width: 35em)
+{
+	.pill-radio-group
+	{
+
+	}
+}
+
+.pill-radio-group
+{
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	align-items: center;
+	background: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	border-radius: 999px;
+	max-width: 500px;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+
+
+	> .segment
+	{
+		text-align: center;
+		z-index: 1;
+
+		> label
+		{
+			cursor: pointer;
+			display: block;
+			font-weight: 700;
+			padding: 10px;
+			transition: color 0.5s ease;
+		}
+
+		&.active label
+		{
+			color: #fff;
+		}
+	}
+}
+
+.pill-radio-group::before
+{
+	content: "";
+	background-color: var(--bs-primary) !important;
+	border-radius: 999px;
+	width: calc(1 / var(--segment-count) * 100% - 10px);
+	transition: transform 0.3s ease, width 0.3s ease;
+	transform: translateX(calc((var(--selected-segment-index) - 1) * calc(100% + 10px)));
+	position: absolute;
+	top: 8px;
+	bottom: 8px;
+	left: 5px;
+	z-index: 0;
+}

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 
 namespace BlazingApple.Components.HTMLElements;
 
+/// <summary>Allows setting a range of dates (begin and end).</summary>
 public partial class InputDateRange : ComponentBase
 {
 	/// <inheritdoc cref="InputDateType" />

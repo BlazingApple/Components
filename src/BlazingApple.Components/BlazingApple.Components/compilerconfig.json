@@ -10,5 +10,9 @@
   {
     "outputFile": "Search/SearchBox.razor.css",
     "inputFile": "Search/SearchBox.razor.scss"
+  },
+  {
+    "outputFile": "HTMLElements/PillRadioGroup.razor.css",
+    "inputFile": "HTMLElements/PillRadioGroup.razor.scss"
   }
 ]

@@ -1,0 +1,33 @@
+﻿@inherits InputRadioGroup<T>
+@typeparam T
+
+<div class="pill-radio-group-container" style="@($"--segment-count: {OptionCount}; --selected-segment-index: {SelectedIndex+1}; --segment-width: {ButtonWidth}px; --highlight-x-pos: {TransformWidth}px;")">
+	<div class="pill-radio-group">
+		<InputRadioGroup Name="@Name" @bind-Value="Value">
+			@if (OptionsByKey is not null)
+			{
+				@foreach (KeyValuePair<string, T> kvp in OptionsByKey)
+				{
+					<div class="@(Value?.Equals(kvp.Value) ?? false ? "segment active" : "segment inactive")">
+						<InputRadio id="@kvp.Key" Value="kvp.Value" style="
+							opacity: 0; margin: 0; top: 0; right: 0; bottom: 0; left: 0;
+							position: absolute; width: 0%; cursor: pointer; z-index: -1; height: 100%;" />
+						<label for="@kvp.Key">@kvp.Key</label>
+					</div>
+				}
+			}
+			else if (Options is not null)
+			{
+				@foreach (T option in Options)
+				{
+					<div class="@(Value?.Equals(option) ?? false ? "segment active" : "segment inactive")">
+						<InputRadio id="@option" Value="option" style="
+							opacity: 0; margin: 0; top: 0; right: 0; bottom: 0; left: 0;
+							position: absolute; width: 0%; cursor: pointer; z-index: -1; height: 100%;" />
+						<label for="@option">@option</label>
+					</div>
+				}
+			}
+		</InputRadioGroup>
+	</div>
+</div>

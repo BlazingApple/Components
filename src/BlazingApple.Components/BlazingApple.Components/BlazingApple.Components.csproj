@@ -10,16 +10,17 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.3.6</AssemblyVersion>
-		<FileVersion>2.3.6</FileVersion>
-		<Version>2.3.6</Version>
-		<PackageReleaseNotes>2.3.6 - Card display improvements</PackageReleaseNotes>
+		<AssemblyVersion>2.3.7</AssemblyVersion>
+		<FileVersion>2.3.7</FileVersion>
+		<Version>2.3.7</Version>
+		<PackageReleaseNotes>2.3.7 - Add pill radio group</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PackageIcon>BlazingApple.png</PackageIcon>
+		<PackageProjectUrl>https://github.com/BlazingApple/Components</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
