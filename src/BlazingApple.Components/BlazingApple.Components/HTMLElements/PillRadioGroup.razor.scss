@@ -1,6 +1,29 @@
 ﻿.pill-radio-group-container
 {
 	display: flex;
+
+	&.small
+	{
+		font-size: .75rem;
+
+		.pill-radio-group
+		{
+			> .segment
+			{
+				> label
+				{
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}
+		}
+
+		.pill-radio-group::before
+		{
+			top: 2px;
+			bottom: 2px;
+		}
+	}
 }
 
 @media (min-width: 35em)
@@ -20,8 +43,6 @@
 	background: white;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	border-radius: 999px;
-	max-width: 500px;
-	margin: auto;
 	overflow: hidden;
 	position: relative;
 
@@ -38,6 +59,7 @@
 			font-weight: 700;
 			padding: 10px;
 			transition: color 0.5s ease;
+			line-height: 1;
 		}
 
 		&.active label
@@ -56,8 +78,8 @@
 	transition: transform 0.3s ease, width 0.3s ease;
 	transform: translateX(calc((var(--selected-segment-index) - 1) * calc(100% + 10px)));
 	position: absolute;
-	top: 8px;
-	bottom: 8px;
+	top: 6px;
+	bottom: 6px;
 	left: 5px;
 	z-index: 0;
 }

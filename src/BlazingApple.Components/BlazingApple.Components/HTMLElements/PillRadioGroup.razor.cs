@@ -8,16 +8,15 @@ namespace BlazingApple.Components.HTMLElements;
 /// <typeparam name="T">The type to bind to.</typeparam>
 public partial class PillRadioGroup<T> : InputRadioGroup<T>
 {
-	private int TransformWidth => SelectedIndex * ButtonWidth;
 	private int OptionCount => Options?.Count ?? OptionsByKey?.Count ?? 0;
 
 	private int SelectedIndex => Options is not null && Value is not null
 				? Options?.ToList()?.IndexOf(Value) ?? 0
 				: OptionsByKey?.Keys is not null && Value is not null ? OptionsByKey?.Values.ToList()?.IndexOf(Value) ?? 0 : 0;
 
-	/// <summary>The width of each button</summary>
+	/// <summary>Additional classes to apply to the pill list.</summary>
 	[Parameter]
-	public int ButtonWidth { get; set; } = 120;
+	public string? AdditionalClasses { get; set; }
 
 	/// <summary></summary>
 	[Parameter, EditorRequired]
@@ -30,4 +29,11 @@ public partial class PillRadioGroup<T> : InputRadioGroup<T>
 	/// <summary>The options to render where <typeparamref name="T"/>'s <c>ToString</c> renders a unique, keyed, value.</summary>
 	[Parameter]
 	public IReadOnlyList<T>? Options { get; set; }
+
+	/// <inheritdoc />
+	protected override void OnParametersSet()
+	{
+		base.OnParametersSet();
+		Name ??= Guid.NewGuid().ToString();
+	}
 }

@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.3.7</AssemblyVersion>
-		<FileVersion>2.3.7</FileVersion>
-		<Version>2.3.7</Version>
-		<PackageReleaseNotes>2.3.7 - Add pill radio group</PackageReleaseNotes>
+		<AssemblyVersion>2.3.8</AssemblyVersion>
+		<FileVersion>2.3.8</FileVersion>
+		<Version>2.3.8</Version>
+		<PackageReleaseNotes>2.3.8 - Pill radio group enhancements</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

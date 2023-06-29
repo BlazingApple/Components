@@ -41,7 +41,15 @@
 
 			<div class="row">
 				<h2>Pill Radio Button Group</h2>
+				<h3>Standard</h3>
 				<PillRadioGroup Name="role2" @bind-Value="Model.SelectedRole2" Options="@(Enum.GetValues<UserRole>())">
+					<TemplatedContent Context="role" >
+						@role
+					</TemplatedContent>
+				</PillRadioGroup>
+				
+				<h3>Small</h3>
+				<PillRadioGroup Name="role3" @bind-Value="Model.SelectedRole3" Options="@(Enum.GetValues<UserRole>())" AdditionalClasses="small">
 					<TemplatedContent Context="role" >
 						@role
 					</TemplatedContent>
