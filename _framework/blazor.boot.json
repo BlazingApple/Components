@@ -9,10 +9,10 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BlazingApple.Components.dll": "sha256-BQSoAgsqc5gca5dYNalq\/Uh6e5LlxukmyDY8vuR35i0=",
+      "BlazingApple.Components.dll": "sha256-3cCOc6e56xCJzgJm82hOMceY5LC9fVRVFQjkfewnuxs=",
       "BlazingApple.Components.Shared.dll": "sha256-k20K\/S2irQO33TZLpXV+nK4wuWpArtL26vsWtVlj0cs=",
       "BlazingApple.FontAwesome.dll": "sha256-ApbZA3tH05mQMmHkTaGaqA7J3bkSfsR\/rHt+J\/iTqEk=",
-      "BlazingAppleConsumer.Components.dll": "sha256-3Vr\/5cmiDBdNq48gAD1eXoQoxP\/5K8\/qFxSvYIAhebM=",
+      "BlazingAppleConsumer.Components.dll": "sha256-Impi0PRSNJSfCR0eI\/VbN5AZBrIwBvh22T6EEQzIaE4=",
       "Blazored.Toast.dll": "sha256-SnlpX7tqR4Or48+LUVR7CMv3xLhjy1JBnmDfQCb2GwM=",
       "Blazorise.dll": "sha256-teUuJLNdaQyz7kSZJpp+7v3d2aD3GZ0iElUCByVsjuU=",
       "Blazorise.Icons.FontAwesome.dll": "sha256-+Iyy8rhBEJyrPLe0zhudEyV\/gu9CPHSI7a2fdRu4ZUo=",

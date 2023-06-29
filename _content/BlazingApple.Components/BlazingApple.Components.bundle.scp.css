@@ -2,6 +2,17 @@
 .pill-radio-group-container[b-iem2zekg1a] {
   display: flex;
 }
+.pill-radio-group-container.small[b-iem2zekg1a] {
+  font-size: 0.75rem;
+}
+.pill-radio-group-container.small .pill-radio-group > .segment > label[b-iem2zekg1a] {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.pill-radio-group-container.small .pill-radio-group[b-iem2zekg1a]::before {
+  top: 2px;
+  bottom: 2px;
+}
 
 .pill-radio-group[b-iem2zekg1a] {
   display: grid;
@@ -11,8 +22,6 @@
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 999px;
-  max-width: 500px;
-  margin: auto;
   overflow: hidden;
   position: relative;
 }
@@ -26,6 +35,7 @@
   font-weight: 700;
   padding: 10px;
   transition: color 0.5s ease;
+  line-height: 1;
 }
 .pill-radio-group > .segment.active label[b-iem2zekg1a] {
   color: #fff;
@@ -39,8 +49,8 @@
   transition: transform 0.3s ease, width 0.3s ease;
   transform: translateX(calc((var(--selected-segment-index) - 1) * (100% + 10px)));
   position: absolute;
-  top: 8px;
-  bottom: 8px;
+  top: 6px;
+  bottom: 6px;
   left: 5px;
   z-index: 0;
 }
