@@ -78,5 +78,6 @@ public partial class FormPage : ComponentBase
 		public UserRole SelectedRole { get; set; }
 		public UserRole SelectedRole2 { get; set; }
 		public UserRole SelectedRole3 { get; set; }
+		public UserRole SelectedRole4 { get; set; }
 	}
 }

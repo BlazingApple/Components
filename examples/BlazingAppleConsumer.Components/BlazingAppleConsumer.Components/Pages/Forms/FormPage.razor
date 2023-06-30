@@ -51,7 +51,14 @@
 				<h3>Small</h3>
 				<PillRadioGroup Name="role3" @bind-Value="Model.SelectedRole3" Options="@(Enum.GetValues<UserRole>())" AdditionalClasses="small">
 					<TemplatedContent Context="role" >
-						@role
+						@role - @((int)role)
+					</TemplatedContent>
+				</PillRadioGroup>
+				
+				<h3>With "Previous Value" set.</h3>
+				<PillRadioGroup Name="role4" @bind-Value="Model.SelectedRole4" PreviousValue="UserRole.Owner" Options="@(Enum.GetValues<UserRole>())" AdditionalClasses="small">
+					<TemplatedContent Context="role" >
+						@role - @((int)role)
 					</TemplatedContent>
 				</PillRadioGroup>
 			</div>
