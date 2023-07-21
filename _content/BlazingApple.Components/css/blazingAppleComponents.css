@@ -92,6 +92,10 @@
   line-height: 1;
 }
 
+.blazored-toast-small {
+  width: inherit !important;
+}
+
 /* #endregion */
 /* All */
 .e-control, .e-css, .e-tooltip-wrap .e-tip-content {
