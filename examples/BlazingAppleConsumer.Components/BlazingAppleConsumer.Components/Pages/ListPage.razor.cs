@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Syncfusion.Blazor.Lists;
 
 namespace BlazingAppleConsumer.Components.Pages;
 
 /// <summary>Shows various list components.</summary>
 public partial class ListPage : ComponentBase
 {
-	private int _itemCount;
+	private int _itemCount = 25;
 	private List<int>? _items;
 
 	/// <inheritdoc />

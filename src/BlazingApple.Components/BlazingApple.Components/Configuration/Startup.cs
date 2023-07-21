@@ -1,5 +1,6 @@
 ﻿using BlazingApple.Components.Services;
 using BlazingApple.FontAwesome.Services;
+using Blazored.Toast;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,7 @@ namespace BlazingApple.Components.Configuration
 			services.Configure<FontAwesomeSettings>(config);
 			services.AddScoped<FontSearchService>();
 			services.AddScoped<IClipboardService, ClipboardService>();
+			services.AddBlazoredToast();
 			services.AddScoped<DeviceManager>();
 
 			IConfigurationSection? syncfusionSection = configRoot.GetSection("Syncfusion");

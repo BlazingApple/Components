@@ -1,15 +1,6 @@
 ﻿@page "/lists"
 <h2>Lists</h2>
 
-@if (_items != null) {
-    <RecordList Context="item" ColumnsPerRow="3" Items="_items">
-        <HeadRow></HeadRow>
-        <RowTemplate>
-            <Badge Name="@item.ToString()" />
-        </RowTemplate>
-    </RecordList>
-}
-<hr style="width:80%;"/>
 @if (_items != null)
 {
     <EditForm Model="@(new {})">

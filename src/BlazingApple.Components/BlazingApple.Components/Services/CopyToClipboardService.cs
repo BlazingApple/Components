@@ -1,9 +1,7 @@
-﻿using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlazingApple.Components.Toasts;
+using Blazored.Toast.Configuration;
+using Blazored.Toast.Services;
+using Microsoft.JSInterop;
 
 namespace BlazingApple.Components.Services;
 
@@ -11,13 +9,27 @@ namespace BlazingApple.Components.Services;
 public partial class ClipboardService : IClipboardService
 {
 	private readonly IJSRuntime _jsInterop;
+	private readonly IToastService _toastService;
 
 	/// <summary>DI Constructor.</summary>
-	public ClipboardService(IJSRuntime jsInterop) => _jsInterop = jsInterop;
+	public ClipboardService(IJSRuntime jsInterop, IToastService toastService)
+	{
+		_jsInterop = jsInterop;
+		_toastService = toastService;
+	}
 
 	/// <summary>Copy text to the clipboard.</summary>
 	/// <param name="text">The text to copy.</param>
 	/// <returns>Async op.</returns>
 	public async Task CopyToClipboard(string text)
-		=> await _jsInterop.InvokeVoidAsync("navigator.clipboard.writeText", text);
+	{
+		await _jsInterop.InvokeVoidAsync("navigator.clipboard.writeText", text);
+		_toastService.ShowToast<CopiedToClipboardToast>(UpdateToastSettings);
+	}
+
+	private void UpdateToastSettings(ToastSettings settings)
+	{
+		settings.Timeout = 2;
+		settings.AdditionalClasses += "blazored-toast-small";
+	}
 }

@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.4.3</AssemblyVersion>
-		<FileVersion>2.4.3</FileVersion>
-		<Version>2.4.3</Version>
-		<PackageReleaseNotes>2.4.3 - Change how PillRadioGroup previous value works.</PackageReleaseNotes>
+		<AssemblyVersion>2.4.4</AssemblyVersion>
+		<FileVersion>2.4.4</FileVersion>
+		<Version>2.4.4</Version>
+		<PackageReleaseNotes>2.4.4 - Require use of Blazored.Toasts.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
