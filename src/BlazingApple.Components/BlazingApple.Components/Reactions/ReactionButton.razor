@@ -20,13 +20,13 @@
 
 		@if (!Value.HasValue)
 		{
-			<button class="@ButtonClasses" style="line-height: 0;" @onmouseenter="OnMouseIn">
+			<button class="@ButtonClasses" @onmouseenter="OnMouseIn">
 				<span>@DefaultButtonText</span>
 			</button>
 		}
 		else
 		{
-			<button class="@($"{ButtonClasses} fw-bold")" style="line-height: 0;" @onmouseenter="OnMouseIn">
+			<button class="@($"{ButtonClasses} fw-bold")" @onmouseenter="OnMouseIn">
 				<span>
 					@if(ShowIconsOnly) {
 						@Value.GetEnumDisplayName()

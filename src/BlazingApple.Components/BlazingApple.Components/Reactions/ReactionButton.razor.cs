@@ -56,9 +56,11 @@ public partial class ReactionButton : ComponentBase
 		else
 			Value = newVal;
 
+		Reactions ??= new Dictionary<ReactionType, int>();
+
 		if (Reactions is not null)
 		{
-			if (oldVal.HasValue)
+			if (oldVal.HasValue && Reactions.ContainsKey(oldVal.Value))
 			{
 				Reactions[oldVal.Value]--;
 
