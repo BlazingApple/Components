@@ -65,6 +65,48 @@
   max-width: 10rem;
   margin: 0.5rem;
 }
+/* _content/BlazingApple.Components/Reactions/ExistingReactions.razor.rz.scp.css */
+.ba-reaction-options-container[b-06ug0aocvb] {
+  display: flex;
+  align-items: center;
+}
+.ba-reaction-options-container :not(:first-child)[b-06ug0aocvb] {
+  margin-left: -0.3rem;
+}
+
+.ba-reaction-icon[b-06ug0aocvb] {
+  font-size: 0.75rem;
+  border-radius: 50%;
+  padding: 0.01rem;
+  border: 1px solid white;
+  transition: margin-top ease-in-out 0.25s;
+  background-color: white;
+}
+.ba-reaction-icon:hover[b-06ug0aocvb] {
+  margin-top: -0.25rem;
+}
+/* _content/BlazingApple.Components/Reactions/ReactionOptions.razor.rz.scp.css */
+.ba-reaction-options-container[b-qjs13ocnug] {
+  display: inline-flex;
+  box-shadow: 0 1px 3px 0 rgba(32, 33, 36, 0.28) !important;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.25rem;
+  border: 1px solid lightgray;
+}
+
+.ba-reaction-option-button[b-qjs13ocnug] {
+  height: 1.75rem;
+  width: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: margin ease-in-out 0.25s 0.05s;
+}
+.ba-reaction-option-button:hover[b-qjs13ocnug] {
+  margin-top: -0.15rem;
+}
 /* _content/BlazingApple.Components/ZeroState.razor.rz.scp.css */
 @keyframes animate-middle-b-wrdbijrg8y {
   animation-name: example;
