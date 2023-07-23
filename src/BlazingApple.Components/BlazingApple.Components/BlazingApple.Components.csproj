@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.4.4</AssemblyVersion>
-		<FileVersion>2.4.4</FileVersion>
-		<Version>2.4.4</Version>
-		<PackageReleaseNotes>2.4.4 - Require use of Blazored.Toasts.</PackageReleaseNotes>
+		<AssemblyVersion>2.4.6</AssemblyVersion>
+		<FileVersion>2.4.6</FileVersion>
+		<Version>2.4.6</Version>
+		<PackageReleaseNotes>2.4.6 - Add new ReactionButton option.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -32,7 +32,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BlazingApple.Components.Shared" Version="0.2.0" />
+		<PackageReference Include="BlazingApple.Components.Shared" Version="0.5.0" />
 		<PackageReference Include="BlazingApple.FontAwesome" Version="0.4.0" />
 		<PackageReference Include="Blazored.Toast" Version="4.1.0" />
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.1.5" />
@@ -54,5 +54,9 @@
 		</None>
 		<None Include="wwwroot/BlazingApple.png" Pack="true" PackagePath="" />
 		<None Include="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\BlazingApple.Components.Shared\BlazingApple.Components.Shared.csproj" />
 	</ItemGroup>
 </Project>

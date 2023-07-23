@@ -1,0 +1,21 @@
+﻿.ba-reaction-options-container {
+  display: inline-flex;
+  box-shadow: 0 1px 3px 0 rgba(32, 33, 36, 0.28) !important;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.25rem;
+  border: 1px solid lightgray;
+}
+
+.ba-reaction-option-button {
+  height: 1.75rem;
+  width: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: margin ease-in-out 0.25s 0.05s;
+}
+.ba-reaction-option-button:hover {
+  margin-top: -0.15rem;
+}

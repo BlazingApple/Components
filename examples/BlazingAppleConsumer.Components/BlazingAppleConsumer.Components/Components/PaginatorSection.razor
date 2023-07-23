@@ -1,11 +1,23 @@
 ﻿<h3>Paginator</h3>
 <div class="code"><code>@("<ListPaginator BatchSize=\"25\" ResultCount=\"126\" @bind-Value=\"_currentPage\"/>")</code></div>
 
-<div class="d-flex">
-	<label>Current Page: </label>
-	<EditForm Model="_resultCount">
-		<InputNumber @bind-Value="_resultCount"></InputNumber>
-	</EditForm>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="d-flex flex-column">
+			<label for="result-count">Number of Results</label>
+			<EditForm Model="_resultCount">
+				<InputNumber id="result-count" class="form-control" @bind-Value="_resultCount"></InputNumber>
+			</EditForm>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="d-flex flex-column">
+			<label for="batch-size">Batch size</label>
+			<EditForm Model="_batchSize">
+				<InputNumber id="batch-size" class="form-control" @bind-Value="_batchSize"></InputNumber>
+			</EditForm>
+		</div>
+	</div>
 	<span class="ms-2">@(_currentPage + 1)</span>
 </div>
-<ListPaginator BatchSize="25" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>
+<ListPaginator BatchSize="_batchSize" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>

@@ -9,10 +9,10 @@ internal class SearchRequest<TFilter> : ISearchRequest<TFilter> where TFilter : 
 	/// <inheritdoc cref="Filter" />
 	public TFilter Filter { get; init; }
 
-	/// <summary>How many models to skip.</summary>
+	/// <inheritdoc />
 	public int Skip { get; init; }
 
-	/// <summary>How many models to retrieve.</summary>
+	/// <inheritdoc />
 	public int Take { get; init; }
 
 	/// <inheritdoc cref="ListSortDirection"/>
@@ -40,10 +40,7 @@ internal class SearchRequest<TFilter> : ISearchRequest<TFilter> where TFilter : 
 	{
 	}
 
-	/// <summary>
-	/// 	<c>True</c> if <see cref="Filter"/> is empty, and <see cref="SortDirection"/> is <see cref="ListSortDirection.Ascending"/>.
-	/// </summary>
-	/// <returns>Whether request is empty.</returns>
+	/// <inheritdoc />
 	public bool IsEmpty()
 		=> SortDirection == ListSortDirection.Ascending && Filter.IsEmpty() && Take == 0;
 }

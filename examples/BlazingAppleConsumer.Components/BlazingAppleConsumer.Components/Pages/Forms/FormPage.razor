@@ -15,7 +15,7 @@
 				<h2>Multi-Checklist</h2>
 				<FormGroup for="title" ColumnWidthClass="col-md-12" Label="User Roles">
 					<ValidationMessage For="@(() => Model)" />
-					<InputCheckboxList Data="@_roleOptions" TItem="DisplayValuePair<UserRole>" TValue="UserRole"
+					<InputCheckboxList class="form-control" Data="@_roleOptions" TItem="DisplayValuePair<UserRole>" TValue="UserRole"
 									   TextField="@((item)=>item.Text)"
 									   ValueField="@((item)=>item.Value)"
 									   OnChange="OnChange"
@@ -43,21 +43,21 @@
 				<h2>Pill Radio Button Group</h2>
 				<h3>Standard</h3>
 				<PillRadioGroup Name="role2" @bind-Value="Model.SelectedRole2" Options="@(Enum.GetValues<UserRole>())">
-					<TemplatedContent Context="role" >
+					<TemplatedContent Context="role">
 						@role
 					</TemplatedContent>
 				</PillRadioGroup>
-				
+
 				<h3>Small</h3>
 				<PillRadioGroup Name="role3" @bind-Value="Model.SelectedRole3" Options="@(Enum.GetValues<UserRole>())" AdditionalClasses="small">
-					<TemplatedContent Context="role" >
+					<TemplatedContent Context="role">
 						@role - @((int)role)
 					</TemplatedContent>
 				</PillRadioGroup>
-				
+
 				<h3>With "Previous Value" set.</h3>
 				<PillRadioGroup Name="role4" @bind-Value="Model.SelectedRole4" PreviousValue="UserRole.Owner" Options="@(Enum.GetValues<UserRole>())" AdditionalClasses="small">
-					<TemplatedContent Context="role" >
+					<TemplatedContent Context="role">
 						@role - @((int)role)
 					</TemplatedContent>
 				</PillRadioGroup>

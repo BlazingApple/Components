@@ -1,0 +1,13 @@
+﻿@using BlazingApple.Components.Shared.Models.Reactions;
+<div class="ba-reaction-options-container" @attributes="@AdditionalAttributes">
+	@foreach(ReactionType reactionType in Enum.GetValues<ReactionType>())
+	{
+		string defaultClasses = "btn btn-sm btn-light me-1 ba-reaction-option-button";
+
+		string buttonClasses = reactionType != Value ? defaultClasses : $"{defaultClasses} active";
+
+		<button class="@buttonClasses" disabled="@_isLoading" type="button" @onclick="async () => await OnValueSelect(reactionType)">
+			@reactionType.GetEnumDisplayName()
+		</button>
+	}
+</div>

@@ -1,0 +1,36 @@
+﻿@using BlazingApple.Components.Shared.Models.Reactions;
+
+@if (_showOptions)
+{
+	<div style="top:0; left:0; position:fixed; z-index:2; height:100%; width: 100%;" @onclick="OnMouseOut"></div>
+}
+<div style="display: inline-block;" @attributes="@AdditionalAttributes">
+	<div style="position:relative;">
+		@if (_showOptions)
+		{
+			<div style="z-index: 3; position:absolute; top:-2.5rem;">
+				<ReactionOptions Value="Value" ValueChanged="@OnValueSelect" />
+			</div>
+		}
+
+		@if (!Value.HasValue)
+		{
+			<button class="btn btn-link p-0" style="line-height: 0;" @onmouseenter="OnMouseIn">
+				<span>@DefaultButtonText</span>
+			</button>
+		}
+		else
+		{
+			<button class="btn btn-link p-0 fw-bold" style="line-height: 0;" @onmouseenter="OnMouseIn">
+				<span>
+					@if(ShowIconsOnly) {
+						@Value.GetEnumDisplayName()
+					}
+					else {
+						@Value.GetEnumDisplayName() @Value
+					}
+				</span>
+			</button>
+		}
+	</div>
+</div>

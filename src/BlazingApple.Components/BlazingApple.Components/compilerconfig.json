@@ -14,5 +14,9 @@
   {
     "outputFile": "HTMLElements/PillRadioGroup.razor.css",
     "inputFile": "HTMLElements/PillRadioGroup.razor.scss"
+  },
+  {
+    "outputFile": "Reactions/ReactionOptions.razor.css",
+    "inputFile": "Reactions/ReactionOptions.razor.scss"
   }
 ]

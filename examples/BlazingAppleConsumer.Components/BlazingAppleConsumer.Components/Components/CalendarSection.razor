@@ -2,52 +2,55 @@
 @code {
 	CalendarEvent calEvent = new();
 }
+
 <div class="row">
-	<div class="col-lg-9">
-		<EditForm Model="@(new{})">
+	<div class="col-lg-6">
+		<EditForm Model="@_model">
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
 					<label>Title</label>
-					<InputText @bind-Value="calEvent.Title"></InputText>
+					<InputText class="form-control" @bind-Value="calEvent.Title"></InputText>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
 					<label>Location</label>
-					<InputText @bind-Value="calEvent.Location"></InputText>
+					<InputText class="form-control" @bind-Value="calEvent.Location"></InputText>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
 					<label>Description</label>
-					<InputTextArea @bind-Value="calEvent.Description"></InputTextArea>
+					<InputTextArea class="form-control" @bind-Value="calEvent.Description"></InputTextArea>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
 					<label>Start date</label>
-					<InputDateTime @bind-Value="calEvent.Start"></InputDateTime>
+					<InputDateTime class="form-control" @bind-Value="calEvent.Start"></InputDateTime>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
 					<label>End date</label>
-					<InputDateTime @bind-Value="calEvent.End"></InputDateTime>
+					<InputDateTime class="form-control" @bind-Value="calEvent.End"></InputDateTime>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
-					<label>Full day</label>
-					<InputCheckbox @bind-Value="calEvent.IsFullDay"></InputCheckbox>
+					<div class="form-check">
+						<InputCheckbox id="is-full-day" class="form-check-input" @bind-Value="calEvent.IsFullDay"></InputCheckbox>
+						<label for="is-full-day" class="form-check-label">Full day</label>
+					</div>
 				</div>
 			</div>
 		</EditForm>
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-6">
 		<AddToCalendar Title="@calEvent.Title"
 					   Description="@calEvent.Description"
 					   Location="@calEvent.Location"
