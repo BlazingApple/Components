@@ -45,8 +45,8 @@ internal class SearchResults<T> : ISearchResults<T>
 
 	/// <summary>Transform a <see cref="IReadOnlyList{T}"/> into a paginated <see cref="SearchResults{T}"/></summary>
 	/// <param name="source">Query source</param>
-	/// <param name="skip"><see cref="SearchRequest.Skip"/></param>
-	/// <param name="take"><see cref="SearchRequest.Take"/></param>
+	/// <param name="skip"><see cref="SearchRequest{TFilter}.Skip"/></param>
+	/// <param name="take"><see cref="SearchRequest{TFilter}.Take"/></param>
 	/// <returns><see cref="SearchResults{T}"/></returns>
 	public static SearchResults<T> Create(IReadOnlyList<T> source, int skip, int take)
 	{

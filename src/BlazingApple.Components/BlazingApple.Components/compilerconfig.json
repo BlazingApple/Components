@@ -18,5 +18,9 @@
   {
     "outputFile": "Reactions/ReactionOptions.razor.css",
     "inputFile": "Reactions/ReactionOptions.razor.scss"
+  },
+  {
+    "outputFile": "Reactions/ExistingReactions.razor.css",
+    "inputFile": "Reactions/ExistingReactions.razor.scss"
   }
 ]

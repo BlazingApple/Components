@@ -19,6 +19,10 @@ public partial class ReactionOptions : ComponentBase
 	[Parameter]
 	public EventCallback<ReactionType?> ValueChanged { get; set; }
 
+	/// <summary>The available reactions to be selected from.</summary>
+	[Parameter]
+	public IReadOnlyList<ReactionType> Options { get; set; } = Enum.GetValues<ReactionType>();
+
 	/// <summary>
 	/// Invoked when one of the Reaction buttons is clicked.
 	/// </summary>

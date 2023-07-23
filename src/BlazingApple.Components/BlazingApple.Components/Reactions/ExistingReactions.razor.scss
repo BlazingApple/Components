@@ -1,0 +1,22 @@
+﻿.ba-reaction-options-container
+{
+	display: flex;
+	align-items: center;
+
+	:not(:first-child)
+	{
+		margin-left: -.3rem;
+	}
+}
+.ba-reaction-icon 
+{
+	font-size: .75rem;
+	border-radius:50%;
+	padding:.01rem;
+	border: 1px solid white;
+	transition: margin-top ease-in-out .25s;
+	background-color: white;
+	&:hover {
+		margin-top: -.25rem;
+	}
+}

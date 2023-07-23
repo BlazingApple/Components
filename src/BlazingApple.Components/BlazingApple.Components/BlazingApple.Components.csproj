@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.4.6</AssemblyVersion>
-		<FileVersion>2.4.6</FileVersion>
-		<Version>2.4.6</Version>
-		<PackageReleaseNotes>2.4.6 - Add new ReactionButton option.</PackageReleaseNotes>
+		<AssemblyVersion>2.4.7</AssemblyVersion>
+		<FileVersion>2.4.7</FileVersion>
+		<Version>2.4.7</Version>
+		<PackageReleaseNotes>2.4.7 - Support showing reaction counts by type.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

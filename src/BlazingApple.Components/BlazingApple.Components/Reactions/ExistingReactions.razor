@@ -1,0 +1,18 @@
+﻿@using BlazingApple.Components.Shared.Models.Reactions
+@if(Reactions is not null) {
+	<div class="d-flex align-items-center">
+		<div class="ba-reaction-options-container me-2">
+			@foreach(ReactionType reactionType in Reactions.Keys.OrderBy(r=>r))
+			{
+				@if(Reactions[reactionType] <= 0)
+				{
+					continue;
+				}
+				<div title="@($"{Reactions[reactionType]} {reactionType.GetEnumDisplayName()}")" class="ba-reaction-icon">@reactionType.GetEnumDisplayName()</div>
+			}
+		</div>
+		<div>
+			@_totalReactionCount
+		</div>
+	</div>
+}
