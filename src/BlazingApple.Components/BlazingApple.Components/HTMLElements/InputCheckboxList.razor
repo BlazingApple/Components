@@ -17,7 +17,7 @@
 				}
 				<div class="form-group" style="margin-bottom:0;">
 					<div class="form-check" style="line-height: initial;">
-						<input id="@($"{Name}-{ValueId}")" disabled="@Disabled" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(ValueId, eventArgs.Value); }" />
+						<input id="@($"{Name}-{ValueId}")" disabled="@Disabled" type="checkbox" class="form-check-input" checked=@Checked @onchange="eventArgs => { CheckboxClicked(ValueId, eventArgs.Value!); }" />
 						<label for="@($"{Name}-{ValueId}")" class="form-check-label">@Text</label>
 					</div>
 				</div>
