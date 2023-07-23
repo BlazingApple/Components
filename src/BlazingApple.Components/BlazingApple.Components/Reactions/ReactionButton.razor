@@ -4,7 +4,7 @@
 {
 	<div style="top:0; left:0; position:fixed; z-index:2; height:100%; width: 100%;" @onclick="OnMouseOut"></div>
 }
-<div style="display: inline-flex;" @attributes="@AdditionalAttributes">
+<div style="display: inline-flex; align-items: end;" @attributes="@AdditionalAttributes">
 	@if(Reactions is not null) {
 		<div class="me-2">
 			<ExistingReactions Reactions="@Reactions.AsReadOnly()"/>

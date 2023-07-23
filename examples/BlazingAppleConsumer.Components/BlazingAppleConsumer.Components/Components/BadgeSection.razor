@@ -1,0 +1,26 @@
+﻿<h2>Badges</h2>
+
+<div class="d-flex flex-column">
+	<label>Usage</label>
+	<div class="code"><code>@("<Badge Name=\"Senate Bill 133\"/>")</code></div>
+</div>
+<div class="d-flex">
+	<Badge Name="Senate Bill 133" />
+	<Badge UseFullString="true" Name="@("\"133\"")" />
+	<Badge UseFullString="true" Name="@("\"1334\"")" />
+	<Badge Name="Hello *World*, I Love You!" />
+	<Badge IconClass="fas fa-exclamation-triangle" Name="Warning!" />
+</div>
+
+@code {
+	string badgeString = "hello world";
+}
+<div>
+	<EditForm Model="@badgeString">
+		<label for="badgeInput">Try it out!</label>
+		<div class="d-flex align-items-center">
+			<InputText id="badgeInput" class="form-control me-2" style="max-width: 10rem;" @bind-Value="badgeString" />
+			<Badge Name="@badgeString" />
+		</div>
+	</EditForm>
+</div>

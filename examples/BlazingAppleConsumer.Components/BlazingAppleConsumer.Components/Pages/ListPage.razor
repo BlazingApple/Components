@@ -1,4 +1,6 @@
 ﻿@page "/lists"
+@using BlazingAppleConsumer.Components.Components
+
 <h2>Lists</h2>
 
 @if (_items != null)
@@ -18,3 +20,7 @@
         </RecordList>
     }
 }
+
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
+
+<PaginatorSection/>
