@@ -2,7 +2,7 @@
 <h3>Copy to Clipboard</h3>
 
 <div class="d-flex align-items-center">
-	<EditForm Model="@()">
+	<EditForm Model="@(new {})">
 		<FormGroup Label="Text to copy">
 			<div class="d-flex align-items-center">
 				<InputText style="min-width: 8rem;" class="form-control" @bind-Value="_textToCopy"></InputText>
