@@ -1,4 +1,5 @@
-﻿using BlazingApple.Components.Shared.Models.Reactions;
+﻿using BlazingApple.Components.Reactions;
+using BlazingApple.Components.Shared.Models.Reactions;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazingAppleConsumer.Components.Components;
@@ -7,8 +8,20 @@ namespace BlazingAppleConsumer.Components.Components;
 public partial class ReactionSection : ComponentBase
 {
 	private IDictionary<ReactionType, int>? _reactions;
+	private ReactionType? _oldReaction;
 	public ReactionType? SelectedReaction { get; set; }
-	public ReactionType? SelectedReaction2 { get; set; }
+	public ReactionType? SelectedReaction2
+	{
+		get => SelectedReaction;
+		set
+		{
+			_oldReaction = SelectedReaction;
+			SelectedReaction = value;
+
+			if (_reactions is not null)
+				ReactionButton.UpdateDictionaryWithReactionChange(_oldReaction, value, _reactions);
+		}
+	}
 
 	/// <inheritdoc />
 	protected override async Task OnInitializedAsync()

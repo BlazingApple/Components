@@ -41,6 +41,10 @@ public partial class ReactionButton : ComponentBase
 
 	private string ButtonClasses => $"btn btn-link p-0 {AdditionalClasses}";
 
+	/// <inheritdoc/>
+
+	protected override void OnParametersSet() => base.OnParametersSet();
+
 	/// <summary>
 	/// Invoked when one of the Reaction buttons is clicked.
 	/// </summary>
@@ -48,38 +52,11 @@ public partial class ReactionButton : ComponentBase
 	/// <returns>Async op.</returns>
 	public async Task OnValueSelect(ReactionType? newVal)
 	{
-		ReactionType? oldVal = Value;
-
 		_showOptions = false;
 		if (Value == newVal)
 			Value = null;
 		else
 			Value = newVal;
-
-		Reactions ??= new Dictionary<ReactionType, int>();
-
-		if (Reactions is not null)
-		{
-			if (oldVal.HasValue && Reactions.ContainsKey(oldVal.Value))
-			{
-				Reactions[oldVal.Value]--;
-
-				if (Reactions[oldVal.Value] <= 0)
-					Reactions.Remove(oldVal.Value);
-			}
-
-			if (Value.HasValue)
-			{
-				if (Reactions.ContainsKey(Value.Value))
-				{
-					Reactions[Value.Value]++;
-				}
-				else
-				{
-					Reactions.Add(Value.Value, 1);
-				}
-			}
-		}
 
 		if (ValueChanged.HasDelegate)
 			await ValueChanged.InvokeAsync(Value);
@@ -88,5 +65,36 @@ public partial class ReactionButton : ComponentBase
 	}
 
 	private void OnMouseIn() => _showOptions = true;
-	private void OnMouseOut() => _showOptions = false;
+
+	private void OnClickAway() => _showOptions = false;
+
+	/// <summary>Performs the basic logic to update the reactions dictionary.</summary>
+	/// <param name="oldValue">The value prior to the new action</param>
+	/// <param name="newValue">The new value</param>
+	/// <param name="reactions">The reactions dictionary</param>
+	public static void UpdateDictionaryWithReactionChange(ReactionType? oldValue, ReactionType? newValue, IDictionary<ReactionType, int> reactions)
+	{
+		if (reactions is not null)
+		{
+			if (oldValue.HasValue && reactions.ContainsKey(oldValue.Value))
+			{
+				reactions[oldValue.Value]--;
+
+				if (reactions[oldValue.Value] <= 0)
+					reactions.Remove(oldValue.Value);
+			}
+
+			if (newValue.HasValue)
+			{
+				if (reactions.ContainsKey(newValue.Value))
+				{
+					reactions[newValue.Value]++;
+				}
+				else
+				{
+					reactions.Add(newValue.Value, 1);
+				}
+			}
+		}
+	}
 }

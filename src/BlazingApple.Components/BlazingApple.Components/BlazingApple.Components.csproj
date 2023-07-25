@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.4.7.2</AssemblyVersion>
-		<FileVersion>2.4.7.2</FileVersion>
-		<Version>2.4.7.2</Version>
-		<PackageReleaseNotes>2.4.7.2 - Work on Safari?</PackageReleaseNotes>
+		<AssemblyVersion>2.4.7.3</AssemblyVersion>
+		<FileVersion>2.4.7.3</FileVersion>
+		<Version>2.4.7.3</Version>
+		<PackageReleaseNotes>2.4.7.3 - Fix approach to updating reactions.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
