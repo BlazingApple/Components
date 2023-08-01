@@ -1,0 +1,8 @@
+﻿@if(Parent is not null) {
+	<div class="@($"progress-bar {AdditionalClasses}")" role="progressbar" aria-valuenow="@Value" aria-valuemin="0" aria-valuemax="100" @attributes="AdditionalAttributes" style="@StyleString">
+		@if(ChildContent is not null)
+		{
+			@ChildContent
+		}
+	</div>
+}

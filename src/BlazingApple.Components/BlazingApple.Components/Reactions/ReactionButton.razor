@@ -29,10 +29,10 @@
 			<button class="@($"{ButtonClasses} fw-bold")"  @onmouseenter="OnMouseIn">
 				<span>
 					@if(ShowIconsOnly) {
-						@Value.GetEnumDisplayName()
+						@Value.ToDisplayName()
 					}
 					else {
-						@Value.GetEnumDisplayName() @Value
+						@Value.ToDisplayName() @Value
 					}
 				</span>
 			</button>

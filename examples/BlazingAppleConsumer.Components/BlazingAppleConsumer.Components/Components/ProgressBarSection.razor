@@ -1,0 +1,100 @@
+﻿
+@{
+	object model = new { };
+
+}
+
+<h2>Progress Bars</h2>
+<div class="row">
+	<div class="col-lg-6">
+		<h3>Single</h3>
+		<EditForm Model="model">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label>Numerator</label>
+					<InputNumber class="form-control" @bind-Value="_progressSingleNumerator" />
+				</div>
+				<div class="form-group col-md-6">
+					<label>Denominator</label>
+					<InputNumber class="form-control" @bind-Value="_progressSingleDenominator" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-check">
+						<InputCheckbox class="form-check-input" type="checkbox" @bind-Value="_progressSingleShowPercentComplete" id="flexCheckDefault" />
+						<label class="form-check-label" for="flexCheckDefault">
+							Show percent complete label
+						</label>
+					</div>
+				</div>
+			</div>
+		</EditForm>
+		<ProgressBar style="accent-color: orchid;"
+					 AsOfTime="@DateTime.Now"
+					 CurrentIndex="@_progressSingleNumerator"
+					 TotalCount="_progressSingleDenominator"
+					 Units="units, of some sort"
+					 ShowPercentComplete="_progressSingleShowPercentComplete" />
+	</div>
+	<div class="col-lg-6">
+		<h3 class="mt-3">Multi</h3>
+		<small class="text-muted">
+			We're only providing controls to modify the <em>first</em> segment, 
+			for this demo's simplicity, but, all can be modified.
+		</small>
+
+		<EditForm Model="model">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label>Numerator</label>
+					<InputNumber class="form-control" @bind-Value="_progressMultiNumerator" />
+				</div>
+
+				<div class="form-group col-md-6">
+					<label>Denominator</label>
+					<InputNumber class="form-control" disabled="@(!_passDenominator)" @bind-Value="_progressMultiDenominator" />
+				</div>
+			</div>
+			<div class="form-check">
+				<InputCheckbox class="form-check-input" type="checkbox" @bind-Value="_passDenominator" id="flexCheckDefault2" />
+				<label class="form-check-label" for="flexCheckDefault2">
+					Pass denominator to component (only required if the sum of the segments totals don't equate to 100%)
+				</label>
+			</div>
+		</EditForm>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="d-flex">
+					<div class="d-flex me-2 my-1">
+						<div class="me-2" style="height: 1rem; width:1rem; background-color: orchid; border-radius: 100%; border: 1px lightgray solid;"></div>
+						<small class="text-muted">Val: @_progressMultiNumerator</small>
+					</div>
+					<div class="d-flex me-2 my-1">
+						<div class="me-2" style="height: 1rem; width:1rem; background-color: peachpuff; border-radius: 100%; border: 1px lightgray solid;"></div>
+						<small class="text-muted">Val: 12</small>
+					</div>
+					<div class="d-flex me-2 my-1">
+						<div class="me-2" style="height: 1rem; width:1rem; background-color: orange; border-radius: 100%; border: 1px lightgray solid;"></div>
+						<small class="text-muted">Val: 19</small>
+					</div>
+					<div class="d-flex me-2 my-1">
+						<div class="me-2" style="height: 1rem; width:1rem; background-color: powderblue; border-radius: 100%; border: 1px lightgray solid;"></div>
+						<small class="text-muted">Val: 7</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<ProgressBarMulti Denominator="@(_passDenominator ? _progressMultiDenominator : null)">
+					<ProgressBarSegment Value="_progressMultiNumerator" Tooltip="My tooltip" style="background-color: orchid;">My label</ProgressBarSegment>
+					<ProgressBarSegment Value="12" Tooltip="My tooltip" style="background-color: peachpuff;"></ProgressBarSegment>
+					<ProgressBarSegment Value="19" Tooltip="My tooltip" style="background-color: orange;"></ProgressBarSegment>
+					<ProgressBarSegment Value="7" Tooltip="My tooltip" style="background-color: powderblue;"></ProgressBarSegment>
+				</ProgressBarMulti>
+			</div>
+		</div>
+	</div>
+</div>

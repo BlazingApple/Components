@@ -7,7 +7,7 @@
 		string buttonClasses = reactionType != Value ? defaultClasses : $"{defaultClasses} active";
 
 		<button class="@buttonClasses" disabled="@_isLoading" type="button" @onclick="async () => await OnValueSelect(reactionType)">
-			@reactionType.GetEnumDisplayName()
+			@reactionType.ToDisplayName()
 		</button>
 	}
 </div>

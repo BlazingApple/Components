@@ -8,7 +8,7 @@
 				{
 					continue;
 				}
-				<div title="@($"{Reactions[reactionType]} {reactionType.GetEnumDisplayName()}")" class="ba-reaction-icon">@reactionType.GetEnumDisplayName()</div>
+				<div title="@($"{Reactions[reactionType]} {reactionType.ToDisplayName()}")" class="ba-reaction-icon">@reactionType.ToDisplayName()</div>
 			}
 		</div>
 		<div>

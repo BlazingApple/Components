@@ -9,7 +9,7 @@ public static class EnumExtensions
 	/// <summary>Using reflection, get the display name of the enum value.</summary>
 	/// <param name="value">The enum value.</param>
 	/// <returns>The <see cref="DisplayAttribute.Name" /> of the enum value.</returns>
-	public static string GetEnumDisplayName(this Enum value)
+	public static string ToDisplayName(this Enum value)
 	{
 		DisplayAttribute? attribute = GetAttribute<DisplayAttribute>(value);
 		return attribute?.Name ?? value.ToString();
