@@ -1,0 +1,25 @@
+﻿@using BlazingApple.Components.Services;
+@inherits Icon
+
+@if (I != IconType.Null && string.IsNullOrEmpty(CustomIcon))
+{
+	@switch (I)
+	{
+		case IconType.CSpan:
+		case IconType.GovTrack:
+		case IconType.OurGov:
+		case IconType.SealHouse:
+		case IconType.SealPresident:
+		case IconType.SealSenate:
+			<CustomIcon AdditionalAttributes="AdditionalAttributes" AdditionalClasses="@AdditionalClasses" I="I" CustomIcon="@CustomIcon" AltText="@AltText" />
+			break;
+		default:
+			IconData icon = Get(I);
+			<i title="@AltText" class="@($"{icon.IconClasses} {AdditionalClasses}")" @attributes="AdditionalAttributes"></i>
+			break;
+	}
+}
+else
+{
+	<i title="@AltText" class="@($"{customIconString} {AdditionalClasses}")" @attributes="AdditionalAttributes"></i>
+}

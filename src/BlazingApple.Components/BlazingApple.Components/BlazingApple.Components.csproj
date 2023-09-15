@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.4.8.1</AssemblyVersion>
-		<FileVersion>2.4.8.1</FileVersion>
-		<Version>2.4.8.1</Version>
-		<PackageReleaseNotes>2.4.8.1 - Add Multi Progress Bar</PackageReleaseNotes>
+		<AssemblyVersion>2.5.0</AssemblyVersion>
+		<FileVersion>2.5.0</FileVersion>
+		<Version>2.5.0</Version>
+		<PackageReleaseNotes>2.5.0 - Fix bug in CircleList in which unable to render 2 items.</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>

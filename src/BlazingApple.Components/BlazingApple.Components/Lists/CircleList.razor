@@ -3,36 +3,23 @@
 	https://codepen.io/thebabydino/pen/zdhmt
 	https://stackoverflow.com/questions/12813573/position-icons-into-circle
 *@
-<div class="ba-circle-container" style="--m: @count; --d:@ItemSize; --tan: @tan">
-	@for (int i = 0; i < Items.Count; i++)
-	{
-		TItem item = Items[i];
-		<div class="ba-circle-item" style="--i: @i">
-			@RowTemplate(item)
+@if(Items is not null && Items.Count > 0) {
+	if(Items.Count > 1) {
+		<div class="ba-circle-container" style="--m: @Items.Count; --d:@ItemSize; --tan: @_tan">
+			@for (int i = 0; i < Items.Count; i++)
+			{
+				TItem item = Items[i];
+				<div class="ba-circle-item" style="--i: @i">
+					@RowTemplate(item)
+				</div>
+			}
+			<!-- the rest of those placed on the circle -->
 		</div>
 	}
-	<!-- the rest of those placed on the circle -->
-</div>
-
-@code {
-	[Parameter, EditorRequired]
-	public IReadOnlyList<TItem> Items { get; set; } = null!;
-
-	[Parameter, EditorRequired]
-	public RenderFragment<TItem> RowTemplate { get; set; } = null!;
-
-	/// <summary>
-	/// The Css/Html compliant format for the item size
-	/// </summary>
-	[Parameter, EditorRequired]
-	public string ItemSize { get; set; } = null!;
-
-	private int count;
-	private double tan;
-
-	protected override void OnParametersSet()
+	else
 	{
-		count = Items.Count;
-		tan = Math.Tan(Math.PI / count);
+		<div>
+			@RowTemplate(Items[0])
+		</div>
 	}
 }

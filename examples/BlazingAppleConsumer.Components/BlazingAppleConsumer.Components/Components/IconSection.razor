@@ -1,0 +1,27 @@
+﻿@using BlazingApple.Components.Services;
+
+<h2>Icons</h2>
+<p>BlazingApple offers an API over FontAwesome's Icons, making it really easy to use them in Blazor. 
+	For applications that allow user's to choose their <em>own</em> icons, use the 
+	<div class="code">
+		<code>
+			IconChooser
+		</code>
+	</div>.
+</p>
+
+<h3>Composite Icons</h3>
+<p>Icons can also be made as composite icons, where one icon is superimposed over another using the
+	<div class="code">
+		<code>
+			ChildContent
+		</code>
+	</div>
+	 property.</p>
+<Icon I="IconType.Like" style="color:deepskyblue;" AltText="Sort of like">
+	<i class="fas fa-exclamation-triangle og-golden-color" style="color:goldenrod;"></i>
+</Icon>
+
+<h2>Icon Chooser</h2>
+<div class="code"><code>@("<IconChooser/>")</code></div>
+<IconChooser />
