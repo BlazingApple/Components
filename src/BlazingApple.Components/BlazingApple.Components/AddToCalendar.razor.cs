@@ -1,9 +1,4 @@
 ﻿using BlazingApple.Components.Calendar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components;
 
@@ -68,8 +63,5 @@ public partial class AddToCalendar : ComponentBase
         _event = new CalendarEvent(Start, End, Title, Description, Location, IsFullDay);
     }
 
-    private void ToggleDropdown()
-    {
-        _dropdownExposed = !_dropdownExposed;
-    }
+    private void ToggleDropdown() => _dropdownExposed = !_dropdownExposed;
 }

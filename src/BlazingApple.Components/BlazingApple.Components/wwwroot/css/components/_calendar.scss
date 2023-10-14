@@ -8,3 +8,79 @@
     border-radius: .5rem;
     box-shadow: 0 1px 3px 0 rgba(32,33,36,0.28);
 }
+
+.ba-calendar-icon-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkred;
+    padding: 0;
+    line-height: 1;
+    border-radius: 3px;
+    text-wrap: wrap;
+    word-wrap: normal;
+
+    .ba-calendar-icon-top
+    {
+        font-size: 1em;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &.small
+    {
+        font-size: .75em;
+        height: 2rem;
+        width: 2rem;
+
+        .ba-calendar-icon-top
+        {
+            font-size: 1rem;
+        }
+    }
+
+    &.medium
+    {
+        font-size: .9em;
+        height: 2.5rem;
+        width: 2.5rem;
+
+        .ba-calendar-icon-top
+        {
+            font-size: 1.1rem;
+        }
+    }
+
+    &.large
+    {
+        font-size: 1.1em;
+        height: 4em;
+        width: 4em;
+        border-radius: 4px;
+
+        .ba-calendar-icon-top
+        {
+            font-size: 1.2rem;
+        }
+    }
+
+    .ba-calendar-icon-bottom
+    {
+        color: white;
+        background-color: darkred;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        flex-shrink: 1;
+        padding-bottom: .1rem;
+        padding-top: .1rem;
+    }
+}

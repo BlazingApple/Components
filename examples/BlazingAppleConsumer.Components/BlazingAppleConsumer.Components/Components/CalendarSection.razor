@@ -5,6 +5,12 @@
 
 <div class="row">
 	<div class="col-lg-6">
+		<h4>Calendar Icon</h4>
+		<div class="code"><code>@("<CalendarIcon Date=\"@date\" SizeClass=\"medium\" />")</code></div>
+		<div style="font-size:1rem;" class="d-flex justify-content-center">
+			<CalendarIcon Date="@calEvent.Start" SizeClass="large" />
+		</div>
+
 		<EditForm Model="@_model">
 			<div class="row">
 				<div class="col-lg-12 d-flex flex-column">
@@ -51,6 +57,7 @@
 		</EditForm>
 	</div>
 	<div class="col-lg-6">
+		<h4>Calendar Button</h4>
 		<AddToCalendar Title="@calEvent.Title"
 					   Description="@calEvent.Description"
 					   Location="@calEvent.Location"

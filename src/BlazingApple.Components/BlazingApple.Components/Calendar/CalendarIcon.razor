@@ -1,0 +1,23 @@
+﻿
+<div class="ba-calendar-icon-container @SizeClass" @attributes="@AdditionalAttributes">
+    <div class="ba-calendar-icon-top">
+        @if(Date.Date == DateTime.Now.Date)
+        {
+            @Date.ToString("t")
+        } 
+        else
+        {
+            @Date.Day
+        }
+    </div>
+    <div class="ba-calendar-icon-bottom">
+        @if (Date.Date == DateTime.Now.Date)
+        {
+            <span>Today</span>
+        }
+        else
+        {
+            @Date.ToString("MMM")
+        }
+    </div>
+</div>
