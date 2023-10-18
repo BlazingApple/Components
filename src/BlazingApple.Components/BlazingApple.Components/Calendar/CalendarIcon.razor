@@ -3,7 +3,10 @@
     <div class="ba-calendar-icon-top">
         @if(Date.Date == DateTime.Now.Date)
         {
-            @Date.ToString("t")
+            <span class="ba-calendar-icon-top-time">
+                @Date.ToString("h:mm")
+            </span>
+            <span class="ba-calendar-icon-top-am-pm">@Date.ToString("tt").ToLower()</span>
         } 
         else
         {
@@ -13,7 +16,7 @@
     <div class="ba-calendar-icon-bottom">
         @if (Date.Date == DateTime.Now.Date)
         {
-            <span>Today</span>
+            <span style="font-size: .75rem;">Today</span>
         }
         else
         {
