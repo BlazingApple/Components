@@ -1,0 +1,16 @@
+﻿@if(Parent is not null && Data.HasValue)
+{
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="heading-@id">
+			<button class="accordion-button" type="button" @onclick="() => _isVisible = !_isVisible" aria-expanded="@_isVisible" aria-controls="collapse-@id">
+				@Data.Value.Heading
+			</button>
+		</h2>
+
+		<div id="collapse-@id" class="accordion-collapse collapse @(_isVisible ? "show": "")" aria-labelledby="heading-@id" data-bs-parent="#@Parent.Id">
+			<div class="accordion-body">
+				@Data.Value.Content
+			</div>
+		</div>
+	</div>
+}

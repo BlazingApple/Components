@@ -21,6 +21,10 @@
     }
 }
 
+<h3>Accordions</h3>
+<small class="text-muted">Bootstrap-styled</small>
+<VerticalAccordion Items="@_items.Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
+
 <hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 
 <PaginatorSection/>

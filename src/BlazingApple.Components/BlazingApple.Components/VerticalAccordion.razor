@@ -1,0 +1,12 @@
+﻿@using BlazingApple.Components.Accordion
+@if (Items is not null)
+{
+	<CascadingValue Value="this">
+		<div class="accordion" id="@Id">
+			@foreach((string Heading, string Content) item in Items)
+			{
+				<AccordionSection Data="item" />
+			}
+		</div>
+	</CascadingValue>
+}
