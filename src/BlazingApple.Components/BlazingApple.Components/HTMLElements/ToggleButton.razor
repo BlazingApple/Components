@@ -1,0 +1,7 @@
+﻿@{
+	string classes = Value ? $"{Classes} active" : Classes;
+}
+
+<button type="button" class="@classes" @attributes="AdditionalAttributes" @onclick="ToggleClicked">
+	@ChildContent
+</button>

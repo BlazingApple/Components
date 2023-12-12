@@ -1,0 +1,35 @@
+﻿@using System.ComponentModel
+
+<h2>
+	@if (_toggleButton)
+	{
+		<i class="fas fa-toggle-on"></i>
+	}
+	else
+	{
+		<i class="fas fa-toggle-off"></i>
+	}
+	 
+	Buttons
+</h2>
+<div class="row">
+	<div class="col-lg-6">
+		<h3>Toggle Button</h3>
+		<ToggleButton @bind-Value="_toggleButton" Classes="btn btn-outline-primary">
+			My value: @_toggleButton
+		</ToggleButton>
+	</div>
+	<div class="col-lg-6">
+		<h3>Dropdown Button</h3>
+		<DropDown Label="Sort" @bind-Value="_sortDirection">
+			@foreach (ListSortDirection val in Enum.GetValues<ListSortDirection>())
+			{
+				<DropDownItem Value="val">
+					<div class="d-flex align-items-center">
+						@val.ToString()
+					</div>
+				</DropDownItem>
+			}
+		</DropDown>
+	</div>
+</div>
