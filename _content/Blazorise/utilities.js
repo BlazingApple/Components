@@ -1,7 +1,4 @@
-﻿import "./vendors/jsencrypt.js?v=1.3.2.0";
-import "./vendors/sha512.js?v=1.3.2.0";
-
-// adds a classname to the specified element
+﻿// adds a classname to the specified element
 export function addClass(element, classname) {
     element.classList.add(classname);
 }
@@ -55,15 +52,6 @@ export function select(element, elementId, focus) {
 
     if (element) {
         element.select();
-    }
-}
-
-// show a browser picker for the supplied input element
-export function showPicker(element, elementId) {
-    element = getRequiredElement(element, elementId);
-
-    if (element && 'showPicker' in HTMLInputElement.prototype) {
-        element.showPicker();
     }
 }
 
@@ -205,7 +193,7 @@ function isExponential(num) {
 
 export function fromExponential(num) {
     if (!num)
-        return num;
+        return null;
 
     const eParts = getExponentialParts(num);
     if (!isExponential(eParts)) {
@@ -280,35 +268,4 @@ export function firstNonNull(value, fallbackValue) {
         return fallbackValue;
 
     return value;
-}
-
-export function verifyRsa(publicKey, content, signature) {
-    try {
-        const jsEncrypt = new JSEncrypt();
-        jsEncrypt.setPublicKey(publicKey);
-
-        const verified = jsEncrypt.verify(content, signature, sha512);
-
-        if (verified) {
-            return true;
-        }
-    } catch (error) {
-        console.error(error);
-    }
-
-    return false;
-}
-
-export function log(message, args) {
-    console.log(message, args);
-}
-
-export function createEvent(name) {
-    const e = document.createEvent("Event");
-    e.initEvent(name, true, true);
-    return e;
-}
-
-export function coalesce(value, defaultValue) {
-    return value === null || value === undefined ? defaultValue : value;
 }

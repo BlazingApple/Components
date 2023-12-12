@@ -37,7 +37,7 @@ function findClosableComponentIndex(elementId) {
 
     for (index = 0; index < closableComponents.length; ++index) {
         if (closableComponents[index].elementId === elementId)
-            return index;
+            return closableComponents[index];
     }
 
     return null;
@@ -48,7 +48,7 @@ function findClosableLightComponentIndex(elementId) {
 
     for (index = 0; index < closableLightComponents.length; ++index) {
         if (closableLightComponents[index].elementId === elementId)
-            return index;
+            return closableLightComponents[index];
     }
 
     return null;
@@ -78,14 +78,6 @@ function hasParentInTree(element, parentElementId) {
     if (!element.parentElement) return false;
     if (element.parentElement.id === parentElementId) return true;
     return hasParentInTree(element.parentElement, parentElementId);
-}
-
-function hasScroll(element) {
-    return element.scrollHeight > element.clientHeight;
-}
-
-function scrollClick(event) {
-    return hasScroll(event.target) && event.target.clientWidth < event.clientX;
 }
 
 export function registerClosableComponent(dotnetAdapter, element) {
@@ -133,14 +125,11 @@ document.addEventListener('mouseup', function handler(evt) {
 
     if (evt.button === 0 && evt.target === lastClickedDocumentElement && closableComponents && closableComponents.length > 0) {
         const lastClosable = closableComponents[closableComponents.length - 1];
-        const scrollClicked = scrollClick(evt);
-        if (lastClosable && !scrollClicked) {
+        if (lastClosable) {
             tryClose(lastClosable, evt.target.id, false, hasParentInTree(evt.target, lastClosable.elementId));
         }
     }
 });
-
-
 
 document.addEventListener('keyup', function handler(evt) {
     if (isClosableLightComponent(evt.target.id))
