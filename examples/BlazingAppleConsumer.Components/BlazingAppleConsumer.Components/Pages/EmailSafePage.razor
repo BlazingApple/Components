@@ -1,10 +1,12 @@
 ﻿@page "/email-safe"
 @using BlazingApple.Components.EmailSafe
+@using BlazingAppleConsumer.Components.Components
 <h3>Email Safe Components</h3>
 <p>All components on this page can be sent in emails, with their styles closely matching those rendered via bootstrap.</p>
 
 <h2>Badges</h2>
-<div class="code"><code>@("<Badge Name=\"Senate Bill 133\"/>")</code></div>
+<CodePreview Code="@("<Badge Name=\"Senate Bill 133\"/>")" />
+
 <BadgeEmailSafe Name="Senate Bill 133" />
 <BadgeEmailSafe UseFullString="true" Name="@("\"133\"")" />
 <BadgeEmailSafe UseFullString="true" Name="@("\"1334\"")" />

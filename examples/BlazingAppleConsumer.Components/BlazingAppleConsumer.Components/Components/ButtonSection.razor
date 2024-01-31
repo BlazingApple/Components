@@ -9,27 +9,55 @@
 	{
 		<i class="fas fa-toggle-off"></i>
 	}
-	 
+
 	Buttons
 </h2>
 <div class="row">
 	<div class="col-lg-6">
 		<h3>Toggle Button</h3>
+		<CodePreview Code="@(@"<ToggleButton @bind-Value=""_val"">
+	My value: @_toggleButton
+</ToggleButton>")" />
 		<ToggleButton @bind-Value="_toggleButton" Classes="btn btn-outline-primary">
 			My value: @_toggleButton
 		</ToggleButton>
 	</div>
 	<div class="col-lg-6">
+		<h3>Input Switch</h3>
+		<CodePreview Code="@(@"<InputSwitch @bind-Value=""_val"">
+	My value: @_val
+</InputSwitch>")" />
+
+		<InputSwitch @bind-Value="_toggleButton">
+			My value: @_toggleButton
+		</InputSwitch>
+	</div>
+</div>
+<div class="row my-2">
+	<div class="col-lg-12">
 		<h3>Dropdown Button</h3>
-		<DropDown Label="Sort" @bind-Value="_sortDirection">
-			@foreach (ListSortDirection val in Enum.GetValues<ListSortDirection>())
-			{
-				<DropDownItem Value="val">
-					<div class="d-flex align-items-center">
-						@val.ToString()
-					</div>
-				</DropDownItem>
-			}
-		</DropDown>
+		<div class="row">
+
+			<div class="col-lg-6">
+				<DropDown Label="Sort" @bind-Value="_sortDirection">
+					@foreach (ListSortDirection val in Enum.GetValues<ListSortDirection>())
+					{
+						<DropDownItem Value="val">
+							<div class="d-flex align-items-center">
+								@val.ToString()
+							</div>
+						</DropDownItem>
+					}
+				</DropDown>
+			</div>
+			<div class="col-lg-6 ps-3"
+			<CodePreview Code="@(@"<DropDown Label=""Sort"" @bind-Value=""myVal"">
+	@foreach (MyEnum val in Enum.GetValues<MyEnum>())
+	{
+		<DropDownItem Value=""val"">@val.ToString()</DropDownItem>
+	}
+</DropDown>")" />
+			</div>
+		</div>
 	</div>
 </div>

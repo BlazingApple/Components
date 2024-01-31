@@ -3,7 +3,7 @@
     @onclick="OnClick" 
     title="Copy to clipboard" 
     class="@ButtonClass"
-        style="@($"{(string.IsNullOrEmpty(ButtonDisplayText) ? "border-radius:50%;" : "")} width: 2rem; height: 2rem;")"
+        style="@($"{(string.IsNullOrEmpty(ButtonDisplayText) ? "border-radius:50%;" : "")} {(TextColor is not null ? $"color: {TextColor}; " : "")}width: 2rem; height: 2rem;")"
         disabled=@(string.IsNullOrEmpty(Text)) 
     @attributes="AdditionalAttributes">
     <i class="@($"{(!string.IsNullOrEmpty(ButtonDisplayText) ? "me-1" : "")} fas fa-copy")"></i>@ButtonDisplayText

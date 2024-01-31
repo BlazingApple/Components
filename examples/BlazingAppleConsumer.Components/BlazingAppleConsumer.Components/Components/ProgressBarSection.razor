@@ -1,13 +1,18 @@
-﻿
-@{
+﻿@{
 	object model = new { };
 
 }
 
 <h2>Progress Bars</h2>
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-12">
 		<h3>Single</h3>
+		<CodePreview Code="@(@"<ProgressBar style=""accent-color: orchid;"" AsOfTime=""@DateTime.Now"" CurrentIndex=""val"" 
+	TotalCount=""denomVal"" Units=""my units"" ShowPercentComplete=""false"" />")" />
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
 		<EditForm Model="model">
 			<div class="row">
 				<div class="form-group col-md-6">
@@ -37,13 +42,21 @@
 					 Units="units, of some sort"
 					 ShowPercentComplete="_progressSingleShowPercentComplete" />
 	</div>
-	<div class="col-lg-6">
+</div>
+<div class="row mt-2">
+	<div class="col-lg-12">
 		<h3 class="mt-3">Multi</h3>
 		<small class="text-muted">
-			We're only providing controls to modify the <em>first</em> segment, 
+			We're only providing controls to modify the <em>first</em> segment,
 			for this demo's simplicity, but, all can be modified.
 		</small>
 
+		<CodePreview Code="@(@"<ProgressBarMulti Denominator=""@_denomVal"">
+	<ProgressBarSegment Value=""numVal"" style=""background-color: orchid;"">My label</ProgressBarSegment>
+	...
+</ProgressBarMulti>")" />
+	</div>
+	<div class="row">
 		<EditForm Model="model">
 			<div class="row">
 				<div class="form-group col-md-6">
@@ -87,7 +100,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<ProgressBarMulti Denominator="@(_passDenominator ? _progressMultiDenominator : null)">
 					<ProgressBarSegment Value="_progressMultiNumerator" Tooltip="My tooltip" style="background-color: orchid;">My label</ProgressBarSegment>
 					<ProgressBarSegment Value="12" Tooltip="My tooltip" style="background-color: peachpuff;"></ProgressBarSegment>

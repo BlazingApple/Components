@@ -1,30 +1,53 @@
 ﻿@page "/lists"
 @using BlazingAppleConsumer.Components.Components
 
-<h2>Lists</h2>
+<div class="d-flex" style="align-items:center;">
+    <img src="_content/BlazingApple.Components/BlazingApple.png" class="img-fluid" style="margin-right: .5rem; max-height:2.5rem;" />
+    <h1 class="ms-2">BlazingApple Lists</h1>
+</div>
 
 @if (_items != null)
 {
-    <EditForm Model="@(new {})">
-        <label>Number of items to show</label>
-        <InputNumber @bind-Value="_itemCount" />
-    </EditForm>
+    <MinimalCard style="margin: 1rem;">
+        <h3>Lists with Columns</h3>
+        <EditForm Model="@(this)">
+            <DataAnnotationsValidator />
+            <div class="row">
+                <FormGroup ColumnWidthClass="col-lg-6 d-flex">
+                    <label for="count">Number of items to show</label>
+                    <InputNumber id="count" @bind-Value="_itemCount" />
+                </FormGroup>
 
-    @if (_items is not null && _items.Count != 0)
-    {
-        <RecordList Context="item" ColumnsPerRow="3" Items="_items.Take(_itemCount).ToList()">
-            <HeadRow></HeadRow>
-            <RowTemplate>
-                <Badge Name="@item.ToString()" />
-            </RowTemplate>
-        </RecordList>
-    }
+                <FormGroup ColumnWidthClass="col-lg-6 d-flex">
+                    <label for="columns">Columns (1-4)</label>
+                    <ValidationMessage For="@(() => ColumnCount)" />
+                    <InputNumber id="columns" @bind-Value="ColumnCount" />
+                </FormGroup>
+            </div>
+        </EditForm>
+
+        @if (_items is not null && _items.Count != 0)
+        {
+            <RecordList Context="item" ColumnsPerRow="ColumnCount" Items="_items.Take(_itemCount).ToList()">
+                <HeadRow></HeadRow>
+                <RowTemplate>
+                    <Badge Name="@item.ToString()" />
+                </RowTemplate>
+            </RecordList>
+        }
+    </MinimalCard>
 }
-
-<h3>Accordions</h3>
-<small class="text-muted">Bootstrap-styled</small>
-<VerticalAccordion Items="@_items.Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
 
 <hr class="border:none; border-top:1px solid; margin:1em 15%;" />
 
-<PaginatorSection/>
+<MinimalCard style="margin: 1rem;">
+    <PaginatorSection />
+</MinimalCard>
+
+<hr class="border:none; border-top:1px solid; margin:1em 15%;" />
+
+<MinimalCard style="margin: 1rem;">
+    <h3>Accordions</h3>
+    <small class="text-muted">Bootstrap-styled</small>
+    <VerticalAccordion Items="@_items.Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
+</MinimalCard>

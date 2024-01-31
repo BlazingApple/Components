@@ -1,9 +1,4 @@
 ﻿using BlazingApple.Components.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components;
 
@@ -25,6 +20,10 @@ public partial class CopyToClipboard : ComponentBase
     [Parameter]
     public string? ButtonDisplayText { get; set; }
 
+    /// <summary>Text color of the button, hex code.</summary>
+    [Parameter]
+    public string? TextColor { get; set; }
+
     /// <summary>The default button class(es). If not passed, it uses 'btn btn-light'.</summary>
     [Parameter]
     public string DefaultButtonClass { get; set; } = "btn btn-light";
@@ -33,7 +32,7 @@ public partial class CopyToClipboard : ComponentBase
     [Parameter, EditorRequired]
     public string Text { get; set; } = null!;
 
-    private string ButtonClass { get => $"{DefaultButtonClass} d-flex align-items-center justify-content-center background-color-animate"; }
+    private string ButtonClass => $"{DefaultButtonClass} d-flex align-items-center justify-content-center background-color-animate";
 
     [Inject]
     private IClipboardService ClipboardService { get; set; } = null!;

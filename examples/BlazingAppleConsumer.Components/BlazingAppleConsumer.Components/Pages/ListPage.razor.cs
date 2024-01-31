@@ -1,22 +1,27 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazingAppleConsumer.Components.Pages;
 
 /// <summary>Shows various list components.</summary>
 public partial class ListPage : ComponentBase
 {
-	private int _itemCount = 25;
-	private List<int>? _items;
+    private int _itemCount = 5;
 
-	/// <inheritdoc />
-	protected override async Task OnInitializedAsync()
-	{
-		await base.OnInitializedAsync();
-		_items = new List<int>();
+    [Range(1, 4)]
+    public int ColumnCount { get; set; } = 3;
 
-		for (int i = 0; i < 100; i++)
-		{
-			_items.Add(i);
-		}
-	}
+    private List<int>? _items;
+
+    /// <inheritdoc />
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        _items = [];
+
+        for (int i = 0; i < 3; i++)
+        {
+            _items.Add(i);
+        }
+    }
 }

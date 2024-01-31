@@ -1,0 +1,22 @@
+﻿@if(Inline)
+{
+	<strong style="font-family: 'Courier New', monospace;">@Code</strong>
+}
+else
+{
+	<div class="small d-flex flex-column mb-2">
+		<label class="" for="@($"code-{_id}")">@Label</label>
+		<div class="code p-2">
+			<div class="d-flex flex-row align-items-start justify-content-lg-between">
+				<div class="pt-1 pb-1">
+					<code id="@($"code-{_id}")" style="white-space: pre;">
+						@Code
+					</code>
+				</div>
+				<div class="ps-3">
+					<CopyToClipboard Text="@Code" TextColor="#5f7c8a" DefaultButtonClass="btn btn-sm btn-light m-0 p-0" />
+				</div>
+			</div>
+		</div>
+	</div>
+}

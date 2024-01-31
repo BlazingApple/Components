@@ -1,5 +1,8 @@
 ﻿<h3>Carousel</h3>
-<div class="code"><code>@("")</code></div>
+
+<CodePreview Code="@(@"<Carousel Items=""imageList"" Context=""imageSource"">
+	<MyImageComponent src=""@imageSource""/>
+</Carousel>")" />
 @code {
 	List<string> imageList = new List<string>()
 	{
