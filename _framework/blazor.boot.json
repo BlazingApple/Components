@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazingAppleConsumer.Components",
   "resources": {
-    "hash": "sha256-Pp2YUc8XeMIyi/QyCyi+7kh3ErVVXpILg1xLLie5XEg=",
+    "hash": "sha256-VSvP3TDvMtPnFv0KH6sdwVvoMq7Skjfh+qy1ZTHStnU=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.ahpp78valh.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -18,9 +18,9 @@
     },
     "assembly": {
       "BlazingApple.Components.Shared.wasm": "sha256-/D5B+ViCo9zUsjAh4+W5cf336XUwo8y+oeGlcLiP8m0=",
-      "BlazingApple.Components.wasm": "sha256-TST9ZEkUdzgwgpkgHPCOruF3jg3ZekAWKWHldcgH48s=",
+      "BlazingApple.Components.wasm": "sha256-JyYlDRTcusxQBNYQfy3ZIGs6r4VS6COclWkgXUzi2Gk=",
       "BlazingApple.FontAwesome.wasm": "sha256-dqS7LCOzvqNCBUWoD4715xNDf0qKepAF7oKrC01+Gzg=",
-      "BlazingAppleConsumer.Components.wasm": "sha256-o6kfWlEDL0RUM4vMHoQO/Zg5AHZakrKSrmlYf7tvb8c=",
+      "BlazingAppleConsumer.Components.wasm": "sha256-0ZCB1hqQX1ZxRWFdiJCaBGV5Y/rW4gqTHsGeAyjQ3Gk=",
       "Blazored.Toast.wasm": "sha256-rct5tMc2ZxFhr35Adawli4MHBEMAF/uJC2QW8RvdQ0M=",
       "Blazorise.Icons.FontAwesome.wasm": "sha256-GSN7S3KTGJTw6PPjk5+Nc8bVPgUsc5tQm/n/xieQUUs=",
       "Blazorise.Licensing.wasm": "sha256-vmNGzxXoM2MA6rFUp99OvXbE3FJlYnUDr6zyA1Nc3Xc=",
