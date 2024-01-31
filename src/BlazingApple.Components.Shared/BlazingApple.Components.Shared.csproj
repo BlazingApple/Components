@@ -9,10 +9,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.5.4</AssemblyVersion>
-		<FileVersion>2.5.5</FileVersion>
-		<Version>2.5.5</Version>
-		<PackageReleaseNotes>2.5.5 - Target .NET 8</PackageReleaseNotes>
+		<AssemblyVersion>2.5.6</AssemblyVersion>
+		<FileVersion>2.5.6</FileVersion>
+		<Version>2.5.6</Version>
+		<PackageReleaseNotes>2.5.6 - Add new SpanType enum</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,5 +26,9 @@
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Humanizer" Version="2.14.1" />
 	</ItemGroup>
 </Project>

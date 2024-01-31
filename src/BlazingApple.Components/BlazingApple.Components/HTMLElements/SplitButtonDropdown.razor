@@ -1,0 +1,19 @@
+﻿@if (_expanded)
+{
+	<div style="width: 100%; height: 100%; top: 0%; left: 0%; position: fixed; z-index:1030;" @onclick="() => _expanded = !_expanded"></div>
+}
+
+<div class="@BtnGroupClasses" role="group" style="@BtnGroupStyle">
+	@PrimaryButton
+	<button type="button"
+			class="@($"{SplitButtonClasses} dropdown-toggle dropdown-toggle-split")"
+			data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false"
+			@attributes="AdditionalAttributes"
+			@onclick="@DropdownClick">
+		<span class="sr-only">Toggle Dropdown</span>
+	</button>
+	<div class="@DropdownMenuClasses" @onclick="() => _expanded = !_expanded">
+		@DropbownButtons
+	</div>
+</div>

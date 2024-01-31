@@ -1,0 +1,23 @@
+﻿@using BlazingApple.Components.Shared.Models.Time
+@using Humanizer
+<div class="d-flex align-items-center">
+	<InputSlider TNumber="int" ShowCurrentValue="false" Value="_countOfSpan" ValueChanged="CountChanged" Max="_maxForSpan" Min="0" @attributes="AdditionalAttributes"></InputSlider>
+
+	@if (!Units.HasValue)
+	{
+		<DropDown T="SpanType" ButtonClass="ms-1 btn-outline-primary btn-sm" ValueChanged="@(async (SpanType val) => await SpanTypeChanged(val))" Value="_spanType">
+			@foreach (SpanType val in Enum.GetValues<SpanType>())
+			{
+				<DropDownItem Value="val">
+					<div class="d-flex align-items-center">
+						@val.ToString()
+					</div>
+				</DropDownItem>
+			}
+		</DropDown>
+	}
+	else
+	{
+		<span class="ms-1">@Units.Value.GetEnumDisplayName().ToQuantity(_countOfSpan)</span>
+	}
+</div>

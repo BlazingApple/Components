@@ -1,0 +1,23 @@
+﻿@using BlazingApple.Components.HTMLElements
+
+@typeparam T
+
+@if (Items is not null && Items.Count > 0)
+{
+	@if (ShowSelectAll)
+	{
+		<div>
+			<button class="btn btn-sm my-1 btn-outline-primary" @onclick="SelectAllClicked">
+				Select all
+			</button>
+		</div>
+	}
+	<div style="display: inline-flex; flex-wrap: wrap;">
+		@foreach (T item in Items)
+		{
+			<ToggleButton Value="@(_selected.Contains(item))" ValueChanged="@(() => OnItemClicked(item))" Classes="btn btn-sm mb-1 me-1 btn-outline-primary d-flex justify-content-center align-items-center">
+				@ResultTemplate(item)
+			</ToggleButton>
+		}
+	</div>
+}

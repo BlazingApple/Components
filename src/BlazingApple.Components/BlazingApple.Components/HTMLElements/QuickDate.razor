@@ -1,0 +1,11 @@
+﻿@typeparam TValue
+
+<div class="d-flex row">
+    <div class="col-lg-8 pr-0">
+        <InputDate AdditionalAttributes=@AdditionalAttributes @bind-Value="BoundValue" />
+    </div>
+    <div class="col-lg-4 d-flex px-0">
+        <button class="btn btn-sm btn-outline-primary ms-2" type="button" @onclick="()=>(OnQuickDateSelect(1))">Tomorrow</button>
+        <button class="btn btn-sm btn-outline-primary ms-2" type="button" @onclick="()=>(OnQuickDateSelect(7))">Next week</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿<div class="form-check form-switch">
+    <input type="checkbox" checked="@Value" class="form-check-input" id="@($"isComplete-{_uniqueId}")" style="line-height:initial;" @onchange="ValueChangedInternal" />
+    <label class="form-check-label" for="@($"isComplete-{_uniqueId}")">
+        <span title="@TitleText">@Label</span>
+        @if (ChildContent is not null)
+        {
+            @ChildContent
+        }
+    </label>
+</div>

@@ -1,9 +1,4 @@
 ﻿using BlazingApple.Components.Shared.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components.Records;
 
@@ -72,7 +67,7 @@ public partial class RecordAction : ComponentBase
 
 	private string AdditionalClassNames => (AdditionalAttributes?.ContainsKey("class") ?? false) ? (string)AdditionalAttributes["class"] : "";
 
-	private string LinkClassNames => Disabled ? $"btn btn-link disabled p-0" : AdditionalClassNames;
+	private string LinkClassNames => Disabled ? $"btn btn-link disabled mx-1 p-0" : AdditionalClassNames;
 
 	/// <inheritdoc />
 	protected override void OnParametersSet()

@@ -13,7 +13,15 @@
 <CascadingValue Value="this">
 	<div class="dropdown">
 		<button class="@dropDownButtonClass" type="button" @onclick="ToggleOpen" @attributes="@AdditionalAttributes">
-			@Label: @Value?.ToString()
+			@Label: 
+			@if(Items is not null)
+			{
+				DropDownItem<T>? item = Items.SingleOrDefault(i => i.Value != null && i.Value.Equals(Value));
+				@if(item?.ChildContent is not null)
+				{
+					@item.ChildContent
+				}
+			}
 		</button>
 
 		<ul class="@dropDownMenuClass" style="z-index: 1030;">

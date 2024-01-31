@@ -1,0 +1,10 @@
+﻿@using System.Numerics
+@typeparam TNumber where TNumber : INumber<TNumber>
+
+<div class="d-flex">
+	<input type="range" class="form-range" min="0" max="@Max" id="slider1" value="@Value" @onchange="ValueChangedInternal" @attributes="AdditionalAttributes">
+	@if (ShowCurrentValue)
+	{
+		<span class="mx-1">@Value</span>
+	}
+</div>

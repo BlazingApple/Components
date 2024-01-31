@@ -1,0 +1,37 @@
+﻿@typeparam TValue
+
+@if (ButtonsOnly)
+{
+    <div class="d-flex row">
+        <div class="col-md-12 d-flex px-0 justify-content-center" style="align-items: center;">
+            <button class="btn btn-sm btn-primary" style="border-radius: 50%; width: 2rem; height: 2rem;" type="button" @onclick="()=>(OnQuickSelect(false))" disabled="@(!CanPressButton(false))">-</button>
+            <span class="mx-2" style="white-space: nowrap;">
+                @if (SingularUnit is not null && Convert.ToDouble(BoundValue) == 1d)
+                {
+                    @($"{BoundValue} {SingularUnit}")
+                }
+                else if (PluralUnit is not null && Convert.ToDouble(BoundValue) != 1d)
+                {
+                    @($"{BoundValue} {PluralUnit}")
+                }
+                else
+                {
+                    @BoundValue
+                }
+            </span>
+            <button class="btn btn-sm btn-primary" style="border-radius: 50%; width: 2rem; height: 2rem;" type="button" @onclick="()=>(OnQuickSelect(true))" disabled="@(!CanPressButton(true))">+</button>
+        </div>
+    </div>
+}
+else
+{
+    <div class="d-flex row">
+        <div class="col-lg-8 pr-0">
+            <InputNumber AdditionalAttributes=@AdditionalAttributes @bind-Value="@BoundValue" />
+        </div>
+        <div class="col-lg-4 d-flex px-0" style="align-items: center;">
+            <button class="btn btn-sm btn-outline-primary ms-2" style="border-radius: 50%; width: 2rem; height: 2rem;" type="button" @onclick="()=>(OnQuickSelect(false))">-</button>
+            <button class="btn btn-sm btn-outline-primary ms-2" style="border-radius: 50%; width: 2rem; height: 2rem;" type="button" @onclick="()=>(OnQuickSelect(true))">+</button>
+        </div>
+    </div>
+}
