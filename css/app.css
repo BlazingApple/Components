@@ -27,6 +27,11 @@ a, .btn-link
 	padding-top: 1.1rem;
 }
 
+main
+{
+	background-color: #F1F9FF;
+}
+
 .valid.modified:not([type=checkbox])
 {
 	outline: 1px solid #26b050;
@@ -40,6 +45,11 @@ a, .btn-link
 .validation-message
 {
 	color: red;
+}
+
+label:not(.form-check-label):not(.btn)
+{
+	color: #5f7c8a;
 }
 
 #blazor-error-ui
@@ -120,7 +130,14 @@ div.code
 	inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
 }
 
-	.loading-progress-text:after
-	{
-		content: var(--blazor-load-percentage-text, "Loading");
-	}
+.loading-progress-text:after
+{
+	content: var(--blazor-load-percentage-text, "Loading");
+}
+
+
+/* Hide the syncfusion license warning since this is a demo site. */
+body > :last-child
+{
+	display: none;
+}
