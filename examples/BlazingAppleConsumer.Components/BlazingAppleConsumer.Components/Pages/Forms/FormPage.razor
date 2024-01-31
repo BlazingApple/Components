@@ -15,7 +15,7 @@
 			<MinimalCard style="margin: 1rem;">
 				<div class="row">
 					<h2>Multi-Checklist</h2>
-					<div class="col-lg-4">
+					<div class="col-lg-6">
 						<CodePreview Code="@(@"<InputCheckboxList class=""form-control"" 
 	Data=""@_options"" 
 	TItem=""DisplayValuePair<UserRole>""
@@ -25,7 +25,7 @@
 	OnChange=""OnChange""
 	SelectedValues=""@SelectedRoles"" />")" />
 					</div>
-					<FormGroup for="title" ColumnWidthClass="col-md-8" Label="User Roles">
+					<FormGroup for="title" ColumnWidthClass="col-md-6" Label="User Roles">
 						<ValidationMessage For="@(() => Model)" />
 						<InputCheckboxList class="form-control" Data="@_roleOptions" TItem="DisplayValuePair<UserRole>" TValue="UserRole"
 										   TextField="@((item)=>item.Text)"
@@ -41,15 +41,6 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<h2>Radio Button Group</h2>
-						<CodePreview Code="@(@"<div class=""btn-group btn-group-toggle"">
-	<InputRadioOG name=""feed"" SelectedValue=""@UserRole.Basic"" @bind-Value=""Model.Role"">
-		Basic
-	</InputRadioOG>
-	...
-	<InputRadioOG name=""feed"" SelectedValue=""@UserRole.Owner"" @bind-Value=""Model.Role"">
-		Owner
-	</InputRadioOG>
-</div>")" />
 						<div class="btn-group btn-group-toggle" style="max-width:12rem;">
 							<InputRadioOG name="feedFilter" SelectedValue="@UserRole.Basic" @bind-Value="Model.SelectedRole"
 										  style="border-top-left-radius: 2rem; border-bottom-left-radius: 2rem;">
@@ -63,9 +54,23 @@
 								Owner
 							</InputRadioOG>
 						</div>
+						<CodePreview Code="@(@"<div class=""btn-group btn-group-toggle"">
+	<InputRadioOG name=""feed"" SelectedValue=""@UserRole.Basic"" @bind-Value=""Model.Role"">
+		Basic
+	</InputRadioOG>
+	...
+	<InputRadioOG name=""feed"" SelectedValue=""@UserRole.Owner"" @bind-Value=""Model.Role"">
+		Owner
+	</InputRadioOG>
+</div>")" />
 					</div>
 					<div class="col-lg-6">
 						<h3>Radio Buttons - Boolean</h3>
+						<div>
+							<label>Boolean radio value: @radioVal</label>
+							<InputRadioOG TValue="string" SelectedValue="@("false")" @bind-Value="radioVal" OnChange="OnValueChange">False</InputRadioOG>
+							<InputRadioOG TValue="string" SelectedValue="@("true")" @bind-Value="radioVal" OnChange="OnValueChange">True</InputRadioOG>
+						</div>
 						<CodePreview Code="@(@"<InputRadioOG TValue=""string"" SelectedValue=""@(""false"")"" @bind-Value=""radioVal"" OnChange=""OnValueChange"">False</InputRadioOG>
 	<InputRadioOG TValue=""string"" SelectedValue=""@(""true"")"" @bind-Value=""radioVal"" OnChange=""OnValueChange"">True</InputRadioOG>")" />
 							@code {
@@ -76,27 +81,22 @@
 									bool.TryParse(newVal, out bool result);
 								}
 							}
-						<div>
-							<label>Boolean radio value: @radioVal</label>
-							<InputRadioOG TValue="string" SelectedValue="@("false")" @bind-Value="radioVal" OnChange="OnValueChange">False</InputRadioOG>
-							<InputRadioOG TValue="string" SelectedValue="@("true")" @bind-Value="radioVal" OnChange="OnValueChange">True</InputRadioOG>
-						</div>
 					</div>
 				</div>
 			</MinimalCard>
 
 			<MinimalCard style="margin: 1rem;">
+				<h2>Pill Radio Group</h2>
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-8">
 						<CodePreview Code="@(@"<PillRadioGroup Name=""role2"" @bind-Value=""Model.SelectedRole2"" Options=""@(Enum.GetValues<UserRole>())"">
-							<TemplatedContent Context=""role"">
-								@role
-							</TemplatedContent>
-						</PillRadioGroup>")" />
+	<TemplatedContent Context=""role"">
+		@role
+	</TemplatedContent>
+</PillRadioGroup>")" />
 					</div>
 				</div>
 				<div class="row">
-					<h2>Pill Radio Group</h2>
 					<div class="col-lg-4">
 						<h3>Standard</h3>
 						<PillRadioGroup Name="role2" @bind-Value="Model.SelectedRole2" Options="@(Enum.GetValues<UserRole>())">

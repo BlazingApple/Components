@@ -11,6 +11,9 @@ public partial class ListPage : ComponentBase
     [Range(1, 4)]
     public int ColumnCount { get; set; } = 3;
 
+    [Range(1, 100)]
+    public int ItemCount { get; set; } = 5;
+
     private List<int>? _items;
 
     /// <inheritdoc />
@@ -19,7 +22,7 @@ public partial class ListPage : ComponentBase
         await base.OnInitializedAsync();
         _items = [];
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 100; i++)
         {
             _items.Add(i);
         }

@@ -2,7 +2,7 @@
 <CodePreview Code="@("<ListPaginator BatchSize=\"25\" ResultCount=\"126\" @bind-Value=\"_currentPage\"/>")" />.
 
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-3">
 		<div class="d-flex flex-column">
 			<label for="result-count">Number of Results</label>
 			<EditForm Model="_resultCount">
@@ -10,7 +10,7 @@
 			</EditForm>
 		</div>
 	</div>
-	<div class="col-lg-6">
+	<div class="col-lg-3">
 		<div class="d-flex flex-column">
 			<label for="batch-size">Batch size</label>
 			<EditForm Model="_batchSize">
@@ -20,4 +20,6 @@
 	</div>
 	<span class="ms-2">@(_currentPage + 1)</span>
 </div>
-<ListPaginator BatchSize="_batchSize" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>
+<div class="d-flex justify-content-center align-items-center">
+	<ListPaginator BatchSize="_batchSize" ResultCount="_resultCount" @bind-Value="_currentPage" OnChange="((s) => Console.WriteLine(s))"></ListPaginator>
+</div>

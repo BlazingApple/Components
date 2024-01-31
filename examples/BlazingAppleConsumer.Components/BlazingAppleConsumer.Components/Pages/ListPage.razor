@@ -13,22 +13,22 @@
         <EditForm Model="@(this)">
             <DataAnnotationsValidator />
             <div class="row">
-                <FormGroup ColumnWidthClass="col-lg-6 d-flex">
+                <FormGroup ColumnWidthClass="col-lg-3">
                     <label for="count">Number of items to show</label>
-                    <InputNumber id="count" @bind-Value="_itemCount" />
+                    <InputNumber class="form-control" id="count" @bind-Value="ItemCount" />
                 </FormGroup>
 
-                <FormGroup ColumnWidthClass="col-lg-6 d-flex">
+                <FormGroup ColumnWidthClass="col-lg-3">
                     <label for="columns">Columns (1-4)</label>
                     <ValidationMessage For="@(() => ColumnCount)" />
-                    <InputNumber id="columns" @bind-Value="ColumnCount" />
+                    <InputNumber class="form-control" id="columns" @bind-Value="ColumnCount" />
                 </FormGroup>
             </div>
         </EditForm>
 
         @if (_items is not null && _items.Count != 0)
         {
-            <RecordList Context="item" ColumnsPerRow="ColumnCount" Items="_items.Take(_itemCount).ToList()">
+            <RecordList Context="item" ColumnsPerRow="ColumnCount" Items="_items.Take(ItemCount).ToList()">
                 <HeadRow></HeadRow>
                 <RowTemplate>
                     <Badge Name="@item.ToString()" />
@@ -49,5 +49,5 @@
 <MinimalCard style="margin: 1rem;">
     <h3>Accordions</h3>
     <small class="text-muted">Bootstrap-styled</small>
-    <VerticalAccordion Items="@_items.Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
+    <VerticalAccordion Items="@_items.Take(3).Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
 </MinimalCard>
