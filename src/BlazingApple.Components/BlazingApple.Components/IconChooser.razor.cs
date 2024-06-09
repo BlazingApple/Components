@@ -1,12 +1,5 @@
-﻿using BlazingApple.Components.Services;
-using BlazingApple.FontAwesome.Models;
+﻿using BlazingApple.FontAwesome.Models;
 using BlazingApple.FontAwesome.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlazingApple.Components
 {
@@ -23,7 +16,7 @@ namespace BlazingApple.Components
 
         /// <summary>Additional classes to put on the button. Uses <c>btn-light</c> if not provided.</summary>
         [Parameter]
-        public string? ButtonClasses { get; set; } = "btn-light";
+        public string ButtonClasses { get; set; } = "btn-light";
 
         /// <summary>A dictionary, keyed by the icon display name, and valued by the icon class names to also render.</summary>
         [Parameter]
@@ -39,7 +32,7 @@ namespace BlazingApple.Components
 
         /// <summary>The selected button's classes to put on the button. Uses <c>btn-primary</c> if not provided.</summary>
         [Parameter]
-        public string? SelectedButtonClasses { get; set; } = "btn-primary";
+        public string SelectedButtonClasses { get; set; } = "btn-primary";
 
         /// <summary>The selected IconType</summary>
         [Parameter]
@@ -56,17 +49,6 @@ namespace BlazingApple.Components
         [Parameter]
         public string? WebRoute { get; set; }
 
-        /// <summary>The value that the component is bound to.</summary>
-        private IconData? BoundValue
-        {
-            get => Value;
-            set
-            {
-                ValueChanged.InvokeAsync(value);
-                Value = value;
-            }
-        }
-
         [Inject]
         private FontSearchService SearchService { get; set; } = null!;
 
@@ -80,7 +62,7 @@ namespace BlazingApple.Components
             }
             else
             {
-                _searchResultIcons = results.ToDictionary(i => i.Label ?? "", i => i.GetCode());
+                _searchResultIcons = results.ToDictionary(i => i.Label ?? "", i => i.GetCode().Trim());
             }
             _isLoading = false;
         }
@@ -98,6 +80,21 @@ namespace BlazingApple.Components
                 await OnSearchChanged.InvokeAsync(_searchString);
         }
 
-        private void Set(IconData icon) => BoundValue = icon;
+        private async Task Set(IconData icon)
+        {
+            if (Value is not null && Value.IconClasses == icon.IconClasses)
+                Value = null;
+            else
+                Value = icon;
+
+            if (ValueChanged.HasDelegate)
+                await ValueChanged.InvokeAsync(Value);
+        }
+
+        private bool IsSelectedButton(IconData icon)
+            => Value is not null && icon == Value;
+
+        private string GetClassesForButton(IconData buttonIcon)
+            => IsSelectedButton(buttonIcon) ? SelectedButtonClasses : ButtonClasses;
     }
 }

@@ -14,5 +14,21 @@
 </Icon>
 
 <h2>Icon Chooser</h2>
-<CodePreview Code="@("<IconChooser />")" />.
-<IconChooser />
+<div class="row">
+	<div class="col-2" title="@($"{_iconData?.Name}: {_iconData?.IconClasses}")">
+		<label class="small">Selected icon</label>
+		@if(_iconData is not null) 
+		{
+			<i class="@_iconData?.IconClasses"/>
+		}
+		else
+		{
+			<div>Not set.</div>
+		}
+	</div>
+	<div class="col-10">
+		<CodePreview Code="@("<IconChooser />")" />.
+	</div>
+</div>
+
+<IconChooser @bind-Value="_iconData" />

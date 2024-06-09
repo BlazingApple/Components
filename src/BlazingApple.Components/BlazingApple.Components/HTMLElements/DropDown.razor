@@ -16,7 +16,8 @@
 			@Label: 
 			@if(Items is not null)
 			{
-				DropDownItem<T>? item = Items.SingleOrDefault(i => i.Value != null && i.Value.Equals(Value));
+				DropDownItem<T>? item = Items.SingleOrDefault(i => (Value == null && i.Value == null) || (i.Value != null && i.Value.Equals(Value)));
+				
 				@if(item?.ChildContent is not null)
 				{
 					@item.ChildContent

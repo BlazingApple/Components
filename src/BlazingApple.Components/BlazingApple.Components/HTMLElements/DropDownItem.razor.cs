@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlazingApple.Components.HTMLElements;
+﻿namespace BlazingApple.Components.HTMLElements;
 
 /// <summary>An item in <see cref="DropDown{T}"/>.</summary>
 /// <typeparam name="T">The type of item.</typeparam>
@@ -27,9 +21,9 @@ public partial class DropDownItem<T> : ComponentBase
 	protected DropDown<T> Parent { get; set; } = null!;
 
 	/// <inheritdoc />
-	protected override void OnInitialized()
+	protected override void OnParametersSet()
 	{
-		base.OnInitialized();
+		base.OnParametersSet();
 		Parent.AddItem(this);
 	}
 

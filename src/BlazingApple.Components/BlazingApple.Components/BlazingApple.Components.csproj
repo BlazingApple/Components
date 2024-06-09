@@ -10,10 +10,10 @@
 		<RepositoryUrl>https://github.com/BlazingApple/Components</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<AssemblyVersion>2.7.0</AssemblyVersion>
-		<FileVersion>2.7.0</FileVersion>
-		<Version>2.7.0</Version>
-		<PackageReleaseNotes>2.7.0 - New Input Components and Buttons</PackageReleaseNotes>
+		<AssemblyVersion>2.7.4</AssemblyVersion>
+		<FileVersion>2.7.4</FileVersion>
+		<Version>2.7.4</Version>
+		<PackageReleaseNotes>2.7.4 - Add row limited list</PackageReleaseNotes>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -38,7 +38,7 @@
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.4.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
-		<PackageReference Include="Syncfusion.Blazor" Version="20.4.0.38" />
+		<PackageReference Include="Syncfusion.Blazor" Version="24.2.4" />
 		<PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
 		<PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
 		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.3.2">

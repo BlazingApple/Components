@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlazingApple.Components.HTMLElements;
+﻿namespace BlazingApple.Components.HTMLElements;
 
 
 /// <summary>A drop down selection component</summary>
@@ -46,8 +40,10 @@ public partial class DropDown<T> : ComponentBase
 	/// <summary>To be called by children.</summary>
 	/// <param name="item">The component to add</param>
 	public void AddItem(DropDownItem<T> item)
-		=> Items!.Add(item);
-
+	{
+		if (!Items!.Contains(item))
+			Items!.Add(item);
+	}
 	/// <summary>
 	/// Called when a <see cref="DropDownItem{T}"/> is clicked.
 	/// </summary>
@@ -69,7 +65,7 @@ public partial class DropDown<T> : ComponentBase
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
-		Items ??= new List<DropDownItem<T>>();
+		Items ??= [];
 	}
 
 	private void ToggleOpen()

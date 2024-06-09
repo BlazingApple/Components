@@ -21,7 +21,10 @@
                 {
                     IconData iconData = new(kvp.Value, kvp.Key);
 
-                    <button type="button" class="@($"btn {(Value == iconData ? SelectedButtonClasses : ButtonClasses)}")" attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
+                    <button 
+                        type="button"
+                            class="@($"btn {{GetClassesForButton(iconData)}}")"
+                            attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
                         <BlazingApple.Components.Icon CustomIcon="@iconData.IconClasses"></BlazingApple.Components.Icon> @iconData.ToString()
                     </button>
                 }
@@ -32,7 +35,10 @@
                     {
                         @if (!string.IsNullOrEmpty(_searchString) && iconName.ToLower().Contains(_searchString))
                         {
-                            <button type="button" class="@($"btn {ButtonClasses}")" attributes="@AdditionalAttributes">
+                            <button 
+                                type="button" 
+                                class="@($"btn {ButtonClasses}")" 
+                                attributes="@AdditionalAttributes">
                                 <BlazingApple.Components.Icon CustomIcon="@CustomIcons[iconName]"></BlazingApple.Components.Icon> @iconName
                             </button>
                         }
@@ -54,7 +60,10 @@
                 else
                 {
                     IconData iconData = IconCore.Get(icon);
-                    <button type="button" class="@($"btn {(Value == iconData ? SelectedButtonClasses : ButtonClasses)}")" attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
+                    <button 
+                        type="button"
+                            class="@($"btn {GetClassesForButton(iconData)}")"
+                            attributes="@AdditionalAttributes" @onclick=@(() => Set(iconData))>
                         <BlazingApple.Components.Icon I="@icon"></BlazingApple.Components.Icon> @iconData.ToString()
                     </button>
 
@@ -65,7 +74,10 @@
             {
                 @foreach (string iconName in CustomIcons.Keys)
                 {
-                    <button type="button" class="@($"btn {ButtonClasses}")" attributes="@AdditionalAttributes">
+                    <button 
+                        type="button" 
+                        class="@($"btn {ButtonClasses}")" 
+                        attributes="@AdditionalAttributes">
                         <BlazingApple.Components.Icon CustomIcon="@CustomIcons[iconName]"></BlazingApple.Components.Icon> @iconName
                     </button>
                 }

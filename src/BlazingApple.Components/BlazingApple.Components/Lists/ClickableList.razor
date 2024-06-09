@@ -1,0 +1,28 @@
+﻿@using BlazingApple.Components.Lists
+
+@typeparam TItem where TItem : class
+@inherits RecordList<TItem>
+
+<div class="clickableList">
+	<RecordList TItem="TItem" Context="item" Items="Items" ColumnsPerRow="ColumnsPerRow" ColGroup="ColGroup" MaxHeight="MaxHeight" FormatAsList="FormatAsList" AdditionalAttributes="AdditionalAttributes">
+		<HeadRow>
+			@if (HeadRow is not null)
+			{
+				@HeadRow
+			}
+		</HeadRow>
+		<RowTemplate>
+			<tr>
+				@{
+					string rowClass = "item";
+					rowClass += _selectedItem != null && item == _selectedItem ? " active" : "";
+				}
+				<td class="@rowClass">
+					<button type="button" @onclick="@(async () => await OnItemClicked(item))" style="width: 100%; display:contents;">
+						@RowTemplate(item)
+					</button>
+				</td>
+			</tr>
+		</RowTemplate>
+	</RecordList>
+</div>

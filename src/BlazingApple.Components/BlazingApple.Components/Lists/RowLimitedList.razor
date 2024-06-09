@@ -1,0 +1,21 @@
+﻿@inherits RecordList<TItem>
+@typeparam TItem
+
+
+<RecordList Items="_itemsToDisplay"
+			ColGroup="ColGroup"
+			ColumnsPerRow="ColumnsPerRow"
+			FormatAsList="FormatAsList"
+			AdditionalAttributes="AdditionalAttributes"
+			Context="item">
+	<RowTemplate>
+		@RowTemplate(item)
+	</RowTemplate>
+</RecordList>
+
+@if (Items.Count > RowLimit)
+{
+	<div class="mt-2 mb-3">
+		<SeeMoreToggle Value="_seeMoreSelected" ValueChanged="SeeMoreClicked" />
+	</div>
+}

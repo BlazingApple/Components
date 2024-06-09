@@ -1,0 +1,34 @@
+﻿@using BlazingApple.Components.HTMLElements
+
+<DropDown T="int" ButtonClass="@ButtonClass" Label="@Label" Value="Value" ValueChanged="ValueChanged" @attributes="AdditionalAttributes">
+	<DropDownItem Value="5">
+		<div class="ms-1 d-inline-flex align-items-center">
+			5
+		</div>
+	</DropDownItem>
+	<DropDownItem Value="10">
+		<div class="ms-1 d-inline-flex align-items-center">
+			10
+		</div>
+	</DropDownItem>
+	<DropDownItem Value="25">
+		<div class="ms-1 d-inline-flex align-items-center">
+			25
+		</div>
+	</DropDownItem>
+	<DropDownItem Value="50">
+		<div class="ms-1 d-inline-flex align-items-center">
+			50
+		</div>
+	</DropDownItem>
+	<DropDownItem Value="100">
+		<div class="ms-1 d-inline-flex align-items-center">
+			100
+		</div>
+	</DropDownItem>
+	<DropDownItem Value="500">
+		<div class="ms-1 d-inline-flex align-items-center" title="May cause performance issues.">
+			500
+		</div>
+	</DropDownItem>
+</DropDown>
