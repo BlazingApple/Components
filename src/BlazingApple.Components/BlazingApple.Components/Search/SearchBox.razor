@@ -5,8 +5,8 @@
 		<Icon I="BlazingAppleServices.IconType.Search" AdditionalClasses="subtle-icon" />
 	</button>
 
-	<input placeholder="@TitleText" @bind="@BoundValue" type="input" />
-	<button class="@_clearButtonClasses" @onclick="OnClearClick" type="button" title="Remove your search term!">
+	<input placeholder="@TitleText" @bind="@BoundValue" type="input" disabled="@Disabled" />
+	<button class="@_clearButtonClasses" @onclick="OnClearClick" type="button" disabled="@Disabled" title="Remove your search term!">
 		<Icon I="BlazingAppleServices.IconType.Cancel" />
 	</button>
 </div>

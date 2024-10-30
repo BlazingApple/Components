@@ -1,0 +1,22 @@
+﻿@if (File is not null)
+{
+	string styleString = "width: 100%; border: none; min-height: 60vh; max-height: 90vh;";
+
+	<ErrorBoundary>
+		<ChildContent>
+			@{
+				string url = @File.Url;
+			}
+
+			@if (_isSmallDevice)
+			{
+				url = $"https://drive.google.com/viewerng/viewer?embedded=true&url={url}";
+			}
+
+			<iframe class="og-single-file-viewer" title="@File.Name" style="@styleString" @onload="OnIFrameLoaded" src="@url"></iframe>
+		</ChildContent>
+		<ErrorContent>
+			<p>Failed to load @File.Name.</p>
+		</ErrorContent>
+	</ErrorBoundary>
+}

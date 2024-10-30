@@ -1,0 +1,11 @@
+﻿@using BlazingApple.Components.Services
+<Tooltip OpenOn="TooltipOpenOn.Hover" TargetId="@($"#info-{_id}")">
+    <ChildContent>
+        <div id="@($"info-{_id}")" class="px-1" style="font-size: .8rem;">
+            <Icon I="IconType.Info"></Icon>
+        </div>
+    </ChildContent>
+    <TooltipContent>
+        @ChildContent
+    </TooltipContent>
+</Tooltip>

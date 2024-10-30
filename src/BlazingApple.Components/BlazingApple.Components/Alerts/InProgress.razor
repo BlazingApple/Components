@@ -1,0 +1,41 @@
+﻿@using BlazorStrap
+@using BlazorStrap.V5
+<BSAlert Color="BSColor.Info" IsDismissible="true">
+	<div style="@($"{(Compact ? "margin: -.25rem;" : "")} margin-right: -1.5rem;")">
+		@if(ChildContent is not null)
+		{
+			<div>
+				@ChildContent
+			</div>
+		}
+		else if(!string.IsNullOrEmpty(Name) || !string.IsNullOrEmpty(Description))
+		{
+			@if(!string.IsNullOrEmpty(Name))
+			{
+				<h5>@Name</h5>
+			}
+			else
+			{
+				<h5>Coming soon!</h5>
+			}
+
+			@if(Compact)
+			{
+				<hr style="width: 100%; margin-top:.25rem; margin-bottom:.25rem;" />
+			}
+
+			@if(!string.IsNullOrEmpty(Description))
+			{
+				@if(!Compact)
+				{
+					<hr style="width: 100%; margin-top:.25rem; margin-bottom:.25rem;" />
+				}
+				<div class="text-muted small">@Description</div>
+			}
+		}
+		else
+		{
+			<div>Coming soon!</div>
+		}
+	</div>
+</BSAlert>

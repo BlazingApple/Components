@@ -1,0 +1,44 @@
+﻿@if (Files is not null && Files.Count > 0)
+{
+	<div class="row og-file-viewer">
+		<div class="col-lg-2">
+			<div class="d-flex justify-content-end">
+				<div class="btn-group-vertical">
+					@foreach (IRenderableFile file in Files)
+					{
+						string className = _selectedFile == file ? "btn btn-outline-primary active" : "btn btn-outline-primary";
+
+						<button type="button" class="@className" @onclick="@(() => OnFileSelect(file))" disabled="@file.IsDisabled">
+							@if (file.IconClass != null)
+							{
+								<span class="me-1">
+									<i class="@file.IconClass"></i>
+								</span>
+							}
+							
+							@file.Name
+						</button>
+					}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8">
+			<p class="print-only">Files must be printed individually.</p>
+			@if (_selectedFile is not null) 
+			{
+				@if(_selectedFile.IsDisabled) {
+					<p class="text-center ba-no-results">You must be logged in to view this content.</p>
+				}
+				else {
+					<SingleFileViewer File="_selectedFile"/>
+				}
+			}
+			else
+			{
+				<p class="text-center ba-no-results">No file selected.</p>
+			}
+		</div>
+		<div class="col-lg-2">
+		</div>
+	</div>
+}

@@ -41,9 +41,28 @@ public partial class DropDown<T> : ComponentBase
 	/// <param name="item">The component to add</param>
 	public void AddItem(DropDownItem<T> item)
 	{
+		Items ??= [];
+
 		if (!Items!.Contains(item))
+		{
 			Items!.Add(item);
+		}
 	}
+
+	/// <inheritdoc />
+	protected override void OnAfterRender(bool firstRender)
+	{
+		base.OnAfterRender(firstRender);
+
+		if (firstRender)
+		{
+			_isOpen = true;
+			StateHasChanged();
+			_isOpen = false;
+			StateHasChanged();
+		}
+	}
+
 	/// <summary>
 	/// Called when a <see cref="DropDownItem{T}"/> is clicked.
 	/// </summary>
@@ -55,19 +74,15 @@ public partial class DropDown<T> : ComponentBase
 		_isOpen = false;
 
 		if (ValueChanged.HasDelegate)
+		{
 			await ValueChanged.InvokeAsync(newVal);
+		}
 
 		StateHasChanged();
 	}
 
-	/// <summary>Get data from the database to populate the input fields.</summary>
-	/// <returns>Nothing.</returns>
-	protected override async Task OnInitializedAsync()
-	{
-		await base.OnInitializedAsync();
-		Items ??= [];
-	}
-
 	private void ToggleOpen()
-		=> _isOpen = !_isOpen;
+	{
+		_isOpen = !_isOpen;
+	}
 }

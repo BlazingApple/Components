@@ -12,8 +12,12 @@
 }
 <CascadingValue Value="this">
 	<div class="dropdown">
-		<button class="@dropDownButtonClass" type="button" @onclick="ToggleOpen" @attributes="@AdditionalAttributes">
-			@Label: 
+		<button class="@dropDownButtonClass" type="button" @onclick="ToggleOpen" disabled="@Disabled" @attributes="@AdditionalAttributes">
+			@if(!string.IsNullOrEmpty(Label)) 
+			{
+				<span>@Label: </span>
+			}
+			
 			@if(Items is not null)
 			{
 				DropDownItem<T>? item = Items.SingleOrDefault(i => (Value == null && i.Value == null) || (i.Value != null && i.Value.Equals(Value)));

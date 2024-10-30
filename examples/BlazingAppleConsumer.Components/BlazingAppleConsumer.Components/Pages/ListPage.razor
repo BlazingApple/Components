@@ -49,5 +49,8 @@
 <MinimalCard style="margin: 1rem;">
     <h3>Accordions</h3>
     <small class="text-muted">Bootstrap-styled</small>
-    <VerticalAccordion Items="@_items.Take(3).Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
+    @if(_items is not null) 
+    {
+        <VerticalAccordion Items="@_items.Take(3).Select(i => ($"{i} Heading", $"{i} Content, Content, Content"))"></VerticalAccordion>
+    }
 </MinimalCard>

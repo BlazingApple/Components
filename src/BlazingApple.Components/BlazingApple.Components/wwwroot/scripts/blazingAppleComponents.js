@@ -17,7 +17,7 @@ var downloadCalendarEvent = function downloadCalendarEvent(subject, description,
 }
 
 var scrollToCarouselSlide = function scrollToCarouselSlide(elementId)
-{
+{``
 	const element = document.getElementById(elementId);
 
 	if (element)
@@ -123,4 +123,14 @@ var disconnectObserver = function ()
 {
 	if (carouselObserver)
 		carouselObserver.disconnect();
+}
+
+function saveAsFile(filename, fileType, fileData)
+{
+	var link = document.createElement('a');
+	link.download = filename;
+	link.href = "data:" + fileType + ";charset=utf-8," + encodeURIComponent(fileData);
+	document.body.appendChild(link); // Needed for Firefox
+	link.click();
+	document.body.removeChild(link);
 }

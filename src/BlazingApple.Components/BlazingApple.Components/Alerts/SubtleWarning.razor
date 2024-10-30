@@ -1,0 +1,13 @@
+﻿@if (Message is not null)
+{
+    <span class="ms-2 d-flex align-items-center">
+        @if(ChildContent is not null)
+        {
+            @ChildContent
+        }
+
+        <span class=@(SmallText ? "text-muted small" : "text-muted")>
+            @Message
+        </span>
+    </span>
+}
