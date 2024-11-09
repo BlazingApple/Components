@@ -1,4 +1,6 @@
 @import '_content/Blazored.Toast/Blazored.Toast.bundle.scp.css';
+@import '_content/BlazorStrap.V5/BlazorStrap.V5.bundle.scp.css';
+@import '_content/BlazorStrap/BlazorStrap.bundle.scp.css';
 @import '_content/BlazingApple.Components/BlazingApple.Components.bundle.scp.css';
 
 /* /Shared/MainLayout.razor.rz.scp.css */
