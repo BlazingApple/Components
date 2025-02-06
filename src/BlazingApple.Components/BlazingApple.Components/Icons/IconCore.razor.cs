@@ -15,7 +15,9 @@ public partial class IconCore : Icon
         base.OnParametersSet();
 
         if (!string.IsNullOrEmpty(CustomIcon))
+        {
             customIconString = CustomIcon;
+        }
     }
 
     /// Get
@@ -25,7 +27,9 @@ public partial class IconCore : Icon
     /// <param name="name">Get the name</param>
     /// <returns><inheritdoc cref="IconData" /></returns>
     public static IconData Get(string customIcon, string name)
-        => GetIcon(customIcon, name);
+    {
+        return GetIcon(customIcon, name);
+    }
 
     /// <summary>Get <see cref="IconData" /> about an icon, including its display name, the classes, etc.</summary>
     /// <param name="type">The icon to retrieve.</param>
@@ -52,7 +56,7 @@ public partial class IconCore : Icon
             IconType.Branch => GetIcon("fab fa-pagelines", IconType.Branch),
             IconType.Building => GetIcon(FontAwesomeIcons.Building, IconType.Building),
             IconType.Calendar => GetIcon(FontAwesomeIcons.CalendarDay, IconType.Calendar),
-            IconType.Cancel => GetIcon(FontAwesomeIcons.Times, IconType.Cancel),
+            IconType.Cancel => GetIcon("fas fa-times", IconType.Cancel),
             IconType.Career => GetIcon(FontAwesomeIcons.GraduationCap, IconType.Career),
             IconType.ChartArea => GetIcon(FontAwesomeIcons.ChartArea, "Area Chart", null, IconStyle.Solid),
             IconType.ChartBar => GetIcon(FontAwesomeIcons.ChartBar, "Bar Chart", null, IconStyle.Solid),
